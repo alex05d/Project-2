@@ -6,7 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation | Welcome</title>
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+
+
+
 
 </head>
 
@@ -78,16 +85,275 @@
                     <h4>Goldendoodle</h4>
 
                 </div>
+            </div>
+        </div>
+        <hr>
+
+        <!-- =================== TABLE TEST ===================-->
+
+        <script type="text/javascript">
+            $(document).ready(function ($) {
+                //ajax row data
+                var ajax_data =
+                    [
+                        { fname: "Code", lname: "With Mark", email: "mark@codewithmark.com" },
+                        { fname: "Mary", lname: "Moe", email: "mary@gmail.com" },
+                        { fname: "John", lname: "Doe", email: "john@yahoo.com" },
+                        { fname: "Julie", lname: "Dooley", email: "julie@gmail.com" },
+                    ]
 
 
 
+                var random_id = function () {
+                    var id_num = Math.random().toString(9).substr(2, 3);
+                    var id_str = Math.random().toString(36).substr(2);
+
+                    return id_num + id_str;
+                }
+
+
+                //--->create data table > start
+                var tbl = '';
+                tbl += '<table class="table table-hover">'
+
+                //--->create table header > start
+                tbl += '<thead>';
+                tbl += '<tr>';
+                tbl += '<th>First Name</th>';
+                tbl += '<th>Last Name</th>';
+                tbl += '<th>Email</th>';
+                tbl += '<th>Options</th>';
+                tbl += '</tr>';
+                tbl += '</thead>';
+                //--->create table header > end
+
+
+                //--->create table body > start
+                tbl += '<tbody>';
+
+                //--->create table body rows > start
+                $.each(ajax_data, function (index, val) {
+                    //you can replace with your database row id
+                    var row_id = random_id();
+
+                    //loop through ajax row data
+                    tbl += '<tr row_id="' + row_id + '">';
+                    tbl += '<td ><div class="row_data" edit_type="click" col_name="fname">' + val['fname'] + '</div></td>';
+                    tbl += '<td ><div class="row_data" edit_type="click" col_name="lname">' + val['lname'] + '</div></td>';
+                    tbl += '<td ><div class="row_data" edit_type="click" col_name="email">' + val['email'] + '</div></td>';
+
+                    //--->edit options > start
+                    tbl += '<td>';
+
+                    tbl += '<span class="btn_edit" > <a href="#" class="btn btn-link " row_id="' + row_id + '" > Edit</a> </span>';
+
+                    //only show this button if edit button is clicked
+                    tbl += '<span class="btn_save"> <a href="#" class="btn btn-link"  row_id="' + row_id + '"> Save</a> | </span>';
+                    tbl += '<span class="btn_cancel"> <a href="#" class="btn btn-link" row_id="' + row_id + '"> Cancel</a> | </span>';
+
+                    tbl += '</td>';
+                    //--->edit options > end
+
+                    tbl += '</tr>';
+                });
+
+                //--->create table body rows > end
+
+                tbl += '</tbody>';
+                //--->create table body > end
+
+                tbl += '</table>'
+                //--->create data table > end
+
+                //out put table data
+                $(document).find('.tbl_user_data').html(tbl);
+
+                $(document).find('.btn_save').hide();
+                $(document).find('.btn_cancel').hide();
+
+
+                //--->make div editable > start
+                $(document).on('click', '.row_data', function (event) {
+                    event.preventDefault();
+
+                    if ($(this).attr('edit_type') == 'button') {
+                        return false;
+                    }
+
+                    //make div editable
+                    $(this).closest('div').attr('contenteditable', 'true');
+                    //add bg css
+                    $(this).addClass('bg-warning').css('padding', '5px');
+
+                    $(this).focus();
+                })
+                //--->make div editable > end
+
+
+                //--->save single field data > start
+                $(document).on('focusout', '.row_data', function (event) {
+                    event.preventDefault();
+
+                    if ($(this).attr('edit_type') == 'button') {
+                        return false;
+                    }
+
+                    var row_id = $(this).closest('tr').attr('row_id');
+
+                    var row_div = $(this)
+                        .removeClass('bg-warning') //add bg css
+                        .css('padding', '')
+
+                    var col_name = row_div.attr('col_name');
+                    var col_val = row_div.html();
+
+                    var arr = {};
+                    arr[col_name] = col_val;
+
+                    //use the "arr"	object for your ajax call
+                    $.extend(arr, { row_id: row_id });
+
+                    //out put to show
+                    $('.post_msg').html('<pre class="bg-success">' + JSON.stringify(arr, null, 2) + '</pre>');
+
+                })
+                //--->save single field data > end
+
+
+                //--->button > edit > start	
+                $(document).on('click', '.btn_edit', function (event) {
+                    event.preventDefault();
+                    var tbl_row = $(this).closest('tr');
+
+                    var row_id = tbl_row.attr('row_id');
+
+                    tbl_row.find('.btn_save').show();
+                    tbl_row.find('.btn_cancel').show();
+
+                    //hide edit button
+                    tbl_row.find('.btn_edit').hide();
+
+                    //make the whole row editable
+                    tbl_row.find('.row_data')
+                        .attr('contenteditable', 'true')
+                        .attr('edit_type', 'button')
+                        .addClass('bg-warning')
+                        .css('padding', '3px')
+
+                    //--->add the original entry > start
+                    tbl_row.find('.row_data').each(function (index, val) {
+                        //this will help in case user decided to click on cancel button
+                        $(this).attr('original_entry', $(this).html());
+                    });
+                    //--->add the original entry > end
+
+                });
+                //--->button > edit > end
+
+
+                //--->button > cancel > start	
+                $(document).on('click', '.btn_cancel', function (event) {
+                    event.preventDefault();
+
+                    var tbl_row = $(this).closest('tr');
+
+                    var row_id = tbl_row.attr('row_id');
+
+                    //hide save and cacel buttons
+                    tbl_row.find('.btn_save').hide();
+                    tbl_row.find('.btn_cancel').hide();
+
+                    //show edit button
+                    tbl_row.find('.btn_edit').show();
+
+                    //make the whole row editable
+                    tbl_row.find('.row_data')
+                        .attr('edit_type', 'click')
+                        .removeClass('bg-warning')
+                        .css('padding', '')
+
+                    tbl_row.find('.row_data').each(function (index, val) {
+                        $(this).html($(this).attr('original_entry'));
+                    });
+                });
+                //--->button > cancel > end
+
+
+                //--->save whole row entery > start	
+                $(document).on('click', '.btn_save', function (event) {
+                    event.preventDefault();
+                    var tbl_row = $(this).closest('tr');
+
+                    var row_id = tbl_row.attr('row_id');
+
+
+                    //hide save and cacel buttons
+                    tbl_row.find('.btn_save').hide();
+                    tbl_row.find('.btn_cancel').hide();
+
+                    //show edit button
+                    tbl_row.find('.btn_edit').show();
+
+
+                    //make the whole row editable
+                    tbl_row.find('.row_data')
+                        .attr('edit_type', 'click')
+                        .removeClass('bg-warning')
+                        .css('padding', '')
+
+                    //--->get row data > start
+                    var arr = {};
+                    tbl_row.find('.row_data').each(function (index, val) {
+                        var col_name = $(this).attr('col_name');
+                        var col_val = $(this).html();
+                        arr[col_name] = col_val;
+                    });
+                    //--->get row data > end
+
+                    //use the "arr"	object for your ajax call
+                    $.extend(arr, { row_id: row_id });
+
+                    //out put to show
+                    $('.post_msg').html('<pre class="bg-success">' + JSON.stringify(arr, null, 2) + '</pre>')
+
+
+                });
+                //--->save whole row entery > end
+
+
+            }); 
+        </script>
+
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><b> Demo </b> </div>
+
+            <div class="panel-body">
+
+                <div class="tbl_user_data"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><b>HTML Table Edits/Upates</b> </div>
+
+            <div class="panel-body">
+
+                <p>All the changes will be displayed below</p>
+                <div class="post_msg"> </div>
 
             </div>
         </div>
+
+
+        <!-- =================== TAB NAMES ===================-->
         <div class="column row">
-            <hr>
-            <!-- TAB NAMES -->
-            <ul class="tabs" data-tabs id="example-tabs">
+            <ul class="tabs align-right" data-tabs id="profile-tab-names">
                 <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">About Me</a></li>
                 <li class="tabs-title"><a href="#panel2">Feeding</a></li>
                 <li class="tabs-title"><a href="#panel3">Vaccinations</a></li>
@@ -95,27 +361,39 @@
                 <li class="tabs-title"><a href="#panel5">Appointments</a></li>
                 <li class="tabs-title"><a href="#panel6">Special Instructions</a></li>
             </ul>
+
             <div class="tabs-content" data-tabs-content="example-tabs">
 
+
+                <!-- =================== EACH TAB ===================-->
 
                 <!-- TAB: ABOUT ME -->
                 <div class="tabs-panel is-active" id="panel1">
                     <table style="width:100%">
                         <tr>
                             <th>Name</th>
-                            <th>SPECIES</th>
-                            <th>WEIGHT</th>
-                            <th>BIRTHDAY</th>
-                            <th>GENDER</th>
-                            <th>PERSONALITY</th>
+                            <th>Species</th>
+                            <th>Weight</th>
+                            <th>Birthday</th>
+                            <th>Gender</th>
+                            <th>Personality</th>
                         </tr>
                         <tr>
-                            <td>January</td>
-                            <td>$100</td>
+                            <td>text</td>
+                            <td>text</td>
+                            <td>text</td>
+                            <td>text</td>
+                            <td>text</td>
+                            <td>text</td>
+
                         </tr>
                         <tr>
-                            <td>February</td>
-                            <td>$50</td>
+                            <td>text2</td>
+                            <td>text2</td>
+                            <td>text2</td>
+                            <td>text2</td>
+                            <td>text2</td>
+                            <td>text2</td>
                         </tr>
                     </table>
 
@@ -123,7 +401,7 @@
                 </div>
 
                 <!-- TAB: FEEDING -->
-                <div class="tabs-panel is-active" id="panel2">
+                <div class="tabs-panel" id="panel2">
 
                     <table style="width:100%">
                         <tr>
@@ -134,12 +412,16 @@
 
                         </tr>
                         <tr>
-                            <td>January</td>
-                            <td>$100</td>
+                            <td>name 1</td>
+                            <td>am time 1</td>
+                            <td>mid time 1</td>
+                            <td>pm time 1</td>
                         </tr>
                         <tr>
-                            <td>February</td>
-                            <td>$50</td>
+                            <td>name 2</td>
+                            <td>am time 2</td>
+                            <td>mid time 2</td>
+                            <td>pm time 2</td>
                         </tr>
                     </table>
 
@@ -147,7 +429,7 @@
                 </div>
 
                 <!-- TAB: VACCINATIONS -->
-                <div class="tabs-panel is-active" id="panel3">
+                <div class="tabs-panel" id="panel3">
 
                     <table style="width:100%">
 
@@ -171,7 +453,7 @@
                 </div>
 
                 <!-- TAB: MEDICATIONS -->
-                <div class="tabs-panel is-active" id="panel4">
+                <div class="tabs-panel" id="panel4">
 
                     <table style="width:100%">
 
@@ -196,15 +478,14 @@
                 </div>
 
                 <!-- TAB: APPOINTMENTS -->
-                <div class="tabs-panel is-active" id="panel5">
-
+                <div class="tabs-panel" id="panel5">
+                    <h4>Vet Name: </h4>
+                    <h4>Vet Address: </h4>
                     <table style="width:100%">
 
                         <tr>
-                            <th>Vet Name</th>
-                            <th>Vet Address</th>
-                            <th>Apointment Time</th>
                             <th>Appointment Date</th>
+                            <th>Apointment Time</th>
 
                         </tr>
                         <tr>
@@ -221,100 +502,65 @@
                 </div>
 
 
-
             </div>
         </div>
     </div>
 
 
-    <div class="ecommerce-footer">
-        <div class="ecommerce-footer-links row">
-            <div class="small-12 medium-12 large-6 columns">
-                <div class="row ecommerce-footer-links-block">
-                    <div class="small-4 medium-4 large-4 columns">
-                        <h5>Categories</h5>
-                        <ul class="menu vertical">
-                            <li><a href="#">Category 1</a></li>
-                            <li><a href="#">Category 2</a></li>
-                            <li><a href="#">Category 3</a></li>
-                            <li><a href="#">Category 4</a></li>
-                            <li><a href="#">Category 5</a></li>
-                        </ul>
-                    </div>
-                    <div class="small-4 medium-4 large-4 columns more-categories">
-                        <ul class="menu vertical">
-                            <li><a href="#">Category 6</a></li>
-                            <li><a href="#">Category 7</a></li>
-                            <li><a href="#">Category 8</a></li>
-                            <li><a href="#">Category 9</a></li>
-                            <li><a href="#">Category 10</a></li>
-                        </ul>
-                    </div>
-                    <div class="small-4 medium-4 large-4 columns">
-                        <h5>Help</h5>
-                        <ul class="menu vertical">
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Return Policy</a></li>
-                            <li><a href="#">Shipping &amp; Delivery</a></li>
-                        </ul>
-                    </div>
-                </div>
 
-            </div>
-            <div class="small-12 medium-12 large-6 columns">
-                <div class="row">
-                    <div class="small-4 medium-4 large-4 columns">
-                        <h5>My Account</h5>
-                        <ul class="menu vertical">
-                            <li><a href="#">Sign In</a></li>
-                            <li><a href="#">Order Status</a></li>
-                            <li><a href="#">My Wishlist</a></li>
-                        </ul>
-                    </div>
-                    <div class="small-4 medium-4 large-4 columns">
-                        <h5>About</h5>
-                        <ul class="menu vertical">
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Store Locator</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Career</a></li>
-                        </ul>
-                    </div>
-                    <div class="small-4 medium-4 large-4 columns">
-                        <h5>Social</h5>
-                        <ul class="menu vertical">
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">Youtube</a></li>
-                        </ul>
+    <!-- =================== FOOTER ===================-->
+    <div id="engadget-footer-social-container">
+        <footer id="engadget-footer-social">
+            <div class="footer-left">
+                <div class="newsletter">
+                    <h6>Sign up for our newsletter</h6>
+                    <div class="input-group">
+
+                        <input class="input-group-field" type="email" placeholder="Email address">
+                        <div class="input-group-button">
+                            <input type="submit" class="button" value="Submit">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="ecommerce-footer-bottom-bar row">
-            <div class="small-12 medium-5 columns">
-                <ul class="bottom-links">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms &amp; Conditions</a></li>
+            <div class="footer-right">
+                <h6>Follow us</h6>
+                <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+            </div>
+        </footer>
+    </div>
+    <div id="engadget-footer-contact-details-container">
+        <footer id="engadget-footer-contact-details">
+            <div class="footer-left">
+                <div class="contact-details">
+                    <ul>
+                        <li><img class="thumbnail" src="http://placehold.it/80"></li>
+                        <li><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 01234 567890</li>
+                        <li><a data-toggle="animatedModal10"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                Contact
+                                us</a></li>
+                        <li><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> Street, City, County, Country
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-right">
+                <ul class="menu align-right">
+                    <li><a href="#">One</a></li>
+                    <li><a href="#">Two</a></li>
+                    <li><a href="#">Three</a></li>
+                    <li><a href="#">Four</a></li>
                 </ul>
             </div>
-            <div class="small-12 medium-2 columns ecommerce-footer-logomark">
-                <img src="https://placehold.it/50x50" />
-            </div>
-            <div class="small-12 medium-5 columns">
-                <div class="bottom-copyright">
-                    <span>©2017 Company Name. All rights reserved.</span>
-                </div>
-            </div>
-        </div>
+        </footer>
     </div>
 
 
 
-
+    <!-- =================== SCRIPTS ===================-->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
