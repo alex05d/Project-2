@@ -1,0 +1,756 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../public/styles/footer.css">
+
+
+</head>
+
+<body>
+
+    <!-- =================== NAVIGATION  ===================-->
+    <div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title">Menu</div>
+    </div>
+
+    <div class="top-bar" id="realEstateMenu">
+        <div class="top-bar-left">
+            <ul class="menu" data-responsive-menu="accordion">
+                <li class="menu-text">PET FETCH</li>
+                <!-- <li><a href="#">One</a></li>
+                <li><a href="#">Two</a></li>
+                <li><a href="#">Three</a></li> -->
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <li><a href="#">My Account</a></li>
+                <li><a class="button">Share Pet Profile</a></li>
+            </ul>
+        </div>
+        <br>
+    </div>
+
+
+    <!-- =================== PET TOP SECTION  ===================-->
+
+    <!-- BACK TO PREVIOUS PAGE -->
+    <div class="row columns">
+        <nav aria-label="You are here:" role="navigation">
+            <ul class="breadcrumbs">
+                <li><a href="#">BACK TO ALL PETS</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="medium-6 columns">
+
+            <!-- PET IMAGES -->
+            <img class="thumbnail" src="https://placehold.it/650x350">
+            <div class="row small-up-4">
+                <div class="column">
+                    <img class="thumbnail" src="https://placehold.it/250x200">
+                </div>
+                <div class="column">
+                    <img class="thumbnail" src="https://placehold.it/250x200">
+                </div>
+                <div class="column">
+                    <img class="thumbnail" src="https://placehold.it/250x200">
+                </div>
+                <div class="column">
+                    <img class="thumbnail" src="https://placehold.it/250x200">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- PET ABOUT -->
+        <!--(will pull data from 'pets' table in database)-->
+        <div class="medium-6 large-5 columns">
+            <h3>Hercules</h3>
+            <p>I'm a very friendly guy! I love taking long walks by the lake. My favorite sport is chasing tennis
+                balls. I'm really good at that! I'm working on barking at other dogs and jumping on people.</p>
+
+
+            <div class="quick-facts">
+                <p>AGE</p>
+                <h4>1yr 2 months</h4>
+                <p>WEIGHT</p>
+                <h4>65lbs</h4>
+                <p>SEX</p>
+                <h4>Male</h4>
+                <p>SPECIES</p>
+                <h4>Goldendoodle</h4>
+
+            </div>
+        </div>
+    </div>
+    <hr>
+
+
+    <!-- =================== TABS ===================-->
+    <div class="column row">
+        <ul class="tabs align-right" data-tabs id="profile-tab-names">
+            <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Feeding</a></li>
+            <li class="tabs-title"><a href="#panel2">Vaccinations</a></li>
+            <li class="tabs-title"><a href="#panel3">Medications</a></li>
+            <li class="tabs-title"><a href="#panel4">Appointments</a></li>
+            <li class="tabs-title"><a href="#panel5">Special Instructions</a></li>
+        </ul>
+
+        <div class="tabs-content" data-tabs-content="example-tabs">
+
+
+            <!-- =================== EACH TAB ===================-->
+
+            <!-- ====== FEEDING (TAB 1) ======  -->
+            <div class="tabs-panel is-active" id="panel1">
+                <h5>Food Brand Name:</h5>
+                <h5>Morning Feeding Time:</h5>
+                <h5>Afternoon Feeding Time</h5>
+                <h5>Evening Feeding Time</h5>
+            </div>
+
+            <!-- ====== VACCINATIONS (TAB 2) ======  -->
+            <div class="tabs-panel" id="panel2">
+
+                <!-- javascript table -->
+                <script type="text/javascript">
+                    $(document).ready(function ($) {
+                        //ajax row data
+                        var ajax_data =
+                            [
+                                { vac_name: "Rabies Vaccine", vac_status: "OVERDUE", vac_due_date: "12/2/2019" },
+                                { vac_name: "K9 Bordetella", vac_status: "OVERDUE", vac_due_date: "8/29/2019" },
+                                { vac_name: "K9 Distemper", vac_status: "UP TO DATE", vac_due_date: "8/29/2020" },
+                                { vac_name: "Heartworm Testr", vac_status: "OVERDUE", vac_due_date: "1/15/2020" },
+
+                            ]
+
+                        var random_id = function () {
+                            var id_num = Math.random().toString(9).substr(2, 3);
+                            var id_str = Math.random().toString(36).substr(2);
+
+                            return id_num + id_str;
+                        }
+
+
+                        //--->create data table > start
+                        var tbl = '';
+                        tbl += '<table class="table table-hover">'
+
+                        //---> CREATE TABLE HEADER > start
+                        tbl += '<thead>';
+                        tbl += '<tr>';
+                        tbl += '<th>Vaccination Name</th>';
+                        tbl += '<th>Vaccination Status</th>';
+                        tbl += '<th>Vaccination Due Date</th>';
+                        tbl += '</tr>';
+                        tbl += '</thead>';
+
+                        //---> end
+
+
+                        //--->CREATE *TABLE BODY* > start
+                        tbl += '<tbody>';
+
+                        //--->CREATE TABLE BODY *ROWS* > start
+                        $.each(ajax_data, function (index, val) {
+
+                            //you can replace with your database row id
+                            var row_id = random_id();
+
+                            //loop through ajax row data
+                            tbl += '<tr row_id="' + row_id + '">';
+                            tbl += '<td ><div class="row_data" edit_type="click" col_name="vac_name">' + val['vac_name'] + '</div></td>';
+                            tbl += '<td ><div class="row_data" edit_type="click" col_name="vac_status">' + val['vac_status'] + '</div></td>';
+                            tbl += '<td ><div class="row_data" edit_type="click" col_name="vac_due_date">' + val['vac_due_date'] + '</div></td>';
+
+                            //--->EDIT OPTIONS > start
+                            tbl += '<td>';
+
+                            tbl += '<span class="btn_edit" > <a href="#" class="btn btn-link " row_id="' + row_id + '" > Edit</a> </span>';
+
+                            //only show this button if edit button is clicked
+                            tbl += '<span class="btn_save"> <a href="#" class="btn btn-link"  row_id="' + row_id + '"> Save</a> | </span>';
+                            tbl += '<span class="btn_cancel"> <a href="#" class="btn btn-link" row_id="' + row_id + '"> Cancel</a> | </span>';
+
+                            tbl += '</td>';
+                            //--->edit options > end
+
+                            tbl += '</tr>';
+                        });
+
+                        //--->create table body rows > end
+
+                        tbl += '</tbody>';
+                        //--->create table body > end
+
+                        tbl += '</table>'
+                        //--->create data table > end
+
+                        //out put table data
+                        $(document).find('.tbl_user_data').html(tbl);
+
+                        $(document).find('.btn_save').hide();
+                        $(document).find('.btn_cancel').hide();
+
+
+                        //--->MAKE DIV EDITABLE > start
+                        $(document).on('click', '.row_data', function (event) {
+                            event.preventDefault();
+
+                            if ($(this).attr('edit_type') == 'button') {
+                                return false;
+                            }
+
+                            //make div editable
+                            $(this).closest('div').attr('contenteditable', 'true');
+                            //add bg css
+                            $(this).addClass('bg-warning').css('padding', '5px');
+
+                            $(this).focus();
+                        })
+                        //--->make div editable > end
+
+
+                        //--->SAVE SINGLE FIELD DATA> start
+                        $(document).on('focusout', '.row_data', function (event) {
+                            event.preventDefault();
+
+                            if ($(this).attr('edit_type') == 'button') {
+                                return false;
+                            }
+
+                            var row_id = $(this).closest('tr').attr('row_id');
+
+                            var row_div = $(this)
+                                .removeClass('bg-warning') //add bg css
+                                .css('padding', '')
+
+                            var col_name = row_div.attr('col_name');
+                            var col_val = row_div.html();
+
+                            var arr = {};
+                            arr[col_name] = col_val;
+
+                            //use the "arr"	object for your ajax call
+                            $.extend(arr, { row_id: row_id });
+
+                            //out put to show
+                            $('.post_msg').html('<pre class="bg-success">' + JSON.stringify(arr, null, 2) + '</pre>');
+
+                        })
+                        //--->save single field data > end
+
+
+                        //--->button > edit > start	
+                        $(document).on('click', '.btn_edit', function (event) {
+                            event.preventDefault();
+                            var tbl_row = $(this).closest('tr');
+
+                            var row_id = tbl_row.attr('row_id');
+
+                            tbl_row.find('.btn_save').show();
+                            tbl_row.find('.btn_cancel').show();
+
+                            //hide edit button
+                            tbl_row.find('.btn_edit').hide();
+
+                            //make the whole row editable
+                            tbl_row.find('.row_data')
+                                .attr('contenteditable', 'true')
+                                .attr('edit_type', 'button')
+                                .addClass('bg-warning')
+                                .css('padding', '3px')
+
+                            //--->add the original entry > start
+                            tbl_row.find('.row_data').each(function (index, val) {
+                                //this will help in case user decided to click on cancel button
+                                $(this).attr('original_entry', $(this).html());
+                            });
+                            //--->add the original entry > end
+
+                        });
+                        //--->button > edit > end
+
+
+                        //--->button > cancel > start	
+                        $(document).on('click', '.btn_cancel', function (event) {
+                            event.preventDefault();
+
+                            var tbl_row = $(this).closest('tr');
+
+                            var row_id = tbl_row.attr('row_id');
+
+                            //hide save and cacel buttons
+                            tbl_row.find('.btn_save').hide();
+                            tbl_row.find('.btn_cancel').hide();
+
+                            //show edit button
+                            tbl_row.find('.btn_edit').show();
+
+                            //make the whole row editable
+                            tbl_row.find('.row_data')
+                                .attr('edit_type', 'click')
+                                .removeClass('bg-warning')
+                                .css('padding', '')
+
+                            tbl_row.find('.row_data').each(function (index, val) {
+                                $(this).html($(this).attr('original_entry'));
+                            });
+                        });
+                        //--->button > cancel > end
+
+
+                        //--->save whole row entery > start	
+                        $(document).on('click', '.btn_save', function (event) {
+                            event.preventDefault();
+                            var tbl_row = $(this).closest('tr');
+
+                            var row_id = tbl_row.attr('row_id');
+
+
+                            //hide save and cacel buttons
+                            tbl_row.find('.btn_save').hide();
+                            tbl_row.find('.btn_cancel').hide();
+
+                            //show edit button
+                            tbl_row.find('.btn_edit').show();
+
+
+                            //make the whole row editable
+                            tbl_row.find('.row_data')
+                                .attr('edit_type', 'click')
+                                .removeClass('bg-warning')
+                                .css('padding', '')
+
+                            //--->get row data > start
+                            var arr = {};
+                            tbl_row.find('.row_data').each(function (index, val) {
+                                var col_name = $(this).attr('col_name');
+                                var col_val = $(this).html();
+                                arr[col_name] = col_val;
+                            });
+                            //--->get row data > end
+
+                            //use the "arr"	object for your ajax call
+                            $.extend(arr, { row_id: row_id });
+
+                            //out put to show
+                            $('.post_msg').html('<pre class="bg-success">' + JSON.stringify(arr, null, 2) + '</pre>')
+
+
+                        });
+                        //--->save whole row entery > end
+
+
+                    }); 
+                </script>
+
+                <!-- HTML TABLE -->
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="tbl_user_data"></div>
+                    </div>
+                </div>
+
+                <!-- DISPLAYS CHANGES TABLE -->
+                <div class="panel panel-default">
+                    <div class="panel-heading"><b>HTML Table Edits/Upates</b> </div>
+
+                    <div class="panel-body">
+
+                        <p>All the changes will be displayed below</p>
+                        <div class="post_msg"> </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====== MEDICATIONS (TAB 3) ======  -->
+            <div class="tabs-panel" id="panel3">
+                <h4>Needs Medication : Y/N</h4>
+                <!-- javascript table -->
+                <script type="text/javascript">
+                    $(document).ready(function ($) {
+                        //ajax row data
+                        var ajax_data =
+                            [
+                                { medication_name: "Cefpodoxime 200mg Tab", medication_time: "11am", dosage: "1 tab" },
+                                { medication_name: "NextGard K9", medication_time: "2/1/2020", dosage: "1" },
+
+                            ]
+
+                        var random_id = function () {
+                            var id_num = Math.random().toString(9).substr(2, 3);
+                            var id_str = Math.random().toString(36).substr(2);
+
+                            return id_num + id_str;
+                        }
+
+
+                        //--->create data table > start
+                        var tbl = '';
+                        tbl += '<table class="table table-hover">'
+
+                        //---> CREATE TABLE HEADER > start
+                        tbl += '<thead>';
+                        tbl += '<tr>';
+                        tbl += '<th>Medication Name</th>';
+                        tbl += '<th>Medication Time</th>';
+                        tbl += '<th>Dosage</th>';
+                        tbl += '</tr>';
+                        tbl += '</thead>'
+
+                        //---> end
+
+
+                        //--->CREATE *TABLE BODY* > start
+                        tbl += '<tbody>';
+
+                        //--->CREATE TABLE BODY *ROWS* > start
+                        $.each(ajax_data, function (index, val) {
+
+                            //you can replace with your database row id
+                            var row_id = random_id();
+
+                            //loop through ajax row data
+                            tbl += '<tr row_id="' + row_id + '">';
+                            tbl += '<td ><div class="row_data" edit_type="click" col_name="medication_name">' + val['medication_name'] + '</div></td>';
+                            tbl += '<td ><div class="row_data" edit_type="click" col_name="medication_time">' + val['medication_time'] + '</div></td>';
+                            tbl += '<td ><div class="row_data" edit_type="click" col_name="dosage">' + val['dosage'] + '</div></td>';
+
+                            //--->EDIT OPTIONS > start
+                            tbl += '<td>';
+
+                            tbl += '<span class="btn_edit" > <a href="#" class="btn btn-link " row_id="' + row_id + '" > Edit</a> </span>';
+
+                            //only show this button if edit button is clicked
+                            tbl += '<span class="btn_save"> <a href="#" class="btn btn-link"  row_id="' + row_id + '"> Save</a> | </span>';
+                            tbl += '<span class="btn_cancel"> <a href="#" class="btn btn-link" row_id="' + row_id + '"> Cancel</a> | </span>';
+
+                            tbl += '</td>';
+                            //--->edit options > end
+
+                            tbl += '</tr>';
+                        });
+
+                        //--->create table body rows > end
+
+                        tbl += '</tbody>';
+                        //--->create table body > end
+
+                        tbl += '</table>'
+                        //--->create data table > end
+
+                        //out put table data
+                        $(document).find('.tbl_user_data2').html(tbl);
+
+                        $(document).find('.btn_save').hide();
+                        $(document).find('.btn_cancel').hide();
+
+
+                        //--->MAKE DIV EDITABLE > start
+                        $(document).on('click', '.row_data', function (event) {
+                            event.preventDefault();
+
+                            if ($(this).attr('edit_type') == 'button') {
+                                return false;
+                            }
+
+                            //make div editable
+                            $(this).closest('div').attr('contenteditable', 'true');
+                            //add bg css
+                            $(this).addClass('bg-warning').css('padding', '5px');
+
+                            $(this).focus();
+                        })
+                        //--->make div editable > end
+
+
+                        //--->SAVE SINGLE FIELD DATA> start
+                        $(document).on('focusout', '.row_data', function (event) {
+                            event.preventDefault();
+
+                            if ($(this).attr('edit_type') == 'button') {
+                                return false;
+                            }
+
+                            var row_id = $(this).closest('tr').attr('row_id');
+
+                            var row_div = $(this)
+                                .removeClass('bg-warning') //add bg css
+                                .css('padding', '')
+
+                            var col_name = row_div.attr('col_name');
+                            var col_val = row_div.html();
+
+                            var arr = {};
+                            arr[col_name] = col_val;
+
+                            //use the "arr"	object for your ajax call
+                            $.extend(arr, { row_id: row_id });
+
+                            //out put to show
+                            $('.post_msg').html('<pre class="bg-success">' + JSON.stringify(arr, null, 2) + '</pre>');
+
+                        })
+                        //--->save single field data > end
+
+
+                        //--->button > edit > start	
+                        $(document).on('click', '.btn_edit', function (event) {
+                            event.preventDefault();
+                            var tbl_row = $(this).closest('tr');
+
+                            var row_id = tbl_row.attr('row_id');
+
+                            tbl_row.find('.btn_save').show();
+                            tbl_row.find('.btn_cancel').show();
+
+                            //hide edit button
+                            tbl_row.find('.btn_edit').hide();
+
+                            //make the whole row editable
+                            tbl_row.find('.row_data')
+                                .attr('contenteditable', 'true')
+                                .attr('edit_type', 'button')
+                                .addClass('bg-warning')
+                                .css('padding', '3px')
+
+                            //--->add the original entry > start
+                            tbl_row.find('.row_data').each(function (index, val) {
+                                //this will help in case user decided to click on cancel button
+                                $(this).attr('original_entry', $(this).html());
+                            });
+                            //--->add the original entry > end
+
+                        });
+                        //--->button > edit > end
+
+
+                        //--->button > cancel > start	
+                        $(document).on('click', '.btn_cancel', function (event) {
+                            event.preventDefault();
+
+                            var tbl_row = $(this).closest('tr');
+
+                            var row_id = tbl_row.attr('row_id');
+
+                            //hide save and cacel buttons
+                            tbl_row.find('.btn_save').hide();
+                            tbl_row.find('.btn_cancel').hide();
+
+                            //show edit button
+                            tbl_row.find('.btn_edit').show();
+
+                            //make the whole row editable
+                            tbl_row.find('.row_data')
+                                .attr('edit_type', 'click')
+                                .removeClass('bg-warning')
+                                .css('padding', '')
+
+                            tbl_row.find('.row_data').each(function (index, val) {
+                                $(this).html($(this).attr('original_entry'));
+                            });
+                        });
+                        //--->button > cancel > end
+
+
+                        //--->save whole row entery > start	
+                        $(document).on('click', '.btn_save', function (event) {
+                            event.preventDefault();
+                            var tbl_row = $(this).closest('tr');
+
+                            var row_id = tbl_row.attr('row_id');
+
+
+                            //hide save and cacel buttons
+                            tbl_row.find('.btn_save').hide();
+                            tbl_row.find('.btn_cancel').hide();
+
+                            //show edit button
+                            tbl_row.find('.btn_edit').show();
+
+
+                            //make the whole row editable
+                            tbl_row.find('.row_data')
+                                .attr('edit_type', 'click')
+                                .removeClass('bg-warning')
+                                .css('padding', '')
+
+                            //--->get row data > start
+                            var arr = {};
+                            tbl_row.find('.row_data').each(function (index, val) {
+                                var col_name = $(this).attr('col_name');
+                                var col_val = $(this).html();
+                                arr[col_name] = col_val;
+                            });
+                            //--->get row data > end
+
+                            //use the "arr"	object for your ajax call
+                            $.extend(arr, { row_id: row_id });
+
+                            //out put to show
+                            $('.post_msg').html('<pre class="bg-success">' + JSON.stringify(arr, null, 2) + '</pre>')
+
+
+                        });
+                        //--->save whole row entery > end
+
+
+                    }); 
+                </script>
+
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="tbl_user_data2"></div>
+                    </div>
+                </div>
+
+                <!-- HTML TABLE -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading"><b>HTML Table Edits/Upates</b> </div>
+
+                    <div class="panel-body">
+
+                        <p>All the changes will be displayed below</p>
+                        <div class="post_msg"> </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====== APPOINTMENTS (TAB 4) ======  -->
+            <div class="tabs-panel" id="panel4">
+
+                <table style="width:100%">
+
+                    <tr>
+                        <th>Needs Medication</th>
+                        <th>Medication Name</th>
+                        <th>Dosage</th>
+                        <th>Medication Time</th>
+
+                    </tr>
+                    <tr>
+                        <td>January</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>$50</td>
+                    </tr>
+                </table>
+
+                <button class="button">EDIT INFO</button>
+            </div>
+
+            <!-- ====== SPECIAL INSTRUCTIONS (TAB 5) ======  -->
+            <div class="tabs-panel" id="panel5">
+                <h4>Vet Name: </h4>
+                <h4>Vet Address: </h4>
+                <table style="width:100%">
+
+                    <tr>
+                        <th>Appointment Date</th>
+                        <th>Apointment Time</th>
+
+                    </tr>
+                    <tr>
+                        <td>January</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>$50</td>
+                    </tr>
+                </table>
+
+                <button class="button">EDIT INFO</button>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+    <!-- =================== FOOTER ===================-->
+    <div id="engadget-footer-social-container">
+        <footer id="engadget-footer-social">
+            <div class="footer-left">
+                <div class="newsletter">
+                    <h6>Sign up for our newsletter</h6>
+                    <div class="input-group">
+
+                        <input class="input-group-field" type="email" placeholder="Email address">
+                        <div class="input-group-button">
+                            <input type="submit" class="button" value="Submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-right">
+                <h6>Follow us</h6>
+                <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
+            </div>
+        </footer>
+    </div>
+    <div id="engadget-footer-contact-details-container">
+        <footer id="engadget-footer-contact-details">
+            <div class="footer-left">
+                <div class="contact-details">
+                    <ul>
+                        <li><img class="thumbnail" src="http://placehold.it/80"></li>
+                        <li><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 01234 567890</li>
+                        <li><a data-toggle="animatedModal10"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                Contact
+                                us</a></li>
+                        <li><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> Street, City, County, Country
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-right">
+                <ul class="menu align-right">
+                    <li><a href="#">One</a></li>
+                    <li><a href="#">Two</a></li>
+                    <li><a href="#">Three</a></li>
+                    <li><a href="#">Four</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <!-- =================== SCRIPTS ===================-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+
+</html>
