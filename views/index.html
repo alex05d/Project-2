@@ -6,48 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to your Pet Fetch Profile</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+
+    <!-- CSS LINKS -->
     <link rel="stylesheet" type="text/css" href="../public/styles/footer.css">
     <link rel="stylesheet" type="text/css" href="../public/styles/home.css">
     <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
 
+    <!--GOOGLE FONTS-->
+    <link
+        href="https://fonts.googleapis.com/css?family=Crimson+Pro:400,500,600,700,800,900|Raleway:300,400,500,600,700,800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <!-- =================== NAVIGATION  ===================-->
-    <div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
+
+    <!-- MOBILE MENU -->
+    <div class="title-bar" data-responsive-toggle="mobileNavMenu" data-hide-for="small">
         <button class="menu-icon" type="button" data-toggle></button>
         <div class="title-bar-title">Menu</div>
     </div>
 
-    <div class="top-bar" id="realEstateMenu">
+    <div class="top-bar" id="navMenu">
+
+        <!-- LEFT NAV -->
         <div class="top-bar-left">
             <ul class="menu" data-responsive-menu="accordion">
+                <li class="menu-text">
+                    <!-- 
+                </li><img src="../public/styles/images/pet-fetch-logo-05-05.png" width="120">
+                </li> -->
                 <li class="menu-text">PET FETCH</li>
-                <!-- <li><a href="#">One</a></li>
-            <li><a href="#">Two</a></li>
-            <li><a href="#">Three</a></li> -->
             </ul>
         </div>
+
+        <!-- RIGHT NAV -->
         <div class="top-bar-right">
             <ul class="menu">
-                <li><a href="#">My Account</a></li>
-                <li><a class="button">Share Pet Profile</a></li>
+                <li><a href="#" id="owner-profile">OWNER PROFILE</a></li>
+                <li><a class="share-button">SHARE PET PROFILE</a></li>
             </ul>
         </div>
-        <br>
+
     </div>
 
 
 
     <!-- =================== USER HOME PAGE ===================-->
-    <div class="work-feature-block row">
+    <div class="work-feature-block row" id="top-block">
 
         <div class="columns medium-5">
-            <h2 class="work-feature-block-header">Welcome back, Brian.</h2>
+            <h5 class="work-feature-block-header" id="sub-header">WELCOME BACK </h5>
+            <h1 class="user-name" id="main-headers">Brian</h1>
+
+
+        </div>
+
+
+        <!-- =================== USER PRFILE PICTURE =================== -->
+
+        <div class="columns medium-7">
+            <!-- IMAGE -->
+            <!-- <img class="work-feature-block-image" src="https://placehold.it/600x400" /> -->
 
             <div class="reminders-section">
 
-                <h5>REMINDERS</h5>
+                <h5 class="work-feature-block-header" id="sub-header">REMINDERS </h5>
 
                 <div data-closable class="callout alert-callout-border primary">
                     <strong>UPCOMING</strong> - Chanel has to take medicine today.
@@ -94,21 +118,27 @@
 
             </div>
         </div>
+    </div>
 
+    <!-- =================== EMERGENCY CONTACT SECTION ===================-->
+    <div class="work-feature-block row" id="emergency-sec">
+        <div class="columns medium-3">
+            Emergency Contact Information:
+        </div>
 
-        <!-- =================== USER PRFILE PICTURE =================== -->
+        <div class="columns medium-3">
+            Phone: 972) 193-1928
+        </div>
 
-        <div class="columns medium-7">
-            <img class="work-feature-block-image" src="https://placehold.it/600x400" />
+        <div class="columns medium-3">
+            Email: petowner@gmail.com
         </div>
     </div>
 
-
     <!-- =================== USER LIST OF ANIMALS ===================-->
-    <hr>
 
     <div class="row column">
-        <p class="lead">YOUR ANIMALS</p>
+        <h5 class="work-feature-block-header" id="sub-header-white">YOUR PETS </h5>
     </div>
     <div class="row small-up-1 medium-up-2 large-up-3">
 
@@ -117,7 +147,7 @@
                 <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of pet">
                 </p>
                 <p class="lead">DUKE</p>
-                <p class="subheader">Male Cat</p>
+                <p class="subheader">MALE CAT</p>
             </div>
         </div>
 
@@ -126,7 +156,7 @@
                 <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of pet">
                 </p>
                 <p class="lead">CHANEL</p>
-                <p class="subheader">Female Corgi Mix</p>
+                <p class="subheader">FEMALE CORGI</p>
             </div>
         </div>
 
@@ -135,7 +165,7 @@
                 <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of pet">
                 </p>
                 <p class="lead">HERCULES</p>
-                <p class="subheader">Male, Goldendoodle</p>
+                <p class="subheader">MALE GOLDENDOODLE</p>
             </div>
         </div>
 
@@ -144,24 +174,37 @@
                 <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of pet">
                 </p>
                 <p class="lead">BIRD</p>
-                <p class="subheader">Male, Parrot</p>
+                <p class="subheader">MALE PARROT</p>
             </div>
         </div>
 
         <div class="column">
-            <div class="callout">
 
-                <h1>ADD PET</h1>
-            </div>
+            <p><img src="../public/styles/images/add-pet-button-04.png" alt="image of pet">
+
         </div>
 
     </div>
 
 
     <!-- =================== FOOTER ===================-->
-    <div id="engadget-footer-social-container">
-        <footer id="engadget-footer-social">
+
+    <div id="engadget-footer-contact-details-container">
+        <footer id="engadget-footer-contact-details">
             <div class="footer-left">
+                <div class="contact-details">
+                    <ul>
+                        <li><img class="thumbnail" src="http://placehold.it/80"></li>
+                        <li><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 1-800-399-9271</li>
+                        <li><a data-toggle="animatedModal10"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+
+                        <li><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> 18727 LUCKY DRIVE, DALLAS, TX
+                            75552
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-right">
                 <div class="newsletter">
                     <h6>Sign up for our newsletter</h6>
                     <div class="input-group">
@@ -172,38 +215,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer-right">
-                <h6>Follow us</h6>
-                <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-            </div>
-        </footer>
-    </div>
-    <div id="engadget-footer-contact-details-container">
-        <footer id="engadget-footer-contact-details">
-            <div class="footer-left">
-                <div class="contact-details">
-                    <ul>
-                        <li><img class="thumbnail" src="http://placehold.it/80"></li>
-                        <li><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 01234 567890</li>
-                        <li><a data-toggle="animatedModal10"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                Contact
-                                us</a></li>
-                        <li><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> Street, City, County, Country
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-right">
-                <ul class="menu align-right">
-                    <li><a href="#">One</a></li>
-                    <li><a href="#">Two</a></li>
-                    <li><a href="#">Three</a></li>
-                    <li><a href="#">Four</a></li>
-                </ul>
             </div>
         </footer>
     </div>
