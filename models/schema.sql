@@ -1,5 +1,5 @@
--- DROP DATABASE IF EXISTS ra49m4zmt16g6ssl;
--- CREATE DATABASE ra49m4zmt16g6ssl;
+
+
 
 DROP DATABASE IF EXISTS test_ra49m4zmt16g6ssl;
 CREATE DATABASE test_ra49m4zmt16g6ssl;
@@ -132,3 +132,4 @@ CREATE TABLE owners
                             (pet_id) REFERENCES pets
                             (pet_id)
 );
+
