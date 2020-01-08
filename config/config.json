@@ -3,7 +3,7 @@
     "username": "owvlccrd74jzj4jq",
     "password": "y2l1wh5pntqzngij",
     "database": "ra49m4zmt16g6ssl",
-    "host": "d6vscs19jtah8iwb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	",
+    "host": "d6vscs19jtah8iwb.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
