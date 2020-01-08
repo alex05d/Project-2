@@ -12,6 +12,164 @@ th, td {
 }
 
 
-/* FORM - START*/
 
-/* FORM - END */
+/* ======= BODY ===================================================*/
+body{
+  background-color: #2E3447;
+}
+
+
+/* ======= FONTS ==================================================*/
+#main-headers{
+  font-family: 'Raleway', sans-serif;
+  font-size:55px;
+}
+
+
+#sub-header{
+  font-family: 'Crimson Pro', serif;
+  letter-spacing: .2rem;
+  font-size:15px;
+}
+
+#sub-header-white{
+  font-family: 'Crimson Pro', serif;
+  letter-spacing: .2rem;
+  font-size:15px;
+  text-align: center;
+  color: white;
+}
+
+.lead{
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: .2rem;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+}
+
+.subheader{
+  font-family: 'Crimson Pro', serif;
+  letter-spacing: .2rem;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+}
+
+.lead-black{
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  text-align: left;
+  color: black;
+}
+
+.subheader-black{
+  font-family: 'Crimson Pro', serif;
+  letter-spacing: .2rem;
+  font-size: 15px;
+  text-align: left;
+  margin-bottom: 2px;
+  color: black;
+}
+/* ======= NAVIGATION =============================================*/
+.top-bar, .top-bar ul {
+  background-color: #E8D356;
+}
+
+#navMenu {
+background-color: #E8D356;
+padding: 15px;
+}
+
+/* LEFT NAV*/
+.menu-text{
+  background-color:#E8D356;
+}
+
+/* RIGHT NAV*/
+#owner-profile{
+  background-color: #E8D356;
+  color: black;
+  font-family: 'Raleway', sans-serif, 700;
+  letter-spacing: .2rem;
+  font-size: 10px;
+  border: none;
+}
+
+.share-button{
+  background-color: #2E3447;
+  color: #F2F2F2;
+  font-family: 'Raleway', sans-serif, 700;
+  letter-spacing: .2rem;
+  font-size: 10px;
+  border-radius: 3px;
+}
+
+
+.log-button{
+  background-color: #AE9E41;
+  color: #F2F2F2;
+  font-family: 'Raleway', sans-serif, 700;
+  letter-spacing: .2rem;
+  font-size: 10px;
+  border-radius: 3px;
+  padding-left: 10px;
+}
+
+.add-row-button{
+  background-color: #2E3447;
+  color: #F2F2F2;
+  font-family: 'Raleway', sans-serif, 700;
+  letter-spacing: .2rem;
+  font-size: 10px;
+  border-radius: 3px;
+  padding-top: 1%;
+  padding-right: 5%;
+  padding-bottom: 1%;
+  padding-left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.callout{
+  background-color: #585D6C;
+}
+
+
+img{
+  border: 7px solid #E8D356;
+
+}
+
+
+#top-block{
+  background-color: #F2F2F2;
+}
+.row{
+  max-width: 100%;
+  padding-left:10%;
+  padding-right:10%;
+  padding-top:4%;
+  padding-bottom:4%;
+}
+
+#emergency-sec {
+  font-family: 'Raleway', sans-serif;
+  background-color: #585D6C;
+  color:#CCCCCC;
+  padding: 15px;
+  padding-left:10%;
+  padding-right:10%;
+  padding-top:2%;
+  padding-bottom:2%;
+  }
+
+  /* ======= PET PROFILE =============================================*/
+  #top-pet-profile{
+    background-color: #F2F2F2;
+  }
+  .about-pet{
+    margin-top: 11px;
+    margin-bottom: 11px;
+  }

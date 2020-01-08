@@ -1,4 +1,5 @@
 
+
 CREATE TABLE owners
 (
     owner_id INT
@@ -122,6 +123,8 @@ CREATE TABLE owners
     PRIMARY KEY
                             (instruction_id),
     FOREIGN KEY
+
                             (pets_id) REFERENCES pets
                             (pets_id)
 );
+
