@@ -25,11 +25,36 @@ body{
   font-size:55px;
 }
 
+#main-headers2{
+  font-family: 'Raleway', sans-serif;
+  font-size:55px;
+  padding-top: 5%;
+  text-align: center;
+  color: white;
+}
+
+#form-header{
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  padding-top: 5%;
+  padding-bottom: 2.5%;
+  text-align: center;
+  color: white;
+}
 
 #sub-header{
   font-family: 'Crimson Pro', serif;
   letter-spacing: .2rem;
   font-size:15px;
+}
+
+
+#sub-header2{
+  font-family: 'Crimson Pro', serif;
+  letter-spacing: .2rem;
+  font-size: 30px;
+  text-align: center;
+  color: white;
 }
 
 #sub-header-white{
@@ -106,6 +131,31 @@ padding: 15px;
 }
 
 
+.log-button{
+  background-color: #AE9E41;
+  color: #F2F2F2;
+  font-family: 'Raleway', sans-serif, 700;
+  letter-spacing: .2rem;
+  font-size: 10px;
+  border-radius: 3px;
+  padding-left: 10px;
+}
+
+.add-row-button{
+  background-color: #2E3447;
+  color: #F2F2F2;
+  font-family: 'Raleway', sans-serif, 700;
+  letter-spacing: .2rem;
+  font-size: 10px;
+  border-radius: 3px;
+  padding-top: 1%;
+  padding-right: 5%;
+  padding-bottom: 1%;
+  padding-left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .callout{
   background-color: #585D6C;
@@ -130,7 +180,9 @@ img{
 }
 
 #emergency-sec {
+  font-family: 'Raleway', sans-serif;
   background-color: #585D6C;
+  color:#CCCCCC;
   padding: 15px;
   padding-left:10%;
   padding-right:10%;
@@ -146,3 +198,11 @@ img{
     margin-top: 11px;
     margin-bottom: 11px;
   }
+
+
+  /* ======= PROFILE SETUP =============================================*/
+  .column:last-child, .columns:last-child {
+float: none;
+margin: auto;
+
+}
