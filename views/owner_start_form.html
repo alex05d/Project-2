@@ -6,104 +6,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to your Pet Fetch Profile</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <link rel="stylesheet" type="text/css" href="//public/styles/styles.css">
-    <link rel="stylesheet" type="text/css" href="/Project 2/Project-2/public/styles/home.css">
+
+    <!-- CSS LINKS -->
+    <link rel="stylesheet" type="text/css" href="../public/styles/footer.css">
+    <link rel="stylesheet" type="text/css" href="../public/styles/home.css">
+    <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
+
+    <!--GOOGLE FONTS-->
+    <link
+        href="https://fonts.googleapis.com/css?family=Crimson+Pro:400,500,600,700,800,900|Raleway:300,400,500,600,700,800&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
-    <!-- =================== MAIN NAVIGATION BAR ===================-->
-    <div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
+    <!-- =================== NAVIGATION  ===================-->
+    <!-- MOBILE MENU -->
+    <div class="title-bar" data-responsive-toggle="mobileNavMenu" data-hide-for="small">
         <button class="menu-icon" type="button" data-toggle></button>
         <div class="title-bar-title">Menu</div>
     </div>
-    <div class="top-bar" id="realEstateMenu">
+
+    <div class="top-bar" id="navMenu">
+
+        <!-- LEFT NAV -->
         <div class="top-bar-left">
             <ul class="menu" data-responsive-menu="accordion">
+                <li class="menu-text">
+                    <!-- 
+            </li><img src="../public/styles/images/pet-fetch-logo-05-05.png" width="120">
+            </li> -->
                 <li class="menu-text">PET FETCH</li>
-
             </ul>
         </div>
+
+        <!-- RIGHT NAV -->
         <div class="top-bar-right">
             <ul class="menu">
-                <li><a href="#">My Account</a></li>
-                <li><a class="button">Share Pet Profile</a></li>
+                <!-- <li><a href="#" id="owner-profile">OWNER PROFILE</a></li>
+                <li><a class="share-button">SHARE PET PROFILE</a></li>
+                <li><a class="log-button">LOGOUT</a></li> -->
             </ul>
         </div>
-    </div>
-
-    <br>
 
     </div>
+
+    </div>
     </div>
 
 
-    <!-- =================== USER FORM =================== -->
+    <h1 class="user-name" id="main-headers2">Profile Setup</h1>
 
-    <h2>Owner Profile</h2>
+    <!-- =================== OWNER FORM =================== -->
 
     <div class="row">
-
-        <div class="small-9 columns">
+        <h1 id="sub-header2">Owner Profile</h1>
+        <hr>
+        <!-- <div class="small-8 columns"> -->
+        <div class="medium-6 columns">
             <input type="text" id="first-name" placeholder="First Name">
             <input type="text" id="last-name" placeholder="Last Name">
             <input type="text" id="email" placeholder="Email">
             <input type="text" id="phone" placeholder="Phone">
         </div>
-
-    </div>
-    <a href="#" class="button large expanded">Next</a>
     </div>
 
-
-    <!-- =================== FOOTER ===================-->
-    <!-- <div id="engadget-footer-social-container">
-        <footer id="engadget-footer-social">
-            <div class="footer-left">
-                <div class="newsletter">
-                    <h6>Sign up for our newsletter</h6>
-                    <div class="input-group">
-
-                        <input class="input-group-field" type="email" placeholder="Email address">
-                        <div class="input-group-button">
-                            <input type="submit" class="button" value="Submit">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-right">
-                <h6>Follow us</h6>
-                <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i>
-            </div>
-        </footer>
     </div>
-    <div id="engadget-footer-contact-details-container">
-        <footer id="engadget-footer-contact-details">
-            <div class="footer-left">
-                <div class="contact-details">
-                    <ul>
-                        <li><img class="thumbnail" src="http://placehold.it/80"></li>
-                        <li><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 01234 567890</li>
-                        <li><a data-toggle="animatedModal10"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact
-                                us</a></li>
-                        <li><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> Street, City, County, Country</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-right">
-                <ul class="menu align-right">
-                    <li><a href="#">One</a></li>
-                    <li><a href="#">Two</a></li>
-                    <li><a href="#">Three</a></li>
-                    <li><a href="#">Four</a></li>
-                </ul>
-            </div>
-        </footer>
-    </div> -->
 
+    <!-- =================== PET FORM =================== -->
+
+    <div class="row">
+        <h1 id="sub-header2">Pet Profile</h1>
+        <hr>
+        <h1 class="user-name" id="form-header">About Pet</h1>
+        <div class="medium-6 columns">
+            <input type="text" id="pet-name" placeholder="Pet Name">
+            <input type="text" id="pet-type" placeholder="Pet Type">
+            <input type="text" id="pet-weight" placeholder="Pet Weight">
+            <input type="text" id="pet-birthday" placeholder="Pet Birthday">
+            <input type="text" id="pet-gender" placeholder="Pet Gender">
+            <input type="text" id="pet-personality" placeholder="Pet Personality">
+        </div>
+    </div>
+
+    <div class="row">
+        <h1 class="user-name" id="form-header">Feeding</h1>
+        <div class="medium-6 columns">
+            <input type="text" id="pet-food" placeholder="Pet Food Name">
+            <input type="text" id="morning-feeding" placeholder="Pet Type">
+            <input type="text" id="afternoon-feeding" placeholder="Pet Weight">
+            <input type="text" id="night-feeding" placeholder="Pet Birthday">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <h1 class="user-name" id="form-header">Vaccinations</h1>
+        <div class="medium-6 columns">
+            <input type="text" id="vac-name" placeholder="Name of Vaccination">
+            <input type="text" id="vac-status" placeholder="Vaccination Status">
+            <input type="text" id="vac-due-date" placeholder="Vaccination Expiration Date">
+            <input type="text" id="last-vaccination" placeholder="Last Vaccination">
+        </div>
+    </div>
+
+    <div class="row">
+        <h1 class="user-name" id="form-header">Medication</h1>
+        <div class="medium-6 columns">
+            <input type="text" id="vac-name" placeholder="Name of Vaccination">
+            <input type="text" id="vac-status" placeholder="Vaccination Status">
+            <input type="text" id="vac-due-date" placeholder="Vaccination Expiration Date">
+            <input type="text" id="last-vaccination" placeholder="Last Vaccination">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <h1 class="user-name" id="form-header">Appointments</h1>
+        <div class="medium-6 columns">
+            <input type="text" id="vet-name" placeholder="Vet Name">
+            <input type="text" id="vet-address" placeholder="Vet Address">
+            <input type="text" id="appt-time" placeholder="Appointment Time">
+            <input type="text" id="appt-date" placeholder="Appointment Date">
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <h1 class="user-name" id="form-header">Special Instructions</h1>
+        <div class="medium-6 columns">
+            <input type="text" id="special-instructions" placeholder="Enter any special instructions you may have">
+        </div>
+    </div>
+
+
+
+    <div>
+        <a href="#" class="button large expanded">Complete Profile</a>
+    </div>
+
+
+    <!-- =================== SCRIPTS =================== -->
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>

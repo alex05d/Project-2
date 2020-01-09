@@ -25,11 +25,36 @@ body{
   font-size:55px;
 }
 
+#main-headers2{
+  font-family: 'Raleway', sans-serif;
+  font-size:55px;
+  padding-top: 5%;
+  text-align: center;
+  color: white;
+}
+
+#form-header{
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  padding-top: 5%;
+  padding-bottom: 2.5%;
+  text-align: center;
+  color: white;
+}
 
 #sub-header{
   font-family: 'Crimson Pro', serif;
   letter-spacing: .2rem;
   font-size:15px;
+}
+
+
+#sub-header2{
+  font-family: 'Crimson Pro', serif;
+  letter-spacing: .2rem;
+  font-size: 30px;
+  text-align: center;
+  color: white;
 }
 
 #sub-header-white{
@@ -173,3 +198,11 @@ img{
     margin-top: 11px;
     margin-bottom: 11px;
   }
+
+
+  /* ======= PROFILE SETUP =============================================*/
+  .column:last-child, .columns:last-child {
+float: none;
+margin: auto;
+
+}
