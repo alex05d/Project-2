@@ -15,7 +15,7 @@ th, td {
 
 /* ======= BODY ===================================================*/
 body{
-  background-color: #2E3447;
+  background-color: #252B38;
 }
 
 
@@ -51,10 +51,20 @@ body{
 
 #sub-header2{
   font-family: 'Crimson Pro', serif;
-  letter-spacing: .2rem;
+  letter-spacing: .1rem;
   font-size: 30px;
   text-align: center;
   color: white;
+}
+
+#sub-header3{
+  font-family: 'Crimson Pro', serif;
+  letter-spacing: .2rem;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 #sub-header-white{
@@ -202,7 +212,7 @@ img{
 
   /* ======= PROFILE SETUP =============================================*/
   .column:last-child, .columns:last-child {
-float: none;
-margin: auto;
+/* float: none;
+margin: auto; */
 
 }
