@@ -1,11 +1,18 @@
 // var db = require("../models");
 
-// module.exports = function (app) {
 
-//   //login route
-//   app.get("/", (req, res) => {
-//     res.render('login.ejs')
-//   })
+// ?? Do we need to require Sequelize here?
+
+module.exports = function (app) {
+
+  //login route
+  // === displays "/start" page
+
+  app.get("/start", function (req, res) {
+    res.sendFile(path.join(__dirname, "/../views/start.html"));
+  });
+
+
 
 //   //login POST method
 //   app.get('/login', (req, res) => {
