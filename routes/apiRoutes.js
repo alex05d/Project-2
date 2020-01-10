@@ -1,25 +1,25 @@
 var db = require("../models");
 
-module.exports = function (app) {
+// module.exports = function (app) {
 
-  //login route
-  app.get("/", (req, res) => {
-    res.render('login.ejs')
-  })
+//   //login route
+//   app.get("/", (req, res) => {
+//     res.render('login.ejs')
+//   })
 
-  //login POST method
-  app.get('/login', (req, res) => {
-    res.render('login.ejs')
-  })
+//   //login POST method
+//   app.get('/login', (req, res) => {
+//     res.render('login.ejs')
+//   })
 
-  //register route
-  app.get('/register', (req, res) => {
-    res.render('register.ejs')
-  })
+//   //register route
+//   app.get('/register', (req, res) => {
+//     res.render('register.ejs')
+//   })
 
   // Get all examples
-  // app.get("/api/examples", function(req, res) {
-  //   db.Example.findAll({}).then(function(dbExamples) {
+  // app.get("/api/examples", function (req, res) {
+  //   db.Example.findAll({}).then(function (dbExamples) {
   //     res.json(dbExamples);
   //   });
   // });
@@ -37,4 +37,4 @@ module.exports = function (app) {
   //     res.json(dbExample);
   //   });
   // });
-};
+// };
