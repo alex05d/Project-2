@@ -1,12 +1,13 @@
 var db = require("../models");
 
+// this pulls information from database
 
 module.exports = function (app) {
 
 
     app.get("/api/Owner", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Owner);
-        db.Owner.findAll({
+        db.Owner.findOne({
             include: [
                 {
                     model: db.Pet
@@ -17,4 +18,13 @@ module.exports = function (app) {
             console.log(Owner);
         });
     });
+
+    app.post("/api/new-profile", function (req, res) {
+        console.log("Owners info made it", req.body)
+    })
+
+    app.post("/api/pet_profile_setup", function (req, res) {
+        console.log("Pet About info made it", req.body)
+    })
+
 };
