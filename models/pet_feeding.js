@@ -1,4 +1,5 @@
 
+
 module.exports = function (sequelize, DataTypes) {
     var Pet_feeding = sequelize.define("Pet_feeding", {
 
