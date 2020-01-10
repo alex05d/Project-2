@@ -1,12 +1,8 @@
-var owners = require("./owners");
+
 
 module.exports = function (sequelize, DataTypes) {
-    var pets = sequelize.define("pets", {
-        pets_id: {
-            type: DataTypes.UUID,
-            allowNull: false,
-            primaryKey: true
-        },
+    var Pet = sequelize.define("Pet", {
+
         pets_name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -30,66 +26,42 @@ module.exports = function (sequelize, DataTypes) {
         pet_personality: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
     });
 
-    owners.associate = function (models) {
-        owners.hasMany(models.pets, {
-            foreignKey: "pets_id",
-            sourceKey: "owner_id",
-            onDelete: "cascade"
+    Pet.associate = function (models) {
+        Pets.hasMany(models.Pet_vaccination, {
+            foreignKey: "pet_id"
         });
     };
 
-    pets.associate = function (models) {
-        pets.belongsTo(models.owners, {
-            foreignKey: "owner_id",
-            sourceKey: "pets_id",
-            onDelete: "cascade"
-        });
-    };
-
-    pets.associate = function (models) {
-        pets.hasMany(models.pet_vaccinations, {
-            foreignKey: "vac_id",
-            sourceKey: "pets_id",
-            onDelete: "cascade"
-        });
-    };
-
-    pets.associate = function (models) {
-        pets.hasMany(models.pet_feeding, {
-            foreignKey: "feeding_id",
-            sourceKey: "pets_id",
-            onDelete: "cascade"
+    Pet.associate = function (models) {
+        Pet.hasMany(models.Pet_feeding, {
+            foreignKey: "pet_id"
         });
     };
 
 
-    pets.associate = function (models) {
-        pets.hasMany(models.medication, {
-            foreignKey: "med_id",
-            sourceKey: "pets_id",
-            onDelete: "cascade"
+    Pet.associate = function (models) {
+        Pet.hasMany(models.Medication, {
+            foreignKey: "pet_id"
         });
     };
 
-    pets.associate = function (models) {
-        pets.hasMany(models.special_instructions, {
-            foreignKey: "instruction_id",
-            sourceKey: "pets_id",
-            onDelete: "cascade"
+    Pet.associate = function (models) {
+        Pet.hasMany(models.Special_instruction, {
+            foreignKey: "pet_id"
         });
     };
 
-    pets.associate = function (models) {
-        pets.hasMany(models.appt, {
-            foreignKey: "appt_id",
-            sourceKey: "pets_id",
-            onDelete: "cascade"
+    Pet.associate = function (models) {
+        Pet.hasMany(models.Appt, {
+            foreignKey: "pet_id"
         });
     };
 
 
-    return pets;
+    return Pet;
+
+
 };
