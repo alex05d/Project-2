@@ -1,11 +1,7 @@
-var pets = require("./pets");
 
 module.exports = function (sequelize, DataTypes) {
-    var special_instructions = sequelize.define("special_instructions", {
-        instuction_id: {
-            type: DataTypes.UUID,
-            allowNull: false
-        },
+    var Special_instruction = sequelize.define("Special_instruction", {
+
         instructions: {
             type: DataTypes.BOOLEAN
         },
@@ -17,18 +13,5 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    pets.associate = function (models) {
-        pets.hasMany(models.special_instructions, {
-            foreignKey: "insturction_id",
-            sourceKey: "pets_id"
-        });
-    };
-
-    special_instructions.associate = function (models) {
-        special_instructions.belongsTo(models.pets, {
-            foreignKey: "pets_id",
-            sourceKey: "instruction_id"
-        });
-    };
-    return special_instructions;
+    return Special_instruction;
 };

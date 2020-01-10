@@ -1,12 +1,8 @@
-var pets = require("./pets");
+
 
 module.exports = function (sequelize, DataTypes) {
-  var owners = sequelize.define("owner", {
-    owner_id: {
-      type: DataTypes.UUID,
-      allowNull: false,
-      primaryKey: true,
-    },
+  var Owner = sequelize.define("Owner", {
+
     first_name: {
       type: DataTypes.STRING
     },
@@ -20,25 +16,26 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     phone_number: {
-      type: DataTypes.INTEGER,
-      validate: {
-        isNumeric: true
-      }
-    }
+      type: DataTypes.STRING
+    },
+    createdAt: {
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      type: DataTypes.DATE
+    },
   });
 
-  owners.associate = function (models) {
-    owners.hasMany(models.pets, {
-      onDelete: "cascade"
+
+
+
+  Owner.associate = function (models) {
+    Owner.hasMany(models.Pet, {
+      foreignKey: "owner_id"
     });
   };
 
-  pets.associate = function (models) {
-    pets.belongsTo(models.owners, {
-      foreignKey: "pets_id",
-      sourceKey: "owners_id",
-      onDelete: "cascade"
-    })
-  }
-  return owners;
+  return Owner;
 };
+
+
