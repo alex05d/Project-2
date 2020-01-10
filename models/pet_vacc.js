@@ -1,11 +1,7 @@
-var pets = require("./pets");
 
 module.exports = function (sequelize, DataTypes) {
-    var pet_vaccinations = sequelize.define("pet_vaccinations", {
-        vac_id: {
-            type: DataTypes.UUID,
-            allowNull: false
-        },
+    var Pet_vaccination = sequelize.define("Pet_vaccination", {
+
         vac_name: {
             type: DataTypes.STRING
         },
@@ -18,20 +14,6 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    // needs connection back to pets
-    pets.associate = function (models) {
-        pets.hasMany(models.pet_vaccinations, {
-            foreignKey: "vac_id",
-            sourceKey: "pets_id",
-            onDelete: "cascade"
-        });
-    };
 
-    pet_vaccinations.associate = function (models) {
-        pet_vaccinations.belongsTo(models.pets, {
-            foreignKey: "pets_id",
-            sourceKey: "vac_id"
-        });
-    };
-    return pet_vaccinations;
+    return Pet_vaccination;
 };

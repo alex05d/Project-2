@@ -1,12 +1,7 @@
-var pets = require("./pets");
 
 module.exports = function (sequelize, DataTypes) {
-    var pet_feeding = sequelize.define("pet_feeding", {
-        feeding_id: {
-            type: DataTypes.UUID,
-            allowNull: false,
-            primaryKey: true
-        },
+    var Pet_feeding = sequelize.define("Pet_feeding", {
+
         pet_food: {
             type: DataTypes.STRING,
             allowNull: false
@@ -29,20 +24,6 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    pets.associate = function (models) {
-        pets.hasMany(models.pet_feeding, {
-            foreignKey: "feeding_id",
-            sourceKey: "pets_id",
-            onDelete: "cascade"
-        });
-    };
 
-
-    pet_feeding.associate = function (models) {
-        pet_feeding.belongsTo(models.pets, {
-            foreignKey: "pets_id",
-            sourcekey: "feeding_id"
-        });
-    };
-    return pet_feeding;
+    return Pet_feeding;
 };
