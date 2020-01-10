@@ -14,8 +14,14 @@ app.use(express.static("public"));
 
 // Routes
 require("./routes/owner-api-routes")(app);
-// require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+// require("./routes/apiRoutes")(app);
+
+
+//Relations
+// db.pets.belongsTo(db.owners);
+// db.owners.hasMany(db.pets);
+
 
 var syncOptions = { force: true };
 

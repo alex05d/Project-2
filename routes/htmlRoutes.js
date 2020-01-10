@@ -6,23 +6,36 @@ var path = require("path");
 
 module.exports = function (app) {
 
-
-  app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
+  // New Profile Welcome Page
+  app.get("/start", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/start.html"));
   });
 
+  // OWNER Profile Setup Form
   app.get("/owner_profile_setup", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/owner_profile_setup.html"));
   });
 
-
+  // PET Profile Setup Form
   app.get("/pet_profile_setup", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/profile_setup.html"));
   });
 
 
+  // OWNER Homepage
+  app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+  });
 
-  //   //login POST method
+  // Each Pet's PROFILE PAGE
+  app.get("/profile_page", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/profile_page.html"));
+  });
+
+};
+
+
+//   //login POST method
   //   app.get('/login', (req, res) => {
   //     res.render('login.ejs')
   //   })
@@ -55,4 +68,3 @@ module.exports = function (app) {
   //   app.get("*", function (req, res) {
   //     res.render("404");
   //   });
-};
