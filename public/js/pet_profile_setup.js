@@ -1,5 +1,6 @@
+
 //on click event to submit the form
-$("#submit").on("click", function (event) {
+$("#submit-pet").on("click", function (event) {
     event.preventDefault();
     // form validation
     function validForm() {
@@ -21,17 +22,19 @@ $("#submit").on("click", function (event) {
     };
     // if validation is true capture information
     if (validForm()) {
-        var owner = {
-            first_name: $("#first-name").val().trim(),
-            last_name: $("#last-name").val().trim(),
-            email: $("#email").val().trim(),
-            phone_number: $("#phone").val().trim(),
+        var aboutPet = {
+            pets_name: $("#first-name").val().trim(),
+            pet_type: $("#last-name").val().trim(),
+            pet_weight: $("#email").val().trim(),
+            pet_birthday: $("#phone").val().trim(),
+            pet_gender: $("#phone").val().trim(),
+            pet_personality: $("#phone").val().trim(),
         };
 
         // this connects to database
         // (data.name.name) = response from database
 
-        $.post("/api/new-profile", owner, function (data) {
+        $.post("/api/new-pet-profile", aboutPet, function (data) {
             $("#owner-name").text(data.owner.first_name);
             $("#owner-phone").text(data.owner.phone_number);
             $('#owner-email').text(data.owner.email);
