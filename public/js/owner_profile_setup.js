@@ -36,6 +36,7 @@ $("#submit").on("click", function (event) {
             $("#owner-phone").text(data.owner.phone_number);
             $('#owner-email').text(data.owner.email);
         })
+        window.location.href = "/pet_profile_setup";
     } else {
         //
         alert("Please fill in all the fields!");

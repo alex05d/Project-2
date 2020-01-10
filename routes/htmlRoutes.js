@@ -6,11 +6,18 @@ var path = require("path");
 
 module.exports = function (app) {
 
-  //login route
-  // === displays "/start" page
+
+  app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+  });
 
   app.get("/owner_profile_setup", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/owner_profile_setup.html"));
+  });
+
+
+  app.get("/pet_profile_setup", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/profile_setup.html"));
   });
 
 
