@@ -1,5 +1,6 @@
 var pets = require("./pets");
 
+
 module.exports = function (sequelize, DataTypes) {
     var pet_feeding = sequelize.define("pet_feeding", {
         feeding_id: {
