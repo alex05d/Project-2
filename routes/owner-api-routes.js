@@ -22,4 +22,9 @@ module.exports = function (app) {
     app.post("/api/new-profile", function (req, res) {
         console.log("Owners info made it", req.body)
     })
+
+    app.post("/api/pet_profile_setup", function (req, res) {
+        console.log("Pet About info made it", req.body)
+    })
+
 };
