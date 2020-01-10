@@ -110,7 +110,11 @@
         <h4>Upload Picture</h4>
         <div class="small-9 columns">
         <div id="fileUpload">
-            <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+            <form action="/file-upload"
+            class="dropzone" 
+            id="my-awesome-dropzone">
+        <button id="dropzoneButton" type="submit">Submit</button>
+        </form>
         </div>
     </div>
     </div>
@@ -175,8 +179,19 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script src="../public/js/dropzone.js"></script>
+
     <script>
         $(document).foundation();
+        Dropzone.options.myAwesomeDropzone = {
+  paramName: "file", // The name that will be used to transfer the file
+  maxFilesize: 10, // MB
+  accept: function(file, done) {
+    if (file.name == "justinbieber.jpg") {
+      done("Naha, you don't.");
+    }
+    else { done(); }
+  }
+};
     </script>
 </body>
 
