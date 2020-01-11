@@ -151,6 +151,17 @@ padding: 15px;
   padding-left: 10px;
 }
 
+
+.sign-in-button{
+  background-color:#252B38;
+  color: #F2F2F2;
+  font-family: 'Raleway', sans-serif, 700;
+  letter-spacing: .2rem;
+  font-size: 10px;
+  border-radius: 3px;
+  padding-left: 10px;
+}
+
 .add-row-button{
   background-color: #2E3447;
   color: #F2F2F2;
@@ -207,6 +218,19 @@ img{
   .about-pet{
     margin-top: 11px;
     margin-bottom: 11px;
+  }
+
+
+  .tabButton{
+    background-color:#7F90A0;
+    /* color: #F2F2F2; */
+    font-family: 'Raleway', sans-serif, 700;
+    /* letter-spacing: .2rem; */
+    font-size: 20px;
+    border-radius: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 20px;
   }
 
 

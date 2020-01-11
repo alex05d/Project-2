@@ -30,12 +30,6 @@
 
     <!-- =================== NAVIGATION  ===================-->
 
-    <!-- MOBILE MENU -->
-    <div class="title-bar" data-responsive-toggle="mobileNavMenu" data-hide-for="small">
-        <button class="menu-icon" type="button" data-toggle></button>
-        <div class="title-bar-title">Menu</div>
-    </div>
-
     <div class="top-bar" id="navMenu">
 
         <!-- LEFT NAV -->
@@ -98,35 +92,42 @@
         <!-- PET ABOUT -->
         <!--(will pull data from 'pets' table in database)-->
 
-        <div class="medium-6 large-5 columns">
-            <h1 id="main-headers">Hercules</h1>
 
-            <div class="about-pet">I'm a very friendly guy! I love taking long walks by the lake. My favorite
-                sport is chasing tennis balls. I'm really good at that! I'm working on barking at other dogs and jumping
+        <div class="medium-6 large-5 columns">
+            <h1 id="main-headers">
+                <div id="pet_name_pg">
+                    Hercules
+                </div>
+            </h1>
+
+            <div class="about-pet" id="pet_personality_pg">I'm a very friendly guy! I love taking long walks by
+                the lake. My favorite
+                sport is chasing tennis balls. I'm really good at that! I'm working on barking at other dogs and
+                jumping
                 on people.</div>
 
 
             <div class="quick-facts">
                 <div class="medium-6 columns">
-                    <p class="subheader-black">AGE</p>
+                    <p class="subheader-black" id="pet_age_pg">AGE</p>
                     <p class="lead-black">1yr 2 months</p>
 
                     <p class="subheader-black">WEIGHT</p>
-                    <p class="lead-black">68lbs</p>
+                    <p class="lead-black" id="pet_weight_pg">68lbs</p>
 
                     <p class="subheader-black">BIRTHDAY</p>
-                    <p class="lead-black">Nov 3, 2018</p>
+                    <p class="lead-black" id="pet_birthday_pg">Nov 3, 2018</p>
                 </div>
 
                 <div class="medium-6 columns">
                     <p class="subheader-black">SEX</p>
-                    <p class="lead-black">Male</p>
+                    <p class="lead-black" id="pet_gender_pg">Male</p>
 
                     <p class="subheader-black">SPECIES</p>
-                    <p class="lead-black">Goldendoodle</p>
+                    <p class="lead-black" id="pet_type_pg">Goldendoodle</p>
 
                     <p class="subheader-black">SPECIAL INSTRUCTIONS</p>
-                    <p class="lead-black">No</p>
+                    <p class="lead-black" id="special_instructions_pg">No</p>
                 </div>
 
 
@@ -154,7 +155,7 @@
 
             <!-- ====== FEEDING (TAB 1) ======  -->
             <div class="tabs-panel is-active" id="panel1">
-                <h5>Food Brand Name:</h5>
+                <div class=h5 id=>Food Brand Name:</div class=h5>
                 <h5>Morning Feeding Time:</h5>
                 <h5>Afternoon Feeding Time</h5>
                 <h5>Evening Feeding Time</h5>
@@ -168,11 +169,20 @@
                 <!-- javascript table -->
                 <script type="text/javascript">
                     $(document).ready(function ($) {
-                        //ajax row data
+                        //ajax ROW DATA
                         var ajax_data =
                             [
-                                { vac_name: "Rabies Vaccine", vac_status: "OVERDUE", vac_due_date: "12/2/2019" },
-                                { vac_name: "K9 Bordetella", vac_status: "OVERDUE", vac_due_date: "8/29/2019" },
+                                {
+                                    vac_name: "Rabies Vaccine",
+                                    vac_status: "OVERDUE",
+                                    vac_due_date: "12/2/2019"
+                                },
+
+                                {
+                                    vac_name: "K9 Bordetella",
+                                    vac_status: "OVERDUE",
+                                    vac_due_date: "8/29/2019"
+                                },
 
 
                             ]

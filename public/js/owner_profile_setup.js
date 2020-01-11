@@ -44,7 +44,6 @@ $("#submit").on("click", function (event) {
         alert("Please fill in all the fields!");
     }
 
-
 });
 
 // ======== CREATE, GET, POST ========
