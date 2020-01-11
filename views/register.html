@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign Up</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <form method="POST" action="/register" role="form">
+                        <div class="form-group">
+                            <h2>Create an Account</h2>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="signupEmail">Email</label>
+                            <input id="signupEmail" name="email" type="email" maxlength="50" class="form-control"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="signupPassword">Password</label>
+                            <input id="signupPassword" name="password" type="password" maxlength="25"
+                                class="form-control" placeholder="at least 6 characters" length="40" required>
+                        </div>
+                        <div class="form-group">
+                            <button id="signupSubmit" type="submit" class="btn btn-info btn-block">Create your
+                                account</button>
+                        </div>
+                        <p class="form-group">By creating an account, you agree to our <a href="#">Terms of Use</a> and
+                            our <a href="#">Privacy Policy</a>.</p>
+                        <hr>
+                        <p></p>Already have an account? <a href="/login">Sign in</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // Question: What does this code do?
+        $("#signupSubmit").on("click", function (event) {
+            // prevents the page from refreshing when the button is clicked
+            event.preventDefault();
+            var user = {
+                email: $("#signupEmail").val().trim(),
+                password: $("#signupPassword").val().trim(),
+            };
+            console.log(user);
+            // this connects to database
+            // (data.tablename.name) = response from database
+
+            /*
+            $.post("/api/login", user, function (data) {
+                $("#owner-name").text(data.user.email);
+                $("#owner-phone").text(data.user.password);
+            });
+            */
+
+            $.ajax({
+                url: "/register",
+                method: "POST",
+                data: user
+            }).then(function (response) {
+                window.location.pathname = "/start";
+            })
+            // // redirect to welcome page
+            // window.location.href = "/";
+        });
+
+    </script>
+
+
+</body>
+
+</html>
