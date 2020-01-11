@@ -11,6 +11,8 @@
   },
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^1.18.1",
+    "cloudinary-jquery-file-upload": "^2.8.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",

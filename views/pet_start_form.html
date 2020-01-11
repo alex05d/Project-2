@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="//public/styles/styles.css">
     <link rel="stylesheet" type="text/css" href="/Project 2/Project-2/public/styles/home.css">
     <link rel="stylesheet" href="../public/styles/dropzone.css">
- 
+
 
 </head>
 
@@ -108,8 +108,8 @@
     </div>
     <form>
         <input id="picfile" type="file" name="pic" accept="image/*">
-        <input id= "petpic" type="submit">
-      </form>
+        <input id="petpic" type="submit">
+    </form>
 
 
 
@@ -165,7 +165,7 @@
             </div>
         </footer>
     </div> -->
-  <!----  <form>
+    <!----  <form>
         <input id="picfile" type="file" name="pic" accept="image/*">
         <input id= "petpic" type="submit">
       </form>-->
@@ -174,19 +174,26 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
-        $("#picfile").change(function(event){
+        $("#picfile").change(function (event) {
             event.preventDefault();
             var reader = new FileReader();
-            reader.onload = function(e){
+            reader.onload = function (e) {
                 console.log(e.target.result)
+                $.post("/api/pet_image",
+                    {
+                        dataURI: e.target.result
+                    },
+                    function (data, status) {
+                        console.log("Data: " + data + "\nStatus: " + status);
+                    });
 
             }
-         reader.readAsDataURL(event.target.files[0])
-           
+            reader.readAsDataURL(event.target.files[0])
         });
+
     </script>
 
-   
+
 </body>
 
 </html>
