@@ -26,7 +26,7 @@ module.exports = function (sequelize, DataTypes) {
         pet_personality: {
             type: DataTypes.STRING,
             allowNull: false
-        },
+        }
     });
 
     Pet.associate = function (models) {

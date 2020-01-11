@@ -28,15 +28,14 @@ $("#submit").on("click", function (event) {
             phone_number: $("#phone").val().trim(),
         };
 
-        // this connects to database
-        // (data.name.name) = response from database
-
-        $.post("/api/new-profile", owner, function (data) {
-            $("#owner-name").text(data.owner.first_name);
-            $("#owner-phone").text(data.owner.phone_number);
-            $('#owner-email').text(data.owner.email);
+        console.log(owner);
+        $.post("/api/owner", owner, function (data) {
+            console.log(data);
+        }).then(res => {
+            window.location.href = "/pet_profile_setup";
         })
-        window.location.href = "/pet_profile_setup";
+
+
     } else {
         //
         alert("Please fill in all the fields!");
