@@ -25,11 +25,13 @@ var db = require("../models");
   // });
 
   // // Create a new example
-  // app.post("/api/examples", function(req, res) {
-  //   db.Example.create(req.body).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
+  app.post("/api/pet_image", function(req, res) {
+    // db.Example.create(req.body).then(function(dbExample) {
+    //   res.json(dbExample);
+    // });
+    console.log(req.body);
+    res.json(req.body)
+  });
 
   // // Delete an example by id
   // app.delete("/api/examples/:id", function(req, res) {
