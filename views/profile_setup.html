@@ -21,12 +21,6 @@
 
 <body>
     <!-- =================== NAVIGATION  ===================-->
-    <!-- MOBILE MENU -->
-    <!-- <div class="title-bar" data-responsive-toggle="mobileNavMenu" data-hide-for="small">
-        <button class="menu-icon" type="button" data-toggle></button>
-        <div class="title-bar-title">Menu</div>
-    </div> -->
-
     <div class="top-bar" id="navMenu">
 
         <!-- LEFT NAV -->
@@ -48,12 +42,10 @@
                 <li><a class="log-button">LOGOUT</a></li> -->
             </ul>
         </div>
-
     </div>
 
-    </div>
-    </div>
 
+    <!-- =================== PET FORM =================== -->
 
     <h1 class="user-name" id="main-headers2">Profile Setup</h1>
     <h1 id="sub-header3">Enter information regarding your first pet.<br>
@@ -61,11 +53,6 @@
 
 
     <form id="profile-setup-form">
-
-
-
-        <!-- =================== PET FORM =================== -->
-
         <div class="row">
             <!-- <h1 id="sub-header2">Pet Profile</h1> -->
 
@@ -89,11 +76,11 @@
                 <h1 class="user-name" id="form-header">Feeding</h1>
             </div>
             <div class="columns medium-6 large-8">
-                <input type="text" id="pet-food" placeholder="Pet Food Name">
+                <input type="text" id="pet_food" placeholder="Pet Food Name">
                 <input type="text" id="food_amount" placeholder="Food Amount">
-                <input type="text" id="morning-feeding" placeholder="Pet Type">
-                <input type="text" id="afternoon-feeding" placeholder="Pet Weight">
-                <input type="text" id="night-feeding" placeholder="Pet Birthday">
+                <input type="text" id="morning-feeding" placeholder="Morning Feeding Time">
+                <input type="text" id="afternoon-feeding" placeholder="Afternoon Feeding Time">
+                <input type="text" id="night-feeding" placeholder="Night Feeding Time">
             </div>
         </div>
 
@@ -113,10 +100,10 @@
                 <h1 class="user-name" id="form-header">Medication</h1>
             </div>
             <div class="columns medium-6 large-8">
-                <input type="text" id="needs_meds" placeholder="Does Your Pet Use Medication? (Yes or No)">
+                <input type="text" id="needs_meds" placeholder="Does your pet take medication? (yes or no)">
                 <input type="text" id="medication_name" placeholder="Medication Name">
-                <input type="text" id="medication_time" placeholder="Time to Take Medication">
-                <input type="text" id="dosage" placeholder="Dosage">
+                <input type="text" id="medication_time" placeholder="Medication Time">
+                <input type="text" id="dosage" placeholder="Dosage Amount">
             </div>
         </div>
 
@@ -126,9 +113,9 @@
                 <h1 class="user-name" id="form-header">Appointments</h1>
             </div>
             <div class="columns medium-6 large-8">
-                <input type="text" id="vet_name" placeholder="Vet Name">
+                <input type="text" id="vet_name" placeholder="Business Name">
                 <input type="text" id="vet_address" placeholder="Vet Address">
-                <input type="text" id="appt" placeholder="Appointment Time and Date">
+                <input type="text" id="appt" placeholder="Appointment Time & Date">
             </div>
 
 
@@ -140,12 +127,20 @@
             </div>
             <div class="columns medium-6 large-8">
                 <input type="text" id="instructions"
-                    placeholder="Does your pet have any special instructions? (Yes or NO">
+                    placeholder="Does your pet have any special instructions? (Yes or NO)">
                 <input type="text" id="info" placeholder="Enter any special instructions you may have">
             </div>
         </div>
 
 
+        <div class="row">
+            <h4>Upload Picture</h4>
+            <div class="small-9 columns">
+                <div id="fileUpload">
+                    <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+                </div>
+            </div>
+        </div>
 
         <div>
             <a href="#" class="button large expanded" id="submit-pet">Complete Profile</a>

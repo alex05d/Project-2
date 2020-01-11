@@ -26,7 +26,7 @@ module.exports = function (app) {
 
   // login form POST method
   app.post('/login', (req, res) => {
-    User.findOne({
+    db.User.findOne({
       where: {
         email: req.body.email
       }

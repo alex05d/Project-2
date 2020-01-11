@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to your Pet Fetch Profile</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <link rel="stylesheet" type="text/css" href="//public/styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
     <link rel="stylesheet" type="text/css" href="/Project 2/Project-2/public/styles/home.css">
     <link rel="stylesheet" href="../public/styles/dropzone.css">
-
 
 </head>
 
@@ -60,9 +59,9 @@
         <h4>Feeding</h4>
         <div class="small-9 columns">
             <input type="text" id="pet-food" placeholder="Pet Food Name">
-            <input type="text" id="morning-feeding" placeholder="Pet Type">
-            <input type="text" id="afternoon-feeding" placeholder="Pet Weight">
-            <input type="text" id="night-feeding" placeholder="Pet Birthday">
+            <input type="text" id="morning-feeding" placeholder="Morning Feeding">
+            <input type="text" id="afternoon-feeding" placeholder="Afternoon Feeding">
+            <input type="text" id="night-feeding" placeholder="Night Feeding">
 
         </div>
     </div>
@@ -106,10 +105,16 @@
             <input type="text" id="special-instructions" placeholder="Enter any special instructions you may have">
         </div>
     </div>
-    <form>
-        <input id="picfile" type="file" name="pic" accept="image/*">
-        <input id="petpic" type="submit">
-    </form>
+
+    <div class="row">
+        <h4>Upload Picture</h4>
+        <div class="small-9 columns">
+            <div id="fileUpload">
+                <form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+            </div>
+        </div>
+    </div>
+    <br>
 
 
 
@@ -165,35 +170,14 @@
             </div>
         </footer>
     </div> -->
-    <!----  <form>
-        <input id="picfile" type="file" name="pic" accept="image/*">
-        <input id= "petpic" type="submit">
-      </form>-->
 
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script src="../public/js/dropzone.js"></script>
     <script>
-        $("#picfile").change(function (event) {
-            event.preventDefault();
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                console.log(e.target.result)
-                $.post("/api/pet_image",
-                    {
-                        dataURI: e.target.result
-                    },
-                    function (data, status) {
-                        console.log("Data: " + data + "\nStatus: " + status);
-                    });
-
-            }
-            reader.readAsDataURL(event.target.files[0])
-        });
-
+        $(document).foundation();
     </script>
-
-
 </body>
 
 </html>
