@@ -115,18 +115,18 @@ module.exports = function (app) {
     // });
     // console.log(req.body);
     var dataURI = req.body.dataURI;
-    var uploadStr = 'data:image/jpeg;base64,' + dataURI;
+    var uploadStr = dataURI;
 
     cloudinary.v2.uploader.upload(uploadStr, {
       api_key: "773177291336529",
       api_secret: "FZUKToWuQ9ijBcUCygsLd7rXvCg",
-      cloud_name: "katedavis",
-      overwrite: true,
-      invalidate: true,
-      width: 810, height: 456, crop: "fill"
+      cloud_name: "katedavis"
     },
       function (error, result) {
-        res.json(result);
+        if (error) {
+          console.log(error);
+        }
+        return res.send(result.url);
       });
     // res.json(req.body)
   });
