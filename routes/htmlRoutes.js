@@ -11,6 +11,19 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/index.html"));
   });
 
+  // once new user registers, they will be redirected to this welcome page
+  app.get("/start", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/start.html"));
+  });
+
+  app.get("/login", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/login.html"));
+  });
+
+  app.get("/register", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/register.html"));
+  });
+
   app.get("/owner_profile_setup", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/owner_profile_setup.html"));
   });
