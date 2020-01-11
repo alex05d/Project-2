@@ -106,11 +106,11 @@
 
 
 
-//         // loads homepage
-//         window.location.href = "/";
+        // loads homepage
+        window.location.href = "/";
 
 
 
-//     });
+    });
 
-// });
+});
