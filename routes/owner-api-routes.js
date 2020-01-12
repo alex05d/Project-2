@@ -14,6 +14,13 @@ module.exports = function (app) {
 
         }).then(function (Owner) {
             res.json(Owner);
+        });
+    });
+
+    app.get("/api/owners", function (req, res) {
+        console.log("!!!!!!!!!!!!!", db.Owner);
+        db.Owner.findAll({}).then(function (Owner) {
+            res.json(Owner);
             console.log(Owner);
         });
     });
@@ -22,7 +29,6 @@ module.exports = function (app) {
         console.log("!!!!!!!!!!!!!", db.Owner);
         db.Owner.create(req.body).then(function (dbOwner) {
             res.json(dbOwner);
-            console.log(dbOwner);
         });
     });
 
