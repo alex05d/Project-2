@@ -1,11 +1,9 @@
 // var db = require("../models");
 var path = require("path");
 
-
 // ?? Do we need to require Sequelize here?
 
 module.exports = function (app) {
-
 
   app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/index.html"));
@@ -28,9 +26,12 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/owner_profile_setup.html"));
   });
 
+  // app.get("/pet_profile_setup", function (req, res) {
+  //   res.sendFile(path.join(__dirname, "../views/profile_setup.html"));
+  // });
 
-  app.get("/pet_profile_setup", function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/profile_setup.html"));
+  app.get("/pet", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/pet_start_form.html"));
   });
 
 
