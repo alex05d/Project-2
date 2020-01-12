@@ -47,6 +47,7 @@ module.exports = function (app) {
       .catch(err => {
         res.status(400).json({ error: err })
       })
+    // commented this out because it was redirecting users to index page without authenticating user
     //res.redirect('/')
   })
 
