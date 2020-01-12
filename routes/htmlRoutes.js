@@ -34,6 +34,10 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/pet_start_form.html"));
   });
 
+
+
+
+
   //   //login POST method
   //   app.get('/login', (req, res) => {
   //     res.render('login.ejs')

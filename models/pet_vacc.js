@@ -6,11 +6,11 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING
         },
         vac_status: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             defaultValue: false
         },
         vac_due_date: {
-            type: DataTypes.DATE
+            type: DataTypes.STRING
         }
     });
 
