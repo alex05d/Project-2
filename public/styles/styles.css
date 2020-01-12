@@ -18,6 +18,12 @@ body{
   background-color: #252B38;
 }
 
+.container {
+  background-color: white;
+  width: 50%;
+  
+}
+
 
 /* ======= FONTS ==================================================*/
 #main-headers{
@@ -131,6 +137,10 @@ padding: 15px;
   border: none;
 }
 
+#signInLeft {
+    background-color: #E8D356;
+}
+
 .share-button{
   background-color: #2E3447;
   color: #F2F2F2;
@@ -160,6 +170,19 @@ padding: 15px;
   font-size: 10px;
   border-radius: 3px;
   padding-left: 10px;
+}
+
+#signinSubmit {
+  background-color:#252B38;
+  color: #F2F2F2;
+  font-family: 'Raleway', sans-serif, 700;
+  letter-spacing: .1rem;
+  font-size: 15px;
+  border-radius: 3px;
+  padding-left: 10px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  width: 100%;
 }
 
 .add-row-button{
