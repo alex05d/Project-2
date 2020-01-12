@@ -12,15 +12,15 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         morning_feeding: {
-            type: DataTypes.TIME,
+            type: DataTypes.STRING,
             allowNull: false
         },
         afternoon_feeding: {
-            type: DataTypes.TIME,
+            type: DataTypes.STRING,
             allowNull: false
         },
         night_feeding: {
-            type: DataTypes.TIME,
+            type: DataTypes.STRING,
             allowNull: false
         }
     });

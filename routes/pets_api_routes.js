@@ -14,7 +14,7 @@ module.exports = function (app) {
 
         }).then(function (dbPet) {
             res.json(dbPet);
-            console.log(dbPet);
+            console.log("this is the new pet " + dbPet);
         });
     });
 
@@ -34,9 +34,9 @@ module.exports = function (app) {
 
     app.post("/api/pet", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Pet);
-        db.Pet.create(req.body).then(function (dbPet) {
-            res.json(dbPet);
-            console.log(dbPet);
+        db.Pet.create(req.body).then(function (newPet) {
+            res.json(newPet);
+            console.log(newPet);
         });
     });
 
