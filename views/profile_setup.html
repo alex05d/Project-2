@@ -100,8 +100,8 @@
                 <h1 class="user-name" id="form-header">Medication</h1>
             </div>
             <div class="columns medium-6 large-8">
-                <input type="text" id="needs_meds" placeholder="Does your pet take medication? (yes or no)">
-                <input type="text" id="medication_name" placeholder="Medication Name">
+                <input type="text" id="needs-meds" placeholder="Does your pet take medication? (yes or no)">
+                <input type="text" id="medication-name" placeholder="Medication Name">
                 <input type="text" id="medication_time" placeholder="Medication Time">
                 <input type="text" id="dosage" placeholder="Dosage Amount">
             </div>
@@ -131,7 +131,10 @@
                 <input type="text" id="info" placeholder="Enter any special instructions you may have">
             </div>
         </div>
-
+        <form>
+            <input id="picfile" type="file" name="pic" accept="image/*">
+            <input id="petpic" type="submit">
+        </form>
 
         <div class="row">
             <h4>Upload Picture</h4>
@@ -143,7 +146,7 @@
         </div>
 
         <div>
-            <a href="#" class="button large expanded" id="submit-pet">Complete Profile</a>
+            <a class="button large expanded" id="submit_pet">Complete Profile</a>
         </div>
 
     </form>
@@ -153,10 +156,31 @@
 
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 
-    <script src="./js/pet_profile_setup.js"></script>
+    <script src="./js/pet_form.js"></script>
     <script>
         $(document).foundation();
     </script>
+
+    <script>
+        $("#picfile").change(function (event) {
+            event.preventDefault();
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                console.log(e.target.result)
+                $.post("/api/pet_image",
+                    {
+                        dataURI: e.target.result
+                    },
+                    function (data, status) {
+                        console.log("Data: " + data + "\nStatus: " + status);
+                    });
+
+            }
+            reader.readAsDataURL(event.target.files[0])
+        });
+
+    </script>
+
 </body>
 
 </html>

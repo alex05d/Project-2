@@ -4,27 +4,43 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-
-    app.get("/api/Owner", function (req, res) {
+    app.get("/api/owner/:id", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Owner);
         db.Owner.findOne({
-            include: [
-                {
-                    model: db.Pet
-                }
-            ]
+            where:
+            {
+                id: req.params.id
+            }
+
         }).then(function (Owner) {
+            res.json(Owner);
+        });
+    });
+
+    app.get("/api/owners", function (req, res) {
+        console.log("!!!!!!!!!!!!!", db.Owner);
+        db.Owner.findAll({}).then(function (Owner) {
             res.json(Owner);
             console.log(Owner);
         });
     });
 
-    app.post("/api/new-profile", function (req, res) {
-        console.log("Owners info made it", req.body)
+    app.post("/api/owner", function (req, res) {
+        console.log("!!!!!!!!!!!!!", db.Owner);
+        db.Owner.create(req.body).then(function (dbOwner) {
+            res.json(dbOwner);
+        });
+    });
+
+    app.delete("/api/owner/:id", function (req, res) {
+        db.Owner.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then(function (dbOwner) {
+            res.json(dbOwner);
+        })
     })
 
-    app.post("/api/pet_profile_setup", function (req, res) {
-        console.log("Pet About info made it", req.body)
-    })
 
 };

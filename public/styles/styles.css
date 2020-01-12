@@ -263,3 +263,14 @@ img{
 margin: auto; */
 
 }
+
+  /* ======= Sign In Button =============================================*/
+.sign-in-button{
+  background-color:#252B38;
+  color: #F2F2F2;
+  font-family: 'Raleway', sans-serif, 700;
+  letter-spacing: .2rem;
+  font-size: 10px;
+  border-radius: 3px;
+  padding-left: 10px;
+}

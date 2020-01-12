@@ -1,25 +1,48 @@
 // var db = require("../models");
 var path = require("path");
 
-
 // ?? Do we need to require Sequelize here?
 
 module.exports = function (app) {
 
-  // New Profile Welcome Page
+  app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+  });
+
+  // once new user registers, they will be redirected to this welcome page
   app.get("/start", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/start.html"));
   });
 
-  // OWNER Profile Setup Form
+  app.get("/login", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/login.html"));
+  });
+
+  app.get("/register", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/register.html"));
+  });
+
   app.get("/owner_profile_setup", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/owner_profile_setup.html"));
   });
 
-  // PET Profile Setup Form
-  app.get("/pet_profile_setup", function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/profile_setup.html"));
+  app.get("/logout", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/index.html"));
   });
+
+  app.get("/pet_profile", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/profile_page.html"));
+  });
+
+  // app.get("/pet_profile_setup", function (req, res) {
+  //   res.sendFile(path.join(__dirname, "../views/profile_setup.html"));
+  // });
+
+  app.get("/pet", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/pet_start_form.html"));
+  });
+
+
 
 
   // OWNER Homepage
