@@ -32,6 +32,7 @@ module.exports = function (app) {
       }
     })
       .then(user => {
+        console.log(user);
         if (user) {
           if (bcrypt.compareSync(req.body.password, user.password)) {
             let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
@@ -46,7 +47,7 @@ module.exports = function (app) {
       .catch(err => {
         res.status(400).json({ error: err })
       })
-    res.redirect('/')
+    //res.redirect('/')
   })
 
   //register POST method
