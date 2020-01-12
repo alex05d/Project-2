@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
     var Special_instruction = sequelize.define("Special_instruction", {
 
         instructions: {
-            type: DataTypes.BOOLEAN
+            type: DataTypes.STRING
         },
         info: {
             type: DataTypes.STRING,
