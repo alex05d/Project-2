@@ -110,6 +110,13 @@ module.exports = function (app) {
     })
 
   })
+
+  //logout function
+  app.post("/logout", function (req, res) {
+
+  })
+
+
   app.post("/api/pet_image", function (req, res) {
     // db.Example.create(req.body).then(function(dbExample) {
     //   res.json(dbExample);
