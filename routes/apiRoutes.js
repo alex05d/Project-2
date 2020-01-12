@@ -85,6 +85,7 @@ module.exports = function (app) {
       .catch(err => {
         res.status(400).json({ error: err })
       })
+    // commented this out because it was redirecting users to index page without authenticating user
     //res.redirect('/')
   })
 
@@ -109,6 +110,13 @@ module.exports = function (app) {
     })
 
   })
+
+  //logout function
+  app.post("/logout", function (req, res) {
+
+  })
+
+
   app.post("/api/pet_image", function (req, res) {
     // db.Example.create(req.body).then(function(dbExample) {
     //   res.json(dbExample);

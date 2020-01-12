@@ -26,6 +26,14 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/owner_profile_setup.html"));
   });
 
+  app.get("/logout", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+  });
+
+  app.get("/pet_profile", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/profile_page.html"));
+  });
+
   // app.get("/pet_profile_setup", function (req, res) {
   //   res.sendFile(path.join(__dirname, "../views/profile_setup.html"));
   // });
