@@ -64,12 +64,13 @@ module.exports = function (app) {
 
   // login form POST method
   app.post('/login', (req, res) => {
-    User.findOne({
+    db.User.findOne({
       where: {
         email: req.body.email
       }
     })
       .then(user => {
+        console.log(user);
         if (user) {
           if (bcrypt.compareSync(req.body.password, user.password)) {
             let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
@@ -84,7 +85,8 @@ module.exports = function (app) {
       .catch(err => {
         res.status(400).json({ error: err })
       })
-    res.redirect('/')
+    // commented this out because it was redirecting users to index page without authenticating user
+    //res.redirect('/')
   })
 
   //register POST method
@@ -108,6 +110,13 @@ module.exports = function (app) {
     })
 
   })
+
+  //logout function
+  app.post("/logout", function (req, res) {
+
+  })
+
+
   app.post("/api/pet_image", function (req, res) {
     // db.Example.create(req.body).then(function(dbExample) {
     //   res.json(dbExample);

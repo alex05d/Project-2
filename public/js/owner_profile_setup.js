@@ -1,6 +1,8 @@
 //on click event to submit the form
 $("#submit").on("click", function (event) {
     event.preventDefault();
+
+    var tokenEmail = $("#email").val().trim();
     // form validation
     function validForm() {
         var valid = true;
@@ -29,16 +31,20 @@ $("#submit").on("click", function (event) {
         };
 
         console.log(owner);
-        $.post("/api/owner", owner, function (data) {
-            console.log(data);
-        }).then(res => {
-            window.location.href = "/pet_profile_setup";
-        })
+        $.post("/api/owner", owner, function () {
+
+        }).then(
+            $.get("/api/owners", function (data) {
+                for (var i = 0; i < data.lenght; i++) {
+                    if (data[i] == tokenEmail) {
+                        console.log('this is the get call: ' + data[i].email);
+                        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' + tokenEmail);
+                    }
+                }
+            })
+        )
 
 
-    } else {
-        //
-        alert("Please fill in all the fields!");
     }
 
 
