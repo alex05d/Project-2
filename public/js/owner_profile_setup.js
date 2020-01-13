@@ -8,6 +8,8 @@ $("#submit").on("click", function (event) {
     localStorage.setItem("email", tokenEmail);
 
 
+
+
     var owner = {
         first_name: $("#first-name").val().trim(),
         last_name: $("#last-name").val().trim(),
@@ -19,9 +21,7 @@ $("#submit").on("click", function (event) {
     $.post("/api/owner", owner, function () {
 
     }).then(res => {
-
-        // redirects to OWNER Homepage
-        window.location.href = "/";
+        window.location.href = "/pet";
 
     })
 

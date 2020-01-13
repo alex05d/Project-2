@@ -46,6 +46,14 @@ module.exports = function (app) {
   });
 
 
+
+
+  // OWNER Homepage
+  app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/index.html"));
+  });
+
+
 };
 
 
