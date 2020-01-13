@@ -1,14 +1,12 @@
+// ======== OWNER PROFILE SETUP FORM ========
+
+
 //on click event to submit the form
-
-
 $("#submit").on("click", function (event) {
     event.preventDefault();
 
     var tokenEmail = $("#email").val().trim();
     localStorage.setItem("email", tokenEmail);
-
-
-
 
     var owner = {
         first_name: $("#first-name").val().trim(),
