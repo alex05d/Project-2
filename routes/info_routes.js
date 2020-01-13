@@ -50,15 +50,5 @@ module.exports = function (app) {
         });
     });
 
-    // app.delete("/api/owner/:id", function (req, res) {
-    //     db.Owner.destroy({
-    //         where: {
-    //             id: req.params.id
-    //         }
-    //     }).then(function (dbOwner) {
-    //         res.json(dbOwner);
-    //     })
-    // })
-
 
 };

@@ -3,7 +3,21 @@ var db = require("../models");
 // this pulls information from database
 
 module.exports = function (app) {
+    // find one owner //
+    app.get("/api/owner/:email", function (req, res) {
+        console.log("!!!!!!!!!!!!!", db.Owner);
+        db.Owner.findOne({
+            where:
+            {
+                email: req.params.email
+            }
 
+        }).then(function (Owner) {
+            res.json(Owner);
+        });
+    });
+
+    // find one owner by id
     app.get("/api/owner/:id", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Owner);
         db.Owner.findOne({
@@ -17,6 +31,7 @@ module.exports = function (app) {
         });
     });
 
+    // find all owners //
     app.get("/api/owners", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Owner);
         db.Owner.findAll({}).then(function (Owner) {
@@ -25,6 +40,7 @@ module.exports = function (app) {
         });
     });
 
+    // create a new owner //
     app.post("/api/owner", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Owner);
         db.Owner.create(req.body).then(function (dbOwner) {
