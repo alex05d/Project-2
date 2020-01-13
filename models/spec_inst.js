@@ -13,5 +13,9 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    Special_instruction.associate = function (models) {
+        Special_instruction.belongsTo(models.Pet);
+    };
+
     return Special_instruction;
 };

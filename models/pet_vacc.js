@@ -14,6 +14,10 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    Pet_vaccination.associate = function (models) {
+        Pet_vaccination.belongsTo(models.Pet);
+    };
+
 
     return Pet_vaccination;
 };

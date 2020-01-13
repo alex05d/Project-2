@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    var tokenEmail = localStorage.getItem('email');
+    var OwnerID = "";
+    var PetID = "";
+
+    $.get("/api/owner/" + tokenEmail, function (data) {
+
+        localStorage.setItem("owner_id", data.id);
+        OwnerID = data.id;
+        console.log("NewOwnerID : ", OwnerID);
+    });
+
     console.log("I'm loaded");
     $("#submit_pet").on("click", function (event) {
         event.preventDefault();
@@ -7,7 +18,7 @@ $(document).ready(function () {
         // var currentPet = '';
 
         var newPet = {
-            owner_id: "1",
+            OwnerId: OwnerID,
             pets_name: $("#pet-name").val().trim(),
             pet_type: $("#pet-type").val().trim(),
             pet_weight: $("#pet-weight").val().trim(),
@@ -17,7 +28,7 @@ $(document).ready(function () {
         };
 
         var feedingInfo = {
-            pets_id: '1',
+            PetId: PetID,
             pet_food: $("#pet_food").val().trim(),
             food_amount: $("#food_amount").val().trim(),
             morning_feeding: $("#morning-feeding").val().trim(),
@@ -26,14 +37,14 @@ $(document).ready(function () {
         };
 
         var newVacc = {
-            pets_id: '1',
+            PetId: PetID,
             vac_name: $("#vac-name").val().trim(),
             vac_status: $("#vac-status").val().trim(),
             vac_due_date: $("#vac-due-date").val().trim(),
         };
 
         var newMeds = {
-            pets_id: '1',
+            PetId: PetID,
             needs_meds: $("#needs-meds").val().trim(),
             medication_name: $("#medication-name").val().trim(),
             medication_time: $("#medication_time").val().trim(),
@@ -41,14 +52,14 @@ $(document).ready(function () {
         };
 
         var newAppt = {
-            pets_id: '1',
+            PetId: PetID,
             vet_name: $("#vet_name").val().trim(),
             vet_address: $("#vet_address").val().trim(),
             appt: $("#appt").val().trim(),
         };
 
         var specInst = {
-            pets_id: '1',
+            PetId: PetID,
             instructions: $("#instructions").val().trim(),
             info: $("#info").val().trim(),
         };
@@ -56,43 +67,44 @@ $(document).ready(function () {
 
 
         console.log(newPet);
-        $.post("/api/pet", newPet, function (data) {
-        }).then(res => {
-            console.log("pet Added")
-            // window.location.href = "/pet_profile_setup";
+        $.post("/api/pet", newPet, function (newPet) {
+
+            PetID = newPet.id;
+            localStorage.setItem("pets_id", PetID);
         })
-
-        $.post("/api/pet/feeding", feedingInfo, function (data) {
-        }).then(res => {
-            console.log("pet Added");
-        })
-
-        $.post("/api/pet/vacc", newVacc, function (data) {
-        }).then(res => {
-            console.log("pet Added");
-        })
-
-        $.post("/api/pet/medication", newMeds, function (data) {
-        }).then(res => {
-            console.log("pet Added");
-        })
-
-        $.post("/api/pet/appt", newAppt, function (data) {
-        }).then(res => {
-            console.log("pet Added");
-        })
-
-        $.post("/api/pet/specInst", specInst, function (data) {
-        }).then(res => {
-            console.log("pet Added");
-        })
+            .then(res => {
 
 
+
+                $.post("/api/pet/feeding", feedingInfo, function (data) {
+                }).then(res => {
+                    console.log("pet Added");
+                })
+
+                $.post("/api/pet/vacc", newVacc, function (data) {
+                }).then(res => {
+                    console.log("pet Added");
+                })
+
+                $.post("/api/pet/medication", newMeds, function (data) {
+                }).then(res => {
+                    console.log("pet Added");
+                })
+
+                $.post("/api/pet/appt", newAppt, function (data) {
+                }).then(res => {
+                    console.log("pet Added");
+                })
+
+                $.post("/api/pet/specInst", specInst, function (data) {
+                }).then(res => {
+                    console.log("pet Added");
+                })
+
+            })
         // console.log("this is the current pet id: " + currentPet);
 
     });
-
-
 
 
 })

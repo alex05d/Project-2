@@ -25,6 +25,11 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    Pet_feeding.associate = function (models) {
+        Pet_feeding.belongsTo(models.Pet);
+    };
+
+
 
     return Pet_feeding;
 };

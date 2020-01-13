@@ -1,4 +1,4 @@
-var db = require("../models");
+var db = require("../models/index");
 
 // this pulls information from database
 
@@ -93,27 +93,6 @@ module.exports = function (app) {
             console.log(dbSpecial_instruction);
         });
     });
-
-
-    //  special instructions GET routes //
-    app.get("/api/pet/specInsts", function (req, res) {
-        console.log("!!!!!!!!!!!!!", db.Special_instruction);
-        db.Special_instruction.findAll(req.body).then(function (dbSpecial_instruction) {
-            res.json(dbSpecial_instruction);
-            console.log(dbSpecial_instruction);
-        });
-    });
-
-
-    // app.delete("/api/owner/:id", function (req, res) {
-    //     db.Owner.destroy({
-    //         where: {
-    //             id: req.params.id
-    //         }
-    //     }).then(function (dbOwner) {
-    //         res.json(dbOwner);
-    //     })
-    // })
 
 
 };
