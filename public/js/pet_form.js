@@ -1,14 +1,14 @@
 $(document).ready(function () {
-    var tokenEmail = localStorage.getItem('email');
-    var OwnerID = "";
-    var PetID = "";
+    // var tokenEmail = localStorage.getItem('email');
+    // var OwnerID = "";
+    var PetID = localStorage.getItem("pets_id");
 
-    $.get("/api/owner/" + tokenEmail, function (data) {
+    // $.get("/api/owner/" + tokenEmail, function (data) {
 
-        localStorage.setItem("owner_id", data.id);
-        OwnerID = data.id;
-        console.log("NewOwnerID : ", OwnerID);
-    });
+    //     localStorage.setItem("owner_id", data.id);
+    //     OwnerID = data.id;
+    //     console.log("NewOwnerID : ", OwnerID);
+    // });
 
     console.log("I'm loaded");
     $("#submit_pet").on("click", function (event) {

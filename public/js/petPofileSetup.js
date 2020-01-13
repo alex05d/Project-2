@@ -1,9 +1,10 @@
 $(document).ready(function () {
 
 
+
     var tokenEmail = localStorage.getItem('email');
     var OwnerID = "";
-    var PetID = "";
+    // var PetID = "";
 
     $.get("/api/owner/" + tokenEmail, function (data) {
 
