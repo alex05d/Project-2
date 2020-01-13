@@ -1,14 +1,13 @@
+// ======== OWNER PROFILE SETUP FORM ========
+// ===== owner_profile_setup.html ==========
+
+
 //on click event to submit the form
-
-
 $("#submit").on("click", function (event) {
     event.preventDefault();
 
     var tokenEmail = $("#email").val().trim();
     localStorage.setItem("email", tokenEmail);
-
-
-
 
     var owner = {
         first_name: $("#first-name").val().trim(),
@@ -21,7 +20,7 @@ $("#submit").on("click", function (event) {
     $.post("/api/owner", owner, function () {
 
     }).then(res => {
-        window.location.href = "/pet";
+        window.location.href = "/about_pet_setup_form";
 
     })
 

@@ -1,3 +1,6 @@
+// ======== PET PROFILE SETUP FORM (1) ========
+// ======== about_pet_setup_form.html  ========
+
 $(document).ready(function () {
 
 
@@ -36,7 +39,7 @@ $(document).ready(function () {
             localStorage.setItem("pets_id", PetID);
         })
             .then(res => {
-                window.location.href = "/about_pet_setup_form"
+                window.location.href = "/pet"
             });
 
     });
