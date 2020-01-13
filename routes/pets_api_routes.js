@@ -1,4 +1,4 @@
-var db = require("../models");
+var db = require("../models/index");
 
 // this pulls information from database
 
@@ -17,6 +17,15 @@ module.exports = function (app) {
             console.log("this is the new pet " + dbPet);
         });
     });
+
+    app.get("/api/pets", function (req, res) {
+        console.log("!!!!!!!!!!!!!", db.Pet);
+        db.Pet.findAll({}).then(function (dbPet) {
+            res.json(dbPet);
+            console.log("this is the new pet " + dbPet);
+        });
+    });
+
     //get one pet by the id//
     app.get("/api/owner/pet/:id", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Pet);
@@ -24,6 +33,20 @@ module.exports = function (app) {
             where:
             {
                 id: req.params.id
+            }
+
+        }).then(function (dbPet) {
+            res.json(dbPet);
+            console.log(dbPet);
+        });
+    });
+
+    app.get("/api/pet/:pets_name", function (req, res) {
+        console.log("!!!!!!!!!!!!!", db.Pet);
+        db.Pet.findOne({
+            where:
+            {
+                pets_name: req.params.pets_name
             }
 
         }).then(function (dbPet) {

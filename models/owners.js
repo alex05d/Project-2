@@ -30,9 +30,7 @@ module.exports = function (sequelize, DataTypes) {
 
 
   Owner.associate = function (models) {
-    Owner.hasMany(models.Pet, {
-      foreignKey: "owner_id"
-    });
+    Owner.hasMany(models.Pet);
   };
 
   return Owner;

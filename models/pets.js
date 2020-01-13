@@ -29,36 +29,8 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    Pet.associate = function (models) {
-        Pets.hasMany(models.Pet_vaccination, {
-            foreignKey: "pet_id"
-        });
-    };
-
-    Pet.associate = function (models) {
-        Pet.hasMany(models.Pet_feeding, {
-            foreignKey: "pet_id"
-        });
-    };
 
 
-    Pet.associate = function (models) {
-        Pet.hasMany(models.Medication, {
-            foreignKey: "pet_id"
-        });
-    };
-
-    Pet.associate = function (models) {
-        Pet.hasMany(models.Special_instruction, {
-            foreignKey: "pet_id"
-        });
-    };
-
-    Pet.associate = function (models) {
-        Pet.hasMany(models.Appt, {
-            foreignKey: "pet_id"
-        });
-    };
 
 
     return Pet;

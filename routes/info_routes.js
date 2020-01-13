@@ -1,4 +1,4 @@
-var db = require("../models");
+var db = require("../models/index");
 
 // this pulls information from database
 
@@ -8,7 +8,7 @@ module.exports = function (app) {
     // this is the feeding post/create routes //
     app.post("/api/pet/feeding", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Pet_feeding);
-        db.Owner.create(req.body).then(function (dbPet_feeding) {
+        db.Pet_feeding.create(req.body).then(function (dbPet_feeding) {
             res.json(dbPet_feeding);
             console.log(dbPet_feeding);
         });
