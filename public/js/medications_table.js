@@ -1,39 +1,31 @@
+// ===== MEDICATION TABLE (JS) =======
+
 // column names
-var columnDefs = [
-    { field: 'vaccinationName', width: 100 },
-    { field: 'vaccinationStatus', width: 100 },
-    { field: 'vaccinationDueDate', width: 90 },
+var medColumnDefs = [
+    { headerName: "Medication Needed", field: 'needs_meds', width: 100 },
+    { headerName: "Medication Name", field: 'medication_name', width: 100 },
+    { headerName: "Time of Medication", field: 'medication_time', width: 100 },
+    { headerName: "Dosage Amount", field: 'dosage', width: 100 },
 
 ];
 
-var rowData = [
-    { vaccinationName: 'Bob', vaccinationStatus: 'Harrison', vaccinationDueDate: 'Male' },
-    { vaccinationName: 'Mary', vaccinationStatus: 'Wilson', vaccinationDueDate: 'Female' },
-
-
+var medRowData = [
+    { needs_meds: 'test 1', medication_name: 'test 1b', medication_time: 'test 1c', dosage: 'test 1d' },
 ];
 
-// function getPinnedTopData() {
-//     return [
-//         { vac_name: '##', vac_status: '##', vac_due_date: '##' }
-//     ];
-// }
 
-// function getPinnedBottomData() {
-//     return [
-//         { vac_name: '##', vac_status: '##', vac_due_date: '##' }
-//     ];
-// }
-
-var gridOptions = {
+var medGridOptions = {
     defaultColDef: {
         editable: true,
         resizable: true
     },
-    columnDefs: columnDefs,
-    rowData: rowData,
-    // pinnedTopRowData: getPinnedTopData(),
-    // pinnedBottomRowData: getPinnedBottomData(),
+    columnDefs: medColumnDefs,
+
+    // !!!!!!! THIS IS WHERE ROW DATA POPULATES AFTER PULLING FROM API
+    rowData: medRowData,
+
+
+
     onGridReady: function (params) {
         params.api.sizeColumnsToFit();
     },
@@ -52,15 +44,15 @@ var gridOptions = {
 };
 
 function onBtStopEditing() {
-    gridOptions.api.stopEditing();
+    medGridOptions.api.stopEditing();
 }
 
 function onBtStartEditing(key, char, pinned) {
-    gridOptions.api.setFocusedCell(0, 'vacName', pinned);
+    medGridOptions.api.setFocusedCell(0, 'medication_name', pinned);
 
-    gridOptions.api.startEditingCell({
+    medGridOptions.api.startEditingCell({
         rowIndex: 0,
-        colKey: 'vacName',
+        colKey: 'medication_name',
         // set to 'top', 'bottom' or undefined
         rowPinned: pinned,
         keyPress: key,
@@ -84,15 +76,15 @@ function isKeyPressedNumeric(event) {
 }
 
 function onBtNextCell() {
-    gridOptions.api.tabToNextCell();
+    medGridOptions.api.tabToNextCell();
 }
 
 function onBtPreviousCell() {
-    gridOptions.api.tabToPreviousCell();
+    medGridOptions.api.tabToPreviousCell();
 }
 
 function onBtWhich() {
-    var cellDefs = gridOptions.api.getEditingCells();
+    var cellDefs = medGridOptions.api.getEditingCells();
     if (cellDefs.length > 0) {
         var cellDef = cellDefs[0];
         console.log('editing cell is: row = ' + cellDef.rowIndex + ', col = ' + cellDef.column.getId()
@@ -102,8 +94,15 @@ function onBtWhich() {
     }
 }
 
-// setup the grid after the page has finished loading
-document.addEventListener('DOMContentLoaded', function () {
+document.getElementById("meds_link").addEventListener('click', function () {
+
+    $('#myGrid').empty()
+    // $('#myGrid2').empty()
+    // $('#myGrid').hide()
+
+
     var gridDiv = document.querySelector('#myGrid');
-    new agGrid.Grid(gridDiv, gridOptions);
+    new agGrid.Grid(gridDiv, medGridOptions);
+
+
 });
