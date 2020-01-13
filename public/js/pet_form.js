@@ -1,3 +1,6 @@
+// ======== PET PROFILE SETUP FORM (2) ========
+// ======== profile_setup.html  ========
+
 $(document).ready(function () {
     // var tokenEmail = localStorage.getItem('email');
     // var OwnerID = "";
@@ -65,6 +68,8 @@ $(document).ready(function () {
         };
 
 
+        // console.log(newPet);
+        // $.post("/api/pet", newPet, function (newPet) {
 
         // console.log(newPet);
         // $.post("/api/pet", newPet, function (newPet) {
@@ -74,16 +79,20 @@ $(document).ready(function () {
         // })
         //     .then(res => {
 
+        //     PetID = newPet.id;
+        //     localStorage.setItem("pets_id", PetID);
+        // })
+        //     .then(res => {
 
 
         $.post("/api/pet/feeding", feedingInfo, function (data) {
         }).then(res => {
-            console.log("pet Added");
+            console.log("Feeding Added");
         })
 
         $.post("/api/pet/vacc", newVacc, function (data) {
         }).then(res => {
-            console.log("pet Added");
+            console.log("Vaccination Added");
         })
 
         $.post("/api/pet/medication", newMeds, function (data) {
@@ -104,7 +113,12 @@ $(document).ready(function () {
         // })
         // console.log("this is the current pet id: " + currentPet);
 
-    });
+        $.post("/api/pet/specInst", specInst, function (data) {
+        }).then(res => {
+            console.log("pet Added");
+        })
 
+    })
+    // console.log("this is the current pet id: " + currentPet);
 
-})
+});

@@ -27,7 +27,7 @@ module.exports = function (app) {
 
 
     // this is the vaccinations post/create routes //
-    app.post("/api/pet/vaccs", function (req, res) {
+    app.post("/api/pet/vacc", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Pet_vaccination);
         db.Pet_vaccination.create(req.body).then(function (dbPet_vaccination) {
             res.json(dbPet_vaccination);
@@ -36,7 +36,7 @@ module.exports = function (app) {
     });
 
     // vaccinations GET routes //
-    app.get("/api/pet/vacc", function (req, res) {
+    app.get("/api/pet/vaccs", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Pet_vaccination);
         db.Pet_vaccination.findAll(req.body).then(function (dbPet_vaccination) {
             res.json(dbPet_vaccination);
