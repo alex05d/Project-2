@@ -27,7 +27,7 @@ module.exports = function (app) {
     });
 
     //get one pet by the id//
-    app.get("/api/owner/pet/:id", function (req, res) {
+    app.get("/api/pet/:id", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Pet);
         db.Pet.findOne({
             where:

@@ -1,5 +1,5 @@
 // ======== PET PROFILE SETUP FORM (2) ========
-// ======== html: profile_setup.html  ========
+// ======== profile_setup.html  ========
 
 $(document).ready(function () {
     // var tokenEmail = localStorage.getItem('email');
@@ -87,12 +87,12 @@ $(document).ready(function () {
 
         $.post("/api/pet/feeding", feedingInfo, function (data) {
         }).then(res => {
-            console.log("pet Added");
+            console.log("Feeding Added");
         })
 
         $.post("/api/pet/vacc", newVacc, function (data) {
         }).then(res => {
-            console.log("pet Added");
+            console.log("Vaccination Added");
         })
 
         $.post("/api/pet/medication", newMeds, function (data) {

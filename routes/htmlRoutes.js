@@ -27,6 +27,7 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/register.html"));
   });
 
+  // OWNER profile page setup form
   app.get("/owner_profile_setup", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/owner_profile_setup.html"));
   });
