@@ -16,6 +16,10 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    Appt.associate = function (models) {
+        Appt.belongsTo(models.Pet);
+    };
+
 
     return Appt;
 };

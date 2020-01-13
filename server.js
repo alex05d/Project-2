@@ -1,7 +1,7 @@
 require("dotenv").config();
 var express = require("express");
 // require('dotenv').config();
-var db = require("./models");
+var db = require("./models/index");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -15,11 +15,11 @@ app.use(express.static("public"));
 // Routes
 require("./routes/owner-api-routes")(app);
 require("./routes/pets_api_routes")(app);
-require("./routes/apiRoutes")(app);
+// require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/info_routes")(app);
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
