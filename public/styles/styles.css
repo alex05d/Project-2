@@ -39,6 +39,17 @@ body{
   color: white;
 }
 
+#tab_name{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size:35px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+  margin: auto;
+  color: #E8D356;
+}
+
 #form-header{
   font-family: 'Raleway', sans-serif;
   font-size: 30px;
@@ -150,6 +161,23 @@ padding: 15px;
   border-radius: 3px;
 }
 
+.add-row-button{
+  margin: auto;
+  background-color:rgb(58, 66, 92);
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: .2rem;
+  font-size: 15px;
+  border-radius: 3px;
+  padding-top: 5%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  width: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+}
 
 .log-button{
   background-color: #AE9E41;
@@ -220,8 +248,9 @@ img{
   padding-left:10%;
   padding-right:10%;
   padding-top:4%;
-  padding-bottom:4%;
+  padding-bottom:2%;
 }
+
 
 #emergency-sec {
   font-family: 'Raleway', sans-serif;
@@ -238,11 +267,11 @@ img{
   #top-pet-profile{
     background-color: #F2F2F2;
   }
+
   .about-pet{
     margin-top: 11px;
     margin-bottom: 11px;
   }
-
 
   .tabButton{
     background-color:#7F90A0;
