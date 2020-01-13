@@ -14,6 +14,18 @@ module.exports = function (app) {
         });
     });
 
+
+
+    // feeding GET routes //
+    app.get("/api/pet/feedings", function (req, res) {
+        console.log("!!!!!!!!!!!!!", db.Pet_feeding);
+        db.Pet_feeding.findAll(req.body).then(function (dbPet_feeding) {
+            res.json(dbPet_feeding);
+            console.log(dbPet_feeding);
+        });
+    });
+
+
     // this is the vaccinations post/create routes //
     app.post("/api/pet/vaccs", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Pet_vaccination);
@@ -23,7 +35,7 @@ module.exports = function (app) {
         });
     });
 
-    // this is the vaccinations GET routes //
+    // vaccinations GET routes //
     app.get("/api/pet/vacc", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Pet_vaccination);
         db.Pet_vaccination.findAll(req.body).then(function (dbPet_vaccination) {
@@ -31,6 +43,7 @@ module.exports = function (app) {
             console.log(dbPet_vaccination);
         });
     });
+
 
     // this is the medications post/create routes//
     app.post("/api/pet/medication", function (req, res) {
@@ -41,6 +54,17 @@ module.exports = function (app) {
         });
     });
 
+    //  medication GET routes //
+    app.get("/api/pet/medications", function (req, res) {
+        console.log("!!!!!!!!!!!!!", db.Medication);
+        db.Medication.findAll(req.body).then(function (dbMedication) {
+            res.json(dbMedication);
+            console.log(dbMedication);
+        });
+    });
+
+
+
     //this is the appointments post/create route//
     app.post("/api/pet/appt", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Appt);
@@ -50,6 +74,17 @@ module.exports = function (app) {
         });
     });
 
+    //  appointments GET routes //
+    app.get("/api/pet/appts", function (req, res) {
+        console.log("!!!!!!!!!!!!!", db.Appt);
+        db.Appt.findAll(req.body).then(function (dbAppt) {
+            res.json(dbAppt);
+            console.log(dbAppt);
+        });
+    });
+
+
+
     // this is the special inst post/create route//
     app.post("/api/pet/specInst", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Special_instruction);
@@ -58,6 +93,17 @@ module.exports = function (app) {
             console.log(dbSpecial_instruction);
         });
     });
+
+
+    //  special instructions GET routes //
+    app.get("/api/pet/specInsts", function (req, res) {
+        console.log("!!!!!!!!!!!!!", db.Special_instruction);
+        db.Special_instruction.findAll(req.body).then(function (dbSpecial_instruction) {
+            res.json(dbSpecial_instruction);
+            console.log(dbSpecial_instruction);
+        });
+    });
+
 
     // app.delete("/api/owner/:id", function (req, res) {
     //     db.Owner.destroy({

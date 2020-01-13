@@ -3,7 +3,7 @@ $(document).ready(function () {
     // $(document).foundation();
 
     // blogContainer holds all of our posts
-    var blogContainer = $(".blog-container");
+    var blogContainer = $(".blog-container4");
     var postCategorySelect = $("#category");
 
 
@@ -20,7 +20,7 @@ $(document).ready(function () {
         if (categoryString) {
             categoryString = "/category/" + categoryString;
         }
-        $.get("api/pet/vacc" + categoryString, function (data) {
+        $.get("/api/pet/feedings" + categoryString, function (data) {
             console.log("Posts", data);
             posts = data;
             if (!posts || !posts.length) {
@@ -95,18 +95,21 @@ $(document).ready(function () {
             "margin-top":
                 "14px"
         });
-        newPostCategory.text("Vaccination Name: " + post.vac_name);
+        newPostCategory.text("Food Name: " + post.pet_food);
 
         var newPostCardBody = $("<div>");
         newPostCardBody.addClass("card-body");
         var newPostBody = $("<p>");
         var newPostBody2 = $("<p>");
-        newPostTitle.text("Vaccination: #" + post.id);
+        var newPostBody3 = $("<p>");
+        var newPostBody4 = $("<p>");
+        newPostTitle.text("Food Brand: #" + post.id);
         // newPostTitle.text(post.vet_name + " ");
         // newPostBody.text("Does Your Pet Need Medication: " + post.needs_meds);
-
-        newPostBody.text("Vaccination Status: " + post.vac_status);
-        newPostBody2.text("Vaccination Due Date: " + post.vac_due_date);
+        newPostBody.text("Food Amount per Serving: " + post.food_amount);
+        newPostBody2.text("Morning Feeding Time " + post.morning_feeding);
+        newPostBody3.text("Afternoon Feeding Time " + post.afternoon_feeding);
+        newPostBody4.text("Evening Feeding Time " + post.night_feeding)
         // var formattedDate = new Date(post.createdAt);
         // formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
         // newPostDate.text(formattedDate);
@@ -117,6 +120,8 @@ $(document).ready(function () {
         newPostCardHeading.append(newPostCategory);
         newPostCardBody.append(newPostBody);
         newPostCardBody.append(newPostBody2);
+        newPostCardBody.append(newPostBody3);
+        newPostCardBody.append(newPostBody4);
         newPostCard.append(newPostCardHeading);
         newPostCard.append(newPostCardBody);
         newPostCard.data("post", post);
@@ -146,9 +151,17 @@ $(document).ready(function () {
     // This function displays a message when there are no posts
     function displayEmpty() {
         blogContainer.empty();
+        blogContainer.css({
+
+            "background-color": "#AE9E41"
+        });
         var messageH2 = $("<h2>");
-        messageH2.css({ "text-align": "center", "margin-top": "50px" });
-        messageH2.html("No posts yet for this category, navigate <a href='/cms'>here</a> in order to create a new post.");
+        messageH2.css({
+            "text-align": "center",
+            "margin-top": "30px",
+
+        });
+        messageH2.html("No posts yet for this category");
         blogContainer.append(messageH2);
     }
 

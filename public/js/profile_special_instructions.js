@@ -3,7 +3,7 @@ $(document).ready(function () {
     // $(document).foundation();
 
     // blogContainer holds all of our posts
-    var blogContainer = $(".blog-container");
+    var blogContainer = $(".blog-container5");
     var postCategorySelect = $("#category");
 
 
@@ -20,7 +20,7 @@ $(document).ready(function () {
         if (categoryString) {
             categoryString = "/category/" + categoryString;
         }
-        $.get("api/pet/vacc" + categoryString, function (data) {
+        $.get("/api/pet/specInsts" + categoryString, function (data) {
             console.log("Posts", data);
             posts = data;
             if (!posts || !posts.length) {
@@ -95,28 +95,21 @@ $(document).ready(function () {
             "margin-top":
                 "14px"
         });
-        newPostCategory.text("Vaccination Name: " + post.vac_name);
+        newPostCategory.text("Special Instructions: " + post.instructions);
 
         var newPostCardBody = $("<div>");
         newPostCardBody.addClass("card-body");
         var newPostBody = $("<p>");
-        var newPostBody2 = $("<p>");
-        newPostTitle.text("Vaccination: #" + post.id);
-        // newPostTitle.text(post.vet_name + " ");
-        // newPostBody.text("Does Your Pet Need Medication: " + post.needs_meds);
+        newPostTitle.text("Instructions: #" + post.id);
 
-        newPostBody.text("Vaccination Status: " + post.vac_status);
-        newPostBody2.text("Vaccination Due Date: " + post.vac_due_date);
-        // var formattedDate = new Date(post.createdAt);
-        // formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
-        // newPostDate.text(formattedDate);
-        // newPostTitle.append(newPostDate);
+        newPostBody.text("Instructions: " + post.info);
+
+        // appends to html
         newPostCardHeading.append(deleteBtn);
         newPostCardHeading.append(editBtn);
         newPostCardHeading.append(newPostTitle);
         newPostCardHeading.append(newPostCategory);
         newPostCardBody.append(newPostBody);
-        newPostCardBody.append(newPostBody2);
         newPostCard.append(newPostCardHeading);
         newPostCard.append(newPostCardBody);
         newPostCard.data("post", post);
