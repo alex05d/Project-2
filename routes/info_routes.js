@@ -94,6 +94,30 @@ module.exports = function (app) {
         });
     });
 
+<<<<<<< HEAD
+=======
+
+    //  special instructions GET routes //
+    app.get("/api/pet/specInsts", function (req, res) {
+        console.log("!!!!!!!!!!!!!", db.Special_instruction);
+        db.Special_instruction.findAll(req.body).then(function (dbSpecial_instruction) {
+            res.json(dbSpecial_instruction);
+            console.log(dbSpecial_instruction);
+        });
+    });
+
+
+    // app.delete("/api/owner/:id", function (req, res) {
+    //     db.Owner.destroy({
+    //         where: {
+    //             id: req.params.id
+    //         }
+    //     }).then(function (dbOwner) {
+    //         res.json(dbOwner);
+    //     })
+    // })
+
+>>>>>>> 1d7ff3d39a759f897f93433fd0e1dde0d69766ac
 
     //  special instructions GET routes //
     app.get("/api/pet/specInsts", function (req, res) {
