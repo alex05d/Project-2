@@ -2,16 +2,16 @@
 // ======== html: profile_setup.html  ========
 
 $(document).ready(function () {
-    var tokenEmail = localStorage.getItem('email');
-    var OwnerID = "";
-    var PetID = "";
+    // var tokenEmail = localStorage.getItem('email');
+    // var OwnerID = "";
+    var PetID = localStorage.getItem("pets_id");
 
-    $.get("/api/owner/" + tokenEmail, function (data) {
+    // $.get("/api/owner/" + tokenEmail, function (data) {
 
-        localStorage.setItem("owner_id", data.id);
-        OwnerID = data.id;
-        console.log("NewOwnerID : ", OwnerID);
-    });
+    //     localStorage.setItem("owner_id", data.id);
+    //     OwnerID = data.id;
+    //     console.log("NewOwnerID : ", OwnerID);
+    // });
 
     console.log("I'm loaded");
     $("#submit_pet").on("click", function (event) {
@@ -71,11 +71,6 @@ $(document).ready(function () {
         // console.log(newPet);
         // $.post("/api/pet", newPet, function (newPet) {
 
-        //     PetID = newPet.id;
-        //     localStorage.setItem("pets_id", PetID);
-        // })
-        // .then(res => {
-
         // console.log(newPet);
         // $.post("/api/pet", newPet, function (newPet) {
 
@@ -84,6 +79,10 @@ $(document).ready(function () {
         // })
         //     .then(res => {
 
+        //     PetID = newPet.id;
+        //     localStorage.setItem("pets_id", PetID);
+        // })
+        //     .then(res => {
 
 
         $.post("/api/pet/feeding", feedingInfo, function (data) {
@@ -105,6 +104,14 @@ $(document).ready(function () {
         }).then(res => {
             console.log("pet Added");
         })
+
+        $.post("/api/pet/specInst", specInst, function (data) {
+        }).then(res => {
+            console.log("pet Added");
+        })
+
+        // })
+        // console.log("this is the current pet id: " + currentPet);
 
         $.post("/api/pet/specInst", specInst, function (data) {
         }).then(res => {
