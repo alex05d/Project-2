@@ -55,10 +55,30 @@
 
 <body>
 
+    <nav class="hover-underline-menu" data-menu-underline-from-center>
+        <ul class="menu align-center">
+            <li class="tabButton" id="vaccines_link">Vaccines</a></li>
+            <li class="tabButton" id="meds_link">Medication</a></li>
+            <li class="tabButton" id="appts_link">Appointments</a></li>
+            <li class="tabButton" id="instructions_link">Special Instructions</a></li>
+        </ul>
+    </nav>
 
 
-    <!-- =================== TABS ===================-->
-    <div class="column row">
+
+    <div style="height: calc(25% - 25px);">
+        <div id="myGrid" style="height: 100%;" class="ag-theme-balham">
+        </div>
+    </div>
+    <script src="vaccines_table.js"></script>
+    <script src="medications_table.js"></script>
+    <script src="appointment_table.js"></script>
+    <script src="instructions_table.js"></script>
+
+
+
+    <!-- =================== TABS =================== -->
+    <!-- <div class="column row">
         <ul class="tabs align-right" data-tabs id="profile-tab-names">
             <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Feeding</a></li>
             <li class="tabs-title"><a href="#panel2">Vaccinations</a></li>
@@ -68,59 +88,43 @@
 
         </ul>
 
-        <div class="tabs-content" data-tabs-content="example-tabs">
+        <div class="tabs-content" data-tabs-content="example-tabs"> -->
 
 
-            <!-- =================== EACH TAB ===================-->
+    <!-- =================== EACH TAB ===================-->
 
-            <!-- ====== FEEDING (TAB 1) ======  -->
-            <div class="tabs-panel is-active" id="panel1">
+    <!-- ====== FEEDING (TAB 1) ======  -->
+    <!-- <div class="tabs-panel is-active" id="panel1">
                 <h5>Food Brand Name:</h5>
                 <h5>Morning Feeding Time:</h5>
                 <h5>Afternoon Feeding Time</h5>
                 <h5>Evening Feeding Time</h5>
+            </div> -->
+
+    <!-- ====== VACCINATIONS (TAB 2) ======  -->
+    <!-- <div class="tabs-panel" id="panel2">
 
 
-            </div>
+            </div> -->
 
-            <!-- ====== VACCINATIONS (TAB 2) ======  -->
-            <div class="tabs-panel" id="panel2">
+    <!-- ====== MEDICATIONS (TAB 3) ======  -->
+    <!-- <div class="tabs-panel" id="panel3">
 
-                <style>
-                    button {
-                        font-size: 12px;
-                    }
-                </style>
-                <div style="margin-bottom: 5px; display: flex; justify-content: space-between;">
+            </div> -->
 
-                </div>
-                <div style="height: calc(100% - 25px);">
-                    <div id="myGrid" style="height: 100%;" class="ag-theme-balham"></div>
-                </div>
-                <script src="vaccines.js"></script>
+    <!-- ====== APPOINTMENTS (TAB 4) ======  -->
+    <!-- <div class="tabs-panel" id="panel4">
 
-            </div>
+            </div> -->
 
-            <!-- ====== MEDICATIONS (TAB 3) ======  -->
-            <div class="tabs-panel" id="panel3">
-
-
-            </div>
-
-            <!-- ====== APPOINTMENTS (TAB 4) ======  -->
-            <div class="tabs-panel" id="panel4">
-
-
-            </div>
-
-            <!-- ====== SPECIAL INSTRUCTIONS (TAB 5) ======  -->
-            <div class="tabs-panel" id="panel5">
+    <!-- ====== SPECIAL INSTRUCTIONS (TAB 5) ======  -->
+    <!-- <div class="tabs-panel" id="panel5">
                 <h4>Display Special Instructions Here: </h4>
 
-            </div>
+            </div> -->
 
-
-        </div>
+    </div>
+    </div>
 
     </div>
 
