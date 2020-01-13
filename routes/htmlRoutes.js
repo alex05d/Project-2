@@ -34,9 +34,9 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/profile_page.html"));
   });
 
-  // app.get("/pet_profile_setup", function (req, res) {
-  //   res.sendFile(path.join(__dirname, "../views/profile_setup.html"));
-  // });
+  app.get("/petProfileSetup", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/petProfileSetup.html"));
+  });
 
   app.get("/pet", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/profile_setup.html"));

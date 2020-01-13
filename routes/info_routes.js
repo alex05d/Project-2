@@ -94,8 +94,6 @@ module.exports = function (app) {
         });
     });
 
-<<<<<<< HEAD
-=======
 
     //  special instructions GET routes //
     app.get("/api/pet/specInsts", function (req, res) {
@@ -117,7 +115,6 @@ module.exports = function (app) {
     //     })
     // })
 
->>>>>>> 1d7ff3d39a759f897f93433fd0e1dde0d69766ac
 
     //  special instructions GET routes //
     app.get("/api/pet/specInsts", function (req, res) {
