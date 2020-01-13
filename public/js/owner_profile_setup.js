@@ -8,8 +8,6 @@ $("#submit").on("click", function (event) {
     localStorage.setItem("email", tokenEmail);
 
 
-
-
     var owner = {
         first_name: $("#first-name").val().trim(),
         last_name: $("#last-name").val().trim(),
@@ -22,8 +20,8 @@ $("#submit").on("click", function (event) {
 
     }).then(res => {
 
-        // redirects to Owner Profile Page
-        window.location.href = "/pet";
+        // redirects to OWNER Homepage
+        window.location.href = "/";
 
     })
 
