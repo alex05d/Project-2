@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
 
     <!-- CSS LINKS -->
-    <link rel="stylesheet" type="text/css" href="../public/styles/footer.css">
-    <link rel="stylesheet" type="text/css" href="../public/styles/home.css">
-    <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="./styles/footer.css">
+    <link rel="stylesheet" type="text/css" href="./styles/home.css">
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
 
     <!--GOOGLE FONTS-->
     <link
@@ -45,7 +45,7 @@
             <ul class="menu">
                 <li><a href="/" id="owner-profile">OWNER PROFILE</a></li>
                 <li><a href="/pet_profile" class="share-button">SHARE PET PROFILE</a></li>
-                <li><a href="/logout" class="log-button">LOGOUT</a></li>
+                <li><a href="/logout" class="log-button" id="logoutButton">LOGOUT</a></li>
             </ul>
         </div>
 
@@ -58,7 +58,7 @@
 
         <div class="columns medium-5">
             <h5 class="work-feature-block-header" id="sub-header">WELCOME BACK </h5>
-            <h1 class="user-name" id="owner-name">Brian</h1>
+            <h1 class="user-name" id="owner-name">Owner Name here</h1>
             <!-- id="main-headers-brian"-->
 
 
@@ -180,13 +180,13 @@
             </div>
         </div>
 
-        <div class="column">
+        <!-- <div class="column">
 
             <p><img src="../public/styles/images/add-pet-button-04.png" alt="image of pet">
 
                 <link rel="stylesheet" href="pet_start_form.html">
 
-        </div>
+        </div> -->
 
 
     </div>
@@ -230,9 +230,11 @@
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 
 
-    <script>
-        $(document).foundation();
-    </script>
+
+    <script>$(document).foundation();</script>
+
+    <script src="./js/ownerPage.js"></script>
+
 </body>
 
 </html>

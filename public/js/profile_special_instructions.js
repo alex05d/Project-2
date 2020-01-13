@@ -100,8 +100,7 @@ $(document).ready(function () {
         var newPostCardBody = $("<div>");
         newPostCardBody.addClass("card-body");
         var newPostBody = $("<p>");
-        newPostTitle.text("Instructions: #" + post.id);
-
+        // newPostTitle.text("Instructions: #" + post.id);
         newPostBody.text("Instructions: " + post.info);
 
         // appends to html

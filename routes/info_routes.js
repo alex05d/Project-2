@@ -45,6 +45,8 @@ module.exports = function (app) {
     });
 
 
+
+
     // this is the medications post/create routes//
     app.post("/api/pet/medication", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Medication);
@@ -114,16 +116,6 @@ module.exports = function (app) {
     //         res.json(dbOwner);
     //     })
     // })
-
-
-    //  special instructions GET routes //
-    app.get("/api/pet/specInsts", function (req, res) {
-        console.log("!!!!!!!!!!!!!", db.Special_instruction);
-        db.Special_instruction.findAll(req.body).then(function (dbSpecial_instruction) {
-            res.json(dbSpecial_instruction);
-            console.log(dbSpecial_instruction);
-        });
-    });
 
 
     // app.delete("/api/owner/:id", function (req, res) {

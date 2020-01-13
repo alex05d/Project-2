@@ -19,7 +19,8 @@ require("./routes/pets_api_routes")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/info_routes")(app);
 
-var syncOptions = { force: true };
+// false: allows data to stay in database
+var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
