@@ -1,8 +1,31 @@
 // ===== VACCINES TABLE (JS) =======
-// $('#vaccines_link').on("click", function (event) {
-//     console.log("Table Linked")
-//     rowData = [];
-// });
+
+const datasource = {
+    getRows(params) {
+        console.log(JSON.stringify(params.request, null, 1));
+
+        fetch('./api/pet/vacc/', {
+            method: 'get',
+            body: JSON.stringify(params.request),
+            headers: { "Content-Type": "application/json; charset=utf-8" }
+        })
+            .then(httpResponse => httpResponse.json())
+            .then(response => {
+                params.successCallback(response.rows, response.lastRow);
+            })
+            .catch(error => {
+                console.error(error);
+                params.failCallback();
+            })
+    }
+};
+
+// register datasource with the grid
+gridOptions.api.setServerSideDatasource(datasource);
+
+
+
+
 // column names
 var columnDefs = [
     { headerName: "Vacination Name", field: 'vac_name', width: 100 },
@@ -14,6 +37,7 @@ var columnDefs = [
 var rowData = [
     { vac_name: 'test 1', vac_status: 'test 1b', vac_due_date: 'test 1c' },
 ];
+
 
 
 var gridOptions = {
