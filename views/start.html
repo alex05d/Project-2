@@ -40,14 +40,90 @@
         </div>
     </div>
 
+
+    <!-- =================== MAIN PAGE  ===================-->
+    <!-- <h1 class="user-name" id="main-headers2">Welcome</h1> -->
+    <div class=large-6column id="signInLeft">
+        <div class="container">
+
+        </div>
     </div>
+
+
+    <div class=large-6column>
+        <div class="container">
+            <div class="row">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <form method="POST" action="/login" role="form">
+                            <div class="form-group">
+                                <h2>Sign in</h2>
+                            </div>
+                            <div class="form-group">
+                                <strong>Email Address</strong>
+                                <input id="signinEmail" name="email" type="email" maxlength="50" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <strong>Password</strong>
+                                <span class="right"><a href="#">Forgot your password?</a></span>
+                                <input id="signinPassword" name="password" type="password" maxlength="25"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group" style="padding-top: 12px;">
+                                <button id="signinSubmit" type="submit" class="btn btn-success btn-block">Sign
+                                    in</button>
+                            </div>
+                            <div class="form-group divider">
+                                <hr class="left"><small>New to site?</small>
+                                <!-- <hr class="right"> -->
+                            </div>
+                            <a href="#" class="button large expanded">Create An Account</a>
+                            <!-- <p class="form-group"><a href="/register" class="btn btn-info btn-block">Create an account</a>
+                        </p> -->
+                            <p class="form-group">By signing in you are agreeing to our <a href="#">Terms of Use</a> and
+                                our
+                                <a href="#">Privacy Policy</a>.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <script type="text/javascript">
+        // Question: What does this code do?
+        $("#signinSubmit").on("click", function (event) {
+            // prevents the page from refreshing when the button is clicked
+            event.preventDefault();
+            var user = {
+                email: $("#signinEmail").val().trim(),
+                password: $("#signinPassword").val().trim(),
+            };
 
-    <h1 class="user-name" id="main-headers2">Welcome</h1>
+            // this connects to database
+            // (data.tablename.name) = response from database
 
+            /*
+            $.post("/api/login", userLogin, function (data) {
+                $("#owner-name").text(data.user.email);
+                $("#owner-phone").text(data.user.password);
+            });
+            */
 
+            console.log(user);
+            $.ajax({
+                url: "/login",
+                method: "POST",
+                data: user
+            }).then(function (response) {
+                // redirect user to the index.html
+                window.location.pathname = "/";
+            })
+            // // redirect to home page
+            // window.location.href = "/";
+        });
 
+    </script>
 
     <div>
         <a href="/pet" class="button large expanded">Create Profile</a>
