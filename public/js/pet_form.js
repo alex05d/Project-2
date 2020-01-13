@@ -118,6 +118,10 @@ $(document).ready(function () {
             console.log("pet Added");
         })
 
+            .then(res => {
+                // redirects to Owner Profile
+                window.location.href = "/"
+            })
     })
     // console.log("this is the current pet id: " + currentPet);
 

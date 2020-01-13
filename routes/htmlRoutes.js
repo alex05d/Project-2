@@ -23,6 +23,10 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/login.html"));
   });
 
+  app.get("/logout", function (req, res) {
+    res.sendFile(path.join(__dirname, "../views/login.html"));
+  });
+
   app.get("/register", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/register.html"));
   });
@@ -32,27 +36,20 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/owner_profile_setup.html"));
   });
 
-  app.get("/logout", function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/login.html"));
-  });
 
-  // pet profile form #1 (about pet)
+
+  // pet profile form #1
+  // (about pet)
   app.get("/about_pet_setup_form", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/about_pet_setup_form.html"));
   });
 
-  // pet profile form #2 (feeding/vaccines/medication/special instructions)
+  // pet profile form #2
+  // (feeding/vaccines/medication/special instructions)
   app.get("/pet", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/profile_setup.html"));
   });
 
-
-
-
-  // OWNER Homepage
-  app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../views/index.html"));
-  });
 
 
 };

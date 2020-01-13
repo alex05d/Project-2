@@ -7,7 +7,6 @@ $(document).ready(function () {
     var postCategorySelect = $("#category");
 
 
-
     // Click events for the edit and delete buttons
     $(document).on("click", "button.delete", handlePostDelete);
     $(document).on("click", "button.edit", handlePostEdit);
