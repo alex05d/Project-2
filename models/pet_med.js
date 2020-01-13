@@ -17,5 +17,9 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
+    Medication.associate = function (models) {
+        Medication.belongsTo(models.Pet);
+    };
+
     return Medication;
 };

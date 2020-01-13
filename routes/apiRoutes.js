@@ -1,9 +1,9 @@
-var db = require("../models");
-var bcrypt = require("bcryptjs");
-var jwt = require("jsonwebtoken");
-var saltRounds = 10;
-var cloudinary = require('cloudinary');
-process.env.SECRET_KEY = 'secret';
+// var db = require("../models");
+// var bcrypt = require("bcryptjs");
+// var jwt = require("jsonwebtoken");
+// var saltRounds = 10;
+// var cloudinary = require('cloudinary');
+// process.env.SECRET_KEY = 'secret';
 
 
 
