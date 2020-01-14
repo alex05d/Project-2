@@ -6,18 +6,21 @@ $(document).ready(function () {
     var blogContainer = $(".blog-container");
     var postCategorySelect = $("#category");
 
-    var PetId = localStorage.getItem('pets_id');
+
 
     // Click events for the edit and delete buttons
     $(document).on("click", "button.delete", handlePostDelete);
     $(document).on("click", "button.edit", handlePostEdit);
     postCategorySelect.on("change", handleCategoryChange);
-    var posts;
 
+
+    var posts;
+    // var PetId = localStorage.getItem('pets_id');
+    var PetId = "2";
     // This function grabs posts from the database and updates the view
     function getPosts(PetId) {
-
-
+        var PetId = localStorage.getItem('pets_id');
+        // PetId = "2";
 
         $.get("/api/pet/vaccs/" + PetId, function (data) {
 
