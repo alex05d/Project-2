@@ -1,7 +1,7 @@
 $('#log-button').on("click", function (event) {
     event.preventDefault();
 
-    localStorage.clear();
+    storage.removeItem("owner_Phone");
 
     window.location.href = "/start";
 })

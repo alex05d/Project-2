@@ -15,21 +15,22 @@ $(document).ready(function () {
     var posts;
 
     // This function grabs posts from the database and updates the view
-    function getPosts(category) {
-        var categoryString = category || "";
-        if (categoryString) {
-            categoryString = "/category/" + categoryString;
-        }
-        $.get("/api/pet/medications" + categoryString, function (data) {
-            console.log("Posts", data);
-            posts = data;
+    function getPosts(PetId) {
+        var PetId = "2"
+
+        $.get("/api/pet/medications/" + PetId, function (data) {
+
+        }).then(res => {
+            console.log("Posts", res);
+            posts = res;
             if (!posts || !posts.length) {
                 displayEmpty();
             }
             else {
                 initializeRows();
             }
-        });
+
+        })
     }
 
     // This function does an API call to delete posts

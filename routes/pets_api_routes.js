@@ -4,12 +4,12 @@ var db = require("../models/index");
 
 module.exports = function (app) {
     //get all the pets with the same owner//
-    app.get("/api/owner/pet/:owner_id", function (req, res) {
+    app.get("/api/owner/pet/:OwnerId", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Pet);
         db.Pet.findAll({
             where:
             {
-                owner_id: req.params.owner_id
+                OwnerId: req.params.OwnerId
             }
 
         }).then(function (dbPet) {
