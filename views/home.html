@@ -21,25 +21,15 @@
 
 <body>
     <!-- =================== NAVIGATION  ===================-->
-    <!-- MOBILE MENU -->
-    <div class="title-bar" data-responsive-toggle="mobileNavMenu" data-hide-for="small">
-        <button class="menu-icon" type="button" data-toggle></button>
-        <div class="title-bar-title">Menu</div>
-    </div>
-
     <div class="top-bar" id="navMenu">
-
         <!-- LEFT NAV -->
         <div class="top-bar-left">
             <ul class="menu" data-responsive-menu="accordion">
                 <li class="menu-text">
-                    <!-- 
-            </li><img src="../public/styles/images/pet-fetch-logo-05-05.png" width="120">
-            </li> -->
-                <li class="menu-text">PET FETCH</li>
+                    <!-- <li class="menu-text">PET FETCH</li> -->
+                <li class="menu-text"><img src="./styles/images/pet-fetch-nav-logo.png" alt="logo" width="150"></li>
             </ul>
         </div>
-
         <!-- RIGHT NAV -->
         <div class="top-bar-right">
             <ul class="menu">
@@ -47,11 +37,9 @@
                 <li><a href="/pet_profile" class="share-button">SHARE PET PROFILE</a></li>
                 <li><a href="/logout" class="log-button" id="logoutButton">LOGOUT</a></li>
             </ul>
+
         </div>
-
     </div>
-
-
 
     <!-- =================== USER HOME PAGE ===================-->
     <div class="work-feature-block row" id="top-block">
@@ -122,18 +110,19 @@
         </div>
     </div>
 
+
     <!-- =================== EMERGENCY CONTACT SECTION ===================-->
     <div class="work-feature-block row" id="emergency-sec">
-        <div class="columns medium-3">
+        <div class="columns medium-6" id="subHeader">
             Emergency Contact Information:
         </div>
-
-        <div class="columns medium-3" id="owner-phone">
-            Phone: 972 193-1928
+        <div class="columns medium-3">
+            <div id="sub-header-white-emergency"> Phone: </div>
+            <div id="owner-phone">Phone: 972) 193-1928</div>
         </div>
-
-        <div class="columns medium-3" id="owner-email">
-            Email: petowner@gmail.com
+        <div class="columns medium-3">
+            <div id="sub-header-white-emergency"> Email: </div>
+            <div id="owner-email">Email: petowner@gmail.com</div>
         </div>
     </div>
 
@@ -144,32 +133,32 @@
     </div>
     <div class="row small-up-1 medium-up-2 large-up-3">
 
+        <div class="column ownerContainer">
 
+            <p> <a href="/about_pet_setup_form"><img src="./styles/images/add-pet-button-04.png"
+                        alt="pet add button"></a>
 
-        <!-- <div class="column">
+                <!-- <link rel="stylesheet" href="/about_pet_setup_form"> -->
+            </p>
 
-            <p><img src="../public/styles/images/add-pet-button-04.png" alt="image of pet">
-
-                <link rel="stylesheet" href="pet_start_form.html">
-
-        </div> -->
-
+        </div>
 
     </div>
 
 
 
     <!-- =================== FOOTER ===================-->
-
     <div id="engadget-footer-contact-details-container">
         <footer id="engadget-footer-contact-details">
             <div class="footer-left">
                 <div class="contact-details">
                     <ul>
-                        <li><img class="thumbnail" src="http://placehold.it/80"></li>
+                        <!-- <li><img class="thumbnail" src="http://placehold.it/80"></li> -->
+                        <li><img class="thumbnail" src="./styles/images/pet-fet-logo-footer-08.png" alt="footer-logo"
+                                width="80">
+                        </li>
                         <li><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 1-800-399-9271</li>
                         <li><a data-toggle="animatedModal10"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-
                         <li><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> 18727 LUCKY DRIVE, DALLAS, TX
                             75552
                         </li>
@@ -180,7 +169,6 @@
                 <div class="newsletter">
                     <h6>Sign up for our newsletter</h6>
                     <div class="input-group">
-
                         <input class="input-group-field" type="email" placeholder="Email address">
                         <div class="input-group-button">
                             <input type="submit" class="button" value="Submit">
