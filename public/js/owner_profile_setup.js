@@ -3,11 +3,12 @@
 
 
 
-//on click event to submit the form
+//on click event to SUBMIT the form
 $("#submit").on("click", function (event) {
     event.preventDefault();
 
 
+    // ( refer to 'ownerPage.js' for 'localStorage.getItem' call)
     // FIRST NAME : stored into LOCAL storage
     var ownerFirstName = $("#first-name").val().trim();
     localStorage.setItem("first_name", ownerFirstName);
@@ -24,6 +25,9 @@ $("#submit").on("click", function (event) {
 
 
 
+    // ======== CAPTURES DATA FROM FORM
+    // =================================================================
+
     var owner = {
         first_name: $("#first-name").val().trim(),
         last_name: $("#last-name").val().trim(),
@@ -39,45 +43,47 @@ $("#submit").on("click", function (event) {
 
     })
 
+
+
+
+
+    // ======== CREATE, GET, POST ========
+
+    // create data in actual database
+    // db.owners.create({
+    //     first_name: $("#first-name").val().trim(),
+    //     last_name: $("#last-name").val().trim(),
+    //     email: $("#email").val().trim(),
+    //     phone_number: $("#phone").val().trim(),
+    // })
+    //     .then(newUser => {
+    //         console.log(`New user ${newUser.first_name}, with id ${newUser.id} has been created.`);
+    //     });
+
+
+    // GET one owner by id
+    // app.get('/owner/:id', (req, res) => {
+    //     const id = req.params.id;
+    //     db.owners.find({
+    //         where: { id: id }
+    //     })
+    //         .then(owner => {
+    //             res.json(owner);
+    //         });
+    // });
+
+    // POST single owner
+    // app.post('/owner', (req, res) => {
+    //     const name = req.body.name;
+    //     const role = req.body.role;
+    //     db.owners.create({
+    //         name: name,
+    //         role: role
+    //     })
+    //         .then(newOwner => {
+    //             res.json(newOwner);
+    //         })
 });
-
-// ======== CREATE, GET, POST ========
-
-// create data in actual database
-// db.owners.create({
-//     first_name: $("#first-name").val().trim(),
-//     last_name: $("#last-name").val().trim(),
-//     email: $("#email").val().trim(),
-//     phone_number: $("#phone").val().trim(),
-// })
-//     .then(newUser => {
-//         console.log(`New user ${newUser.first_name}, with id ${newUser.id} has been created.`);
-//     });
-
-
-// GET one owner by id
-// app.get('/owner/:id', (req, res) => {
-//     const id = req.params.id;
-//     db.owners.find({
-//         where: { id: id }
-//     })
-//         .then(owner => {
-//             res.json(owner);
-//         });
-// });
-
-// POST single owner
-// app.post('/owner', (req, res) => {
-//     const name = req.body.name;
-//     const role = req.body.role;
-//     db.owners.create({
-//         name: name,
-//         role: role
-//     })
-//         .then(newOwner => {
-//             res.json(newOwner);
-//         })
-// });
 
 
 

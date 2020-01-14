@@ -4,7 +4,6 @@
 $(document).ready(function () {
 
 
-
     var tokenEmail = localStorage.getItem('email');
     var OwnerID = "";
     // var PetID = "";
@@ -16,13 +15,19 @@ $(document).ready(function () {
         console.log("NewOwnerID : ", OwnerID);
     });
 
-    console.log("I'm loaded");
+    console.log("Pet form #1 has loaded");
     $("#submit_pet").on("click", function (event) {
         event.preventDefault();
-        console.log("foo")
+        console.log("Adding content...");
 
-        // var currentPet = '';
 
+        // PET NAME : stored into LOCAL STOARAGE
+        // var petName = $('#pet-name').val().trim();
+        // localStorage.setItem("petName", petName);
+
+
+
+        // ======== CAPTURES DATA FROM FORM
         var newPet = {
             OwnerId: OwnerID,
             pets_name: $("#pet-name").val().trim(),

@@ -13,7 +13,7 @@ $(document).ready(function () {
     //     console.log("NewOwnerID : ", OwnerID);
     // });
 
-    console.log("I'm loaded");
+    console.log("Pet Form #2 has loaded");
     $("#submit_pet").on("click", function (event) {
         event.preventDefault();
         console.log("foo")
@@ -97,12 +97,12 @@ $(document).ready(function () {
 
         $.post("/api/pet/medication", newMeds, function (data) {
         }).then(res => {
-            console.log("pet Added");
+            console.log("Medication Added");
         })
 
         $.post("/api/pet/appt", newAppt, function (data) {
         }).then(res => {
-            console.log("pet Added");
+            console.log("Appointment Added");
         })
 
         $.post("/api/pet/specInst", specInst, function (data) {

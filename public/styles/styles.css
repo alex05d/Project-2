@@ -33,10 +33,17 @@ body{
 
 #main-headers2{
   font-family: 'Raleway', sans-serif;
+  font-size:65px;
+  padding-top: 5%;
+ 
+}
+
+#owner-name{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
   font-size:55px;
   padding-top: 5%;
-  text-align: center;
-  color: white;
+
 }
 
 #tab_name{

@@ -20,7 +20,7 @@ $(document).ready(function () {
         if (categoryString) {
             categoryString = "/category/" + categoryString;
         }
-        $.get("api/pet/vaccs" + categoryString, function (data) {
+        $.get("api/pet/vacc" + categoryString, function (data) {
             console.log("Posts", data);
             posts = data;
             if (!posts || !posts.length) {

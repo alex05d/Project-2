@@ -23,6 +23,10 @@ $(document).ready(function () {
 
     // var ownerId = localStorage.getItem("owner_id");
 
+
+    //===========================  STORE DATA IN LOCAL STORAGE ===========================
+    // reference: owner_profile_setup.js
+
     var ownerName = localStorage.getItem("first_name");
     console.log("Owner Name: " + ownerName)
     $("#owner-name").text(ownerName);
@@ -34,6 +38,8 @@ $(document).ready(function () {
     var ownerPhone = localStorage.getItem("owner_Phone");
     console.log("Owner Phone: " + ownerPhone)
     $("#owner-phone").text(ownerPhone);
+
+    //===========================
 
     // ownerName.append("#owner-name");
 
