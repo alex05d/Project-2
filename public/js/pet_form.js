@@ -120,7 +120,7 @@ $(document).ready(function () {
 
             .then(res => {
                 // redirects to Owner Profile
-                window.location.href = "/"
+                window.location.href = "/home"
             })
     })
     // console.log("this is the current pet id: " + currentPet);

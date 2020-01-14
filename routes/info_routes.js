@@ -17,9 +17,13 @@ module.exports = function (app) {
 
 
     // feeding GET routes //
-    app.get("/api/pet/feedings", function (req, res) {
+    app.get("/api/pet/feedings/:PetId", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Pet_feeding);
-        db.Pet_feeding.findAll(req.body).then(function (dbPet_feeding) {
+        db.Pet_feeding.findAll({
+            where: {
+                PetId: req.params.PetId
+            }
+        }).then(function (dbPet_feeding) {
             res.json(dbPet_feeding);
             console.log(dbPet_feeding);
         });
@@ -36,11 +40,16 @@ module.exports = function (app) {
     });
 
     // vaccinations GET routes //
-    app.get("/api/pet/vaccs", function (req, res) {
+    app.get("/api/pet/vaccs/:PetId", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Pet_vaccination);
-        db.Pet_vaccination.findAll(req.body).then(function (dbPet_vaccination) {
+        console.log("000000000000000000000000000000");
+        db.Pet_vaccination.findAll({
+            where: {
+                PetId: req.params.PetId
+            }
+        }).then(function (dbPet_vaccination) {
             res.json(dbPet_vaccination);
-            console.log(dbPet_vaccination);
+            console.log("0000" + dbPet_vaccination);
         });
     });
 
@@ -57,9 +66,13 @@ module.exports = function (app) {
     });
 
     //  medication GET routes //
-    app.get("/api/pet/medications", function (req, res) {
+    app.get("/api/pet/medications/:PetId", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Medication);
-        db.Medication.findAll(req.body).then(function (dbMedication) {
+        db.Medication.findAll({
+            where: {
+                PetId: req.params.PetId
+            }
+        }).then(function (dbMedication) {
             res.json(dbMedication);
             console.log(dbMedication);
         });
@@ -77,9 +90,13 @@ module.exports = function (app) {
     });
 
     //  appointments GET routes //
-    app.get("/api/pet/appts", function (req, res) {
+    app.get("/api/pet/appts/:PetId", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Appt);
-        db.Appt.findAll(req.body).then(function (dbAppt) {
+        db.Appt.findAll({
+            where: {
+                PetId: req.params.PetId
+            }
+        }).then(function (dbAppt) {
             res.json(dbAppt);
             console.log(dbAppt);
         });
@@ -98,9 +115,13 @@ module.exports = function (app) {
 
 
     //  special instructions GET routes //
-    app.get("/api/pet/specInsts", function (req, res) {
+    app.get("/api/pet/specInsts/:PetId", function (req, res) {
         console.log("!!!!!!!!!!!!!", db.Special_instruction);
-        db.Special_instruction.findAll(req.body).then(function (dbSpecial_instruction) {
+        db.Special_instruction.findAll({
+            where: {
+                PetId: req.params.PetId
+            }
+        }).then(function (dbSpecial_instruction) {
             res.json(dbSpecial_instruction);
             console.log(dbSpecial_instruction);
         });
