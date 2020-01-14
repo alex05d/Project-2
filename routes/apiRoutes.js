@@ -1,65 +1,10 @@
-// var db = require("../models");
-// var bcrypt = require("bcryptjs");
-// var jwt = require("jsonwebtoken");
-// var saltRounds = 10;
-// var cloudinary = require('cloudinary');
-// process.env.SECRET_KEY = 'secret';
+var db = require("../models");
+var bcrypt = require("bcryptjs");
+var jwt = require("jsonwebtoken");
+var saltRounds = 10;
+var cloudinary = require('cloudinary');
+process.env.SECRET_KEY = 'secret';
 
-
-
-// Get all examples
-// app.get("/api/examples", function (req, res) {
-//   db.Example.findAll({}).then(function (dbExamples) {
-//     res.json(dbExamples);
-//   });
-// });
-
-
-
-//   //register route
-//   app.get('/register', (req, res) => {
-//     res.render('register.ejs')
-//   })
-
-// Get all examples
-// app.get("/api/examples", function (req, res) {
-//   db.Example.findAll({}).then(function (dbExamples) {
-//     res.json(dbExamples);
-//   });
-// });
-
-// // Create a new example\
-
-// app.post("/api/pet_image", function(req, res) {
-// db.Example.create(req.body).then(function(dbExample) {
-//   res.json(dbExample);
-// });
-// console.log(req.body);
-// var dataURI = req.body.dataURI;
-// var uploadStr = 'data:image/jpeg;base64,' + dataURI;
-//
-// cloudinary.v2.uploader.upload(uploadStr, {
-// api_key: "773177291336529",
-// api_secret: "FZUKToWuQ9ijBcUCygsLd7rXvCg",
-// cloud_name: "katedavis",
-//   overwrite: true,
-//  invalidate: true,
-// width: 810, height: 456, crop: "fill"
-// },
-// function (error, result) {
-// res.json(result);
-//  });
-// res.json(req.body)
-//});
-
-
-// // Delete an example by id
-// app.delete("/api/examples/:id", function(req, res) {
-//   db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-//     res.json(dbExample);
-//   });
-// });
-// };
 module.exports = function (app) {
 
   // login form POST method
@@ -141,25 +86,3 @@ module.exports = function (app) {
     // res.json(req.body)
   });
 };
-
-
-      // Get all examples
-      // app.get("/api/examples", function (req, res) {
-        //   db.Example.findAll({}).then(function (dbExamples) {
-          //     res.json(dbExamples);
-          //   });
-        // });
-
-        // // Create a new example
-        // app.post("/api/examples", function(req, res) {
-        //   db.Example.create(req.body).then(function(dbExample) {
-        //     res.json(dbExample);
-        //   });
-        // });
-
-        // // Delete an example by id
-        // app.delete("/api/examples/:id", function(req, res) {
-        //   db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-        //     res.json(dbExample);
-        //   });
-        // }
