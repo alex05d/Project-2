@@ -72,17 +72,15 @@
 <body>
 
     <!-- =================== NAVIGATION  ===================-->
-
     <div class="top-bar" id="navMenu">
 
         <!-- LEFT NAV -->
         <div class="top-bar-left">
             <ul class="menu" data-responsive-menu="accordion">
                 <li class="menu-text">
-                    <!-- 
-                </li><img src="../public/styles/images/pet-fetch-logo-05-05.png" width="120">
-                </li> -->
-                <li class="menu-text">PET FETCH</li>
+
+                    <!-- <li class="menu-text">PET FETCH</li> -->
+                <li class="menu-text"><img src="./styles/images/pet-fetch-nav-logo.png" alt="logo" width="150"></li>
             </ul>
         </div>
 
@@ -91,7 +89,7 @@
             <ul class="menu">
                 <li><a href="/" id="owner-profile">OWNER PROFILE</a></li>
                 <li><a href="/pet_profile" class="share-button">SHARE PET PROFILE</a></li>
-                <li><a href="/logout" class="log-button">LOGOUT</a></li>
+                <li><a href="/logout" class="log-button" id="logoutButton">LOGOUT</a></li>
             </ul>
         </div>
 
@@ -101,13 +99,10 @@
     <!-- =================== PET TOP SECTION  ===================-->
 
     <!-- BACK TO PREVIOUS PAGE -->
-
-
     <div class="row" id="top-pet-profile">
         <nav aria-label="You are here:" role="navigation">
             <ul class="breadcrumbs">
-                <li><a href="file:///C:/Users/Meli%20Mel/Documents/SMU-CLASS/Project%202/Project-2/views/index.html">BACK
-                        TO ALL PETS</a></li>
+                <li><a href="#">BACK TO ALL PETS</a></li>
             </ul>
         </nav>
 
@@ -132,7 +127,7 @@
         </div>
 
 
-        <!-- PET ABOUT -->
+        <!-- ============= PET ABOUT ================== -->
         <!--(will pull data from 'pets' table in database)-->
 
 
@@ -180,20 +175,6 @@
 
 
 
-
-    <!-- =================== TAB SECTION  ===================-->
-    <!-- <div class="column row"> -->
-    <!-- <nav class="hover-underline-menu" data-menu-underline-from-center> -->
-    <!-- <ul class="menu align-center"> -->
-    <!-- <li class="tabButton" id="vaccines_link">Vaccines</a></li> -->
-    <!-- <li class="tabButton" id="meds_link">Medication</a></li>
-                <li class="tabButton" id="appts_link">Appointments</a></li>
-                <li class="tabButton" id="instructions_link">Special Instructions</a></li>
-            </ul>
-        </nav>
-    </div> -->
-
-
     <!-- =================== DATA POPULATES HERE  ===================-->
 
     <div class="row">
@@ -232,91 +213,9 @@
     <!-- link back to pet profile form-->
     <a href="#" class="add-row-button">ADD MORE INFO</a>
 
-
     </div>
-
-
-
-
-
-    <!-- VACCINES: Modal showing data from DB-->
-    <!-- <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" class="staticBackdropLabel" id="vaccine_modal_header">Vaccines</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h4 class="columnNames" id="vac_name">Vaccine Name</h4>
-                    <h4 class="columnNames" id="vac_status"> Vaccine Status</h4>
-                    <h4 class="columnNames" id="vac_due_date">Vaccine Due Date</h4>
-                    <div id="modal-name" src="" alt="" style="height: 250px" style="width: 200px">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-
-
-    <!-- <div style="height: calc(25% - 25px);">
-        <div id="myGrid" style="height: 100%;" class="ag-theme-balham">
-        </div>
     </div>
-    
-    <script src="./js/vaccines_table.js"></script>
-    <script src="./js/medications_table.js"></script>
-    <script src="./js/appointment_table.js"></script>
-    <script src="./js/instructions_table.js"></script> -->
-
     </div>
-
-
-
-
-
-
-
-    <!-- =================== (OLD TABS) ===================-->
-    <!-- <div class="column row">
-        <ul class="tabs align-right" data-tabs id="profile-tab-names">
-            <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Feeding</a></li>
-            <li class="tabs-title"><a href="#panel2">Vaccinations</a></li>
-            <li class="tabs-title"><a href="#panel3">Medications</a></li>
-            <li class="tabs-title"><a href="#panel4">Appointments</a></li>
-            <li class="tabs-title"><a href="#panel5">Special Instructions</a></li>
-
-        </ul>
-
-        <div class="tabs-content" data-tabs-content="example-tabs"> -->
-
-
-    <!-- =================== EACH TAB ===================-->
-
-    <!-- ====== FEEDING (TAB 1) ======  -->
-    <!-- <div class="tabs-panel is-active" id="panel1">
-                <div class=h5 id=>Food Brand Name:</div class=h5>
-                <h5>Morning Feeding Time:</h5>
-                <h5>Afternoon Feeding Time</h5>
-                <h5>Evening Feeding Time</h5>
-
-
-            </div> -->
-
-
-
-
-
-
-    </div>
-
-
     </div>
     </div>
 
@@ -329,7 +228,11 @@
             <div class="footer-left">
                 <div class="contact-details">
                     <ul>
-                        <li><img class="thumbnail" src="http://placehold.it/80"></li>
+                        <!-- <li><img class="thumbnail" src="http://placehold.it/80"></li> -->
+                        <li><img class="thumbnail" src="./styles/images/pet-fet-logo-footer-08.png" alt="footer-logo"
+                                width="80">
+                        </li>
+
                         <li><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 1-800-399-9271</li>
                         <li><a data-toggle="animatedModal10"><i class="fa fa-envelope-o" aria-hidden="true"></i>
 
@@ -352,6 +255,9 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+
     </div>
 
 
