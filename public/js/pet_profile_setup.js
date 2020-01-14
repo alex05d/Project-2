@@ -107,7 +107,7 @@ $(document).ready(function () {
 
 
         // loads homepage
-        window.location.href = "/";
+        window.location.href = "/home";
 
 
 
