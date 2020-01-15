@@ -49,7 +49,7 @@ module.exports = function (app) {
             }
         }).then(function (dbPet_vaccination) {
             res.json(dbPet_vaccination);
-            console.log("0000" + dbPet_vaccination);
+            console.log("0000oooooooo" + dbPet_vaccination);
         });
     });
 

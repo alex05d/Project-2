@@ -33,10 +33,23 @@ body{
 
 #main-headers2{
   font-family: 'Raleway', sans-serif;
+  font-size:65px;
+  padding-top: 5%;
+ 
+}
+
+#subHeader{
+  font-family: 'Raleway', sans-serif;
+  font-size:20px;
+  font-weight: 600;
+}
+
+#owner-name{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
   font-size:55px;
   padding-top: 5%;
-  text-align: center;
-  color: white;
+
 }
 
 #tab_name{
@@ -89,6 +102,14 @@ body{
   letter-spacing: .2rem;
   font-size:15px;
   text-align: center;
+  color: white;
+}
+
+#sub-header-white-emergency{
+  font-family: 'Crimson Pro', serif;
+  letter-spacing: .2rem;
+  font-size: 20px;
+  text-align: left;
   color: white;
 }
 
@@ -254,7 +275,7 @@ img{
 
 #emergency-sec {
   font-family: 'Raleway', sans-serif;
-  background-color: #585D6C;
+  background-color: #0C1526;
   color:#CCCCCC;
   padding: 15px;
   padding-left:10%;
