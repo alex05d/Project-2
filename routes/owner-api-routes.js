@@ -5,7 +5,6 @@ var db = require("../models/index");
 module.exports = function (app) {
     // find one owner //
     app.get("/api/owner/:email", function (req, res) {
-        console.log("!!!!!!!!!!!!!", db.Owner);
         db.Owner.findOne({
             where:
             {
@@ -19,7 +18,6 @@ module.exports = function (app) {
 
     // find one owner by id
     app.get("/api/owner/:id", function (req, res) {
-        console.log("!!!!!!!!!!!!!", db.Owner);
         db.Owner.findOne({
             where:
             {
@@ -33,7 +31,6 @@ module.exports = function (app) {
 
     // find all owners //
     app.get("/api/owners", function (req, res) {
-        console.log("!!!!!!!!!!!!!", db.Owner);
         db.Owner.findAll({}).then(function (Owner) {
             res.json(Owner);
             console.log(Owner);
@@ -42,7 +39,6 @@ module.exports = function (app) {
 
     // create a new owner //
     app.post("/api/owner", function (req, res) {
-        console.log("!!!!!!!!!!!!!", db.Owner);
         db.Owner.create(req.body).then(function (dbOwner) {
             res.json(dbOwner);
         });

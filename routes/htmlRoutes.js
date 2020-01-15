@@ -14,11 +14,11 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../views/profile_page.html"));
   });
 
-
+  //sign in page
   app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/index.html"));
   });
-
+  // logout path
   app.get("/logout", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/index.html"));
   });
@@ -27,8 +27,6 @@ module.exports = function (app) {
   app.get("/owner_profile_setup", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/owner_profile_setup.html"));
   });
-
-
 
   // pet profile form #1
   // (about pet)
@@ -41,8 +39,5 @@ module.exports = function (app) {
   app.get("/pet", function (req, res) {
     res.sendFile(path.join(__dirname, "../views/profile_setup.html"));
   });
-
-
-
 };
 

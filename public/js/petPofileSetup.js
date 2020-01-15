@@ -4,23 +4,10 @@
 
 $(document).ready(function () {
 
-    // var newpetId = "2";
+
 
     var tokenEmail = localStorage.getItem('email');
     var OwnerID = "";
-    // var PetID = "";
-
-
-
-    // $.get("/api/pet/vaccs/" + newpetId, function (data) {
-
-    //     // for (var i = 0; i < data.length; i++) {
-    //     //     console.log("this is the vaccs: " + data[i].vac_name);
-    //     // }
-    // }).then(res => {
-    //     // this is the respone needed
-    //     console.log(res);
-    // });
 
     $.get("/api/owner/" + tokenEmail, function (data) {
 
@@ -33,9 +20,6 @@ $(document).ready(function () {
     $("#submit_pet").on("click", function (event) {
         event.preventDefault();
         console.log("foo")
-
-        // var currentPet = '';
-
         var newPet = {
             OwnerId: OwnerID,
             pets_name: $("#pet-name").val().trim(),

@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    // $(document).foundation();
-
     // blogContainer holds all of our posts
     var blogContainer = $(".blog-container5");
     var postCategorySelect = $("#category");
@@ -17,7 +15,7 @@ $(document).ready(function () {
     // This function grabs posts from the database and updates the view
     function getPosts(PetId) {
 
-        var PetId = localStorage.getItem('pets_id');
+        var PetId = localStorage.getItem('pet_id');
 
         $.get("/api/pet/specInsts/" + PetId, function (data) {
 
@@ -142,7 +140,7 @@ $(document).ready(function () {
         blogContainer.empty();
         var messageH2 = $("<h2>");
         messageH2.css({ "text-align": "center", "margin-top": "50px" });
-        messageH2.html("No posts yet for this category, navigate <a href='/cms'>here</a> in order to create a new post.");
+        messageH2.html("No info yet for this section, navigate <a href='/pet'>here</a> in order to create a new special instructions.");
         blogContainer.append(messageH2);
     }
 

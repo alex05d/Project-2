@@ -2,33 +2,12 @@
 // ======== profile_setup.html  ========
 
 $(document).ready(function () {
-    // var tokenEmail = localStorage.getItem('email');
-    // var OwnerID = "";
-    var PetID = localStorage.getItem("pets_id");
 
-    // $.get("/api/owner/" + tokenEmail, function (data) {
+    // var PetID = localStorage.getItem("pet_id");
 
-    //     localStorage.setItem("owner_id", data.id);
-    //     OwnerID = data.id;
-    //     console.log("NewOwnerID : ", OwnerID);
-    // });
-
-    console.log("I'm loaded");
     $("#submit_pet").on("click", function (event) {
+        var PetID = localStorage.getItem("pet_id");
         event.preventDefault();
-        console.log("foo")
-
-        // var currentPet = '';
-
-        // var newPet = {
-        //     OwnerId: OwnerID,
-        //     pets_name: $("#pet-name").val().trim(),
-        //     pet_type: $("#pet-type").val().trim(),
-        //     pet_weight: $("#pet-weight").val().trim(),
-        //     pet_birthday: $("#pet-birthday").val().trim(),
-        //     pet_gender: $("#pet-gender").val().trim(),
-        //     pet_personality: $("#pet-personality").val().trim(),
-        // };
 
         var feedingInfo = {
             PetId: PetID,
@@ -68,26 +47,9 @@ $(document).ready(function () {
         };
 
 
-        // console.log(newPet);
-        // $.post("/api/pet", newPet, function (newPet) {
-
-        // console.log(newPet);
-        // $.post("/api/pet", newPet, function (newPet) {
-
-        //     PetID = newPet.id;
-        //     localStorage.setItem("pets_id", PetID);
-        // })
-        //     .then(res => {
-
-        //     PetID = newPet.id;
-        //     localStorage.setItem("pets_id", PetID);
-        // })
-        //     .then(res => {
-
 
         $.post("/api/pet/feeding", feedingInfo, function (data) {
         }).then(res => {
-            console.log("Feeding Added");
         })
 
         $.post("/api/pet/vacc", newVacc, function (data) {
@@ -97,32 +59,24 @@ $(document).ready(function () {
 
         $.post("/api/pet/medication", newMeds, function (data) {
         }).then(res => {
-            console.log("pet Added");
         })
 
         $.post("/api/pet/appt", newAppt, function (data) {
         }).then(res => {
-            console.log("pet Added");
         })
 
         $.post("/api/pet/specInst", specInst, function (data) {
         }).then(res => {
-            console.log("pet Added");
         })
 
-        // })
-        // console.log("this is the current pet id: " + currentPet);
 
         $.post("/api/pet/specInst", specInst, function (data) {
         }).then(res => {
-            console.log("pet Added");
         })
 
             .then(res => {
                 // redirects to Owner Profile
                 window.location.href = "/home"
             })
-    })
-    // console.log("this is the current pet id: " + currentPet);
-
+    });
 });
