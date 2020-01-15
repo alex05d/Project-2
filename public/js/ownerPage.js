@@ -4,11 +4,7 @@ $(document).ready(function () {
 
 
 
-    $('.my_button').click(function () {
-        var newPetID = $(this).val();
-        localStorage.setItem("pet_id", newPetID);
-        window.location.href = "/profile_page";
-    });
+
 
 
     var ownerEmail = localStorage.getItem("email");
@@ -79,6 +75,7 @@ $(document).ready(function () {
         var newPetCard = $("<div>");
         newPetCard.addClass("card");
         newPetCard.attr('href', "https://www.google.com/");
+        newPetCard.attr('data-id', posts.id);
         newPetCard.css({
             "border-width": "10px",
             "border-color": "black",
@@ -154,6 +151,14 @@ $(document).ready(function () {
         return newPetCard;
 
     }
+
+    $(document).on("click", ".card", function () {
+
+        var newPetID = $(this).attr('data-id');
+        console.log(newPetID)
+        localStorage.setItem("pet_id", newPetID);
+        window.location.href = "/profile_page";
+    });
 
 
 
