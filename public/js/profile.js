@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     var posts;
     // var PetId = localStorage.getItem('pets_id');
-    var PetId = "2";
+    // var PetId = "2";
     // This function grabs posts from the database and updates the view
     function getPosts(PetId) {
         var PetId = localStorage.getItem('pets_id');

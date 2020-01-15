@@ -16,7 +16,7 @@ $(document).ready(function () {
     // This function grabs posts from the database and updates the view
 
     function getPosts(PetId) {
-        var PetId = "2"
+        var PetId = localStorage.getItem('pets_id');
 
         $.get("/api/pet/feedings/" + PetId, function (data) {
 
