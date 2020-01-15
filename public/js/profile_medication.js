@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    // $(document).foundation();
-
     // blogContainer holds all of our posts
     var blogContainer = $(".blog-container2");
     var postCategorySelect = $("#category");
@@ -16,7 +14,7 @@ $(document).ready(function () {
 
     // This function grabs posts from the database and updates the view
     function getPosts(PetId) {
-        var PetId = localStorage.getItem('pets_id');
+        var PetId = localStorage.getItem('pet_id');
 
         $.get("/api/pet/medications/" + PetId, function (data) {
 
@@ -107,10 +105,6 @@ $(document).ready(function () {
         // newPostBody.text("Does Your Pet Need Medication: " + post.needs_meds);
         newPostBody.text("Medication Time: " + post.medication_time);
         newPostBody2.text("Dosage Amount: " + post.dosage);
-        // var formattedDate = new Date(post.createdAt);
-        // formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
-        // newPostDate.text(formattedDate);
-        // newPostTitle.append(newPostDate);
         newPostCardHeading.append(deleteBtn);
         newPostCardHeading.append(editBtn);
         newPostCardHeading.append(newPostTitle);
@@ -152,7 +146,7 @@ $(document).ready(function () {
             "margin-top": "50px",
             "margin-bottom": "50px"
         });
-        messageH2.html("No posts yet for this category, navigate <a href='/cms'>here</a> in order to create a new post.");
+        messageH2.html("No info yet for this section, navigate <a href='/pet'>here</a> in order to create a new medications.");
         blogContainer.append(messageH2);
     }
 

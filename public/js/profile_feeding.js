@@ -9,14 +9,14 @@ $(document).ready(function () {
 
     // Click events for the edit and delete buttons
     $(document).on("click", "button.delete", handlePostDelete);
-    $(document).on("click", "button.edit", handlePostEdit);
+    // $(document).on("click", "button.edit", handlePostEdit);
     postCategorySelect.on("change", handleCategoryChange);
     var posts;
 
     // This function grabs posts from the database and updates the view
 
     function getPosts(PetId) {
-        var PetId = localStorage.getItem('pets_id');
+        var PetId = localStorage.getItem('pet_id');
 
         $.get("/api/pet/feedings/" + PetId, function (data) {
 
@@ -141,13 +141,13 @@ $(document).ready(function () {
 
     // This function figures out which post we want to edit and takes it to the
     // Appropriate url
-    function handlePostEdit() {
-        var currentPost = $(this)
-            .parent()
-            .parent()
-            .data("post");
-        window.location.href = "/cms?post_id=" + currentPost.id;
-    }
+    // function handlePostEdit() {
+    //     var currentPost = $(this)
+    //         .parent()
+    //         .parent()
+    //         .data("post");
+    //     window.location.href = "/cms?post_id=" + currentPost.id;
+    // }
 
     // This function displays a message when there are no posts
     function displayEmpty() {
@@ -162,7 +162,7 @@ $(document).ready(function () {
             "margin-top": "30px",
 
         });
-        messageH2.html("No posts yet for this category");
+        messageH2.html("No info yet for this section, navigate <a href='/pet'>here</a> in order to create a new feeding info.");
         blogContainer.append(messageH2);
     }
 

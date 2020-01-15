@@ -5,7 +5,6 @@ var db = require("../models/index");
 module.exports = function (app) {
     //get all the pets with the same owner//
     app.get("/api/owner/pet/:OwnerId", function (req, res) {
-        console.log("!!!!!!!!!!!!!", db.Pet);
         db.Pet.findAll({
             where:
             {
@@ -14,12 +13,10 @@ module.exports = function (app) {
 
         }).then(function (dbPet) {
             res.json(dbPet);
-            console.log("this is the new pet " + dbPet);
         });
     });
 
     app.get("/api/pets", function (req, res) {
-        console.log("!!!!!!!!!!!!!", db.Pet);
         db.Pet.findAll({}).then(function (dbPet) {
             res.json(dbPet);
             console.log("this is the new pet " + dbPet);
@@ -28,7 +25,6 @@ module.exports = function (app) {
 
     //get one pet by the id//
     app.get("/api/pet/:id", function (req, res) {
-        console.log("!!!!!!!!!!!!!", db.Pet);
         db.Pet.findOne({
             where:
             {
@@ -42,7 +38,6 @@ module.exports = function (app) {
     });
 
     app.get("/api/pet/:pets_name", function (req, res) {
-        console.log("!!!!!!!!!!!!!", db.Pet);
         db.Pet.findOne({
             where:
             {
@@ -56,7 +51,6 @@ module.exports = function (app) {
     });
 
     app.post("/api/pet", function (req, res) {
-        console.log("!!!!!!!!!!!!!", db.Pet);
         db.Pet.create(req.body).then(function (newPet) {
             res.json(newPet);
             console.log(newPet);

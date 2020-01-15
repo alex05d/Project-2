@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 
     function getPosts(PetId) {
-        var PetId = localStorage.getItem('pets_id');
+        var PetId = localStorage.getItem('pet_id');
 
         $.get("/api/pet/appts/" + PetId, function (data) {
 
@@ -153,7 +153,7 @@ $(document).ready(function () {
             "margin-top": "30px",
             "background-color": "#fff"
         });
-        messageH2.html("No posts yet for this category, navigate <a href='/cms'>here</a> in order to create a new post.");
+        messageH2.html("No info yet for this section, navigate <a href='/pet'>here</a> in order to create a new appointments.");
         blogContainer.append(messageH2);
     }
 

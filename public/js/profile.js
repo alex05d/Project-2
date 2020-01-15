@@ -1,7 +1,4 @@
 $(document).ready(function () {
-
-    // $(document).foundation();
-
     // blogContainer holds all of our posts
     var blogContainer = $(".blog-container");
     var postCategorySelect = $("#category");
@@ -15,12 +12,9 @@ $(document).ready(function () {
 
 
     var posts;
-    // var PetId = localStorage.getItem('pets_id');
-    // var PetId = "2";
-    // This function grabs posts from the database and updates the view
+
     function getPosts(PetId) {
-        var PetId = localStorage.getItem('pets_id');
-        // PetId = "2";
+        var PetId = localStorage.getItem('pet_id');
 
         $.get("/api/pet/vaccs/" + PetId, function (data) {
 
@@ -36,21 +30,9 @@ $(document).ready(function () {
         })
     }
 
-    // This function does an API call to delete posts
-    // function deletePost(id) {
-    //   $.ajax({
-    //     method: "DELETE",
-    //     url: "api/pet/vacc/" + id
-    //   })
-    //     .then(function() {
-    //       getPosts(postCategorySelect.val());
-    //     });
-    // }
 
-    // Getting the initial list of posts
     getPosts();
-    // InitializeRows handles appending all of our constructed post HTML inside
-    // blogContainer
+
     function initializeRows() {
         blogContainer.empty();
         var postsToAdd = [];
@@ -60,7 +42,7 @@ $(document).ready(function () {
         blogContainer.append(postsToAdd);
     }
 
-    // This function constructs a post's HTML
+
     function createNewRow(post) {
         var newPostCard = $("<div>");
         newPostCard.addClass("card");
@@ -111,10 +93,6 @@ $(document).ready(function () {
 
         newPostBody.text("Vaccination Status: " + post.vac_status);
         newPostBody2.text("Vaccination Due Date: " + post.vac_due_date);
-        // var formattedDate = new Date(post.createdAt);
-        // formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
-        // newPostDate.text(formattedDate);
-        // newPostTitle.append(newPostDate);
         newPostCardHeading.append(deleteBtn);
         newPostCardHeading.append(editBtn);
         newPostCardHeading.append(newPostTitle);
@@ -127,8 +105,7 @@ $(document).ready(function () {
         return newPostCard;
     }
 
-    // This function figures out which post we want to delete and then calls
-    // deletePost
+
     function handlePostDelete() {
         var currentPost = $(this)
             .parent()
@@ -137,8 +114,7 @@ $(document).ready(function () {
         deletePost(currentPost.id);
     }
 
-    // This function figures out which post we want to edit and takes it to the
-    // Appropriate url
+
     function handlePostEdit() {
         var currentPost = $(this)
             .parent()
@@ -147,12 +123,12 @@ $(document).ready(function () {
         window.location.href = "/cms?post_id=" + currentPost.id;
     }
 
-    // This function displays a message when there are no posts
+
     function displayEmpty() {
         blogContainer.empty();
         var messageH2 = $("<h2>");
         messageH2.css({ "text-align": "center", "margin-top": "50px" });
-        messageH2.html("No posts yet for this category, navigate <a href='/cms'>here</a> in order to create a new post.");
+        messageH2.html("No info yet for this section, navigate <a href='/pet'>here</a> in order to create a new vaccinations.");
         blogContainer.append(messageH2);
     }
 
