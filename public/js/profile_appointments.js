@@ -23,7 +23,6 @@ $(document).ready(function () {
         $.get("/api/pet/appts/" + PetId, function (data) {
 
         }).then(res => {
-            console.log("Posts", res);
             posts = res;
             if (!posts || !posts.length) {
                 displayEmpty();

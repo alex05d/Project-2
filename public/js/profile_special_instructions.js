@@ -20,7 +20,6 @@ $(document).ready(function () {
         $.get("/api/pet/specInsts/" + PetId, function (data) {
 
         }).then(res => {
-            console.log("Posts", res);
             posts = res;
             if (!posts || !posts.length) {
                 displayEmpty();
@@ -100,7 +99,7 @@ $(document).ready(function () {
         var newPostCardBody = $("<div>");
         newPostCardBody.addClass("card-body");
         var newPostBody = $("<p>");
-        // newPostTitle.text("Instructions: #" + post.id);
+        newPostTitle.text("Instructions: #" + post.id);
         newPostBody.text("Instructions: " + post.info);
 
         // appends to html

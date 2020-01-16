@@ -54,7 +54,6 @@ $(document).ready(function () {
 
         $.post("/api/pet/vacc", newVacc, function (data) {
         }).then(res => {
-            console.log("Vaccination Added");
         })
 
         $.post("/api/pet/medication", newMeds, function (data) {

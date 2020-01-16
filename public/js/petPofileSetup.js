@@ -13,13 +13,10 @@ $(document).ready(function () {
 
         localStorage.setItem("owner_id", data.id);
         OwnerID = data.id;
-        console.log("NewOwnerID : ", data);
     });
 
-    console.log("I'm loaded");
     $("#submit_pet").on("click", function (event) {
         event.preventDefault();
-        console.log("foo")
         var newPet = {
             OwnerId: OwnerID,
             pets_name: $("#pet-name").val().trim(),

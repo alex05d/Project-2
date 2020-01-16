@@ -10,8 +10,20 @@ $(document).ready(function () {
     $(document).on("click", "button.edit", handlePostEdit);
     postCategorySelect.on("change", handleCategoryChange);
 
+    var currentPet = localStorage.getItem('pet_id');
 
     var posts;
+
+    $.get("/api/pet/" + currentPet, function (data) {
+
+        $("#pet_name_pg").text(data.pets_name);
+        $("#pet_type_pg").text(data.pet_type);
+        $("#pet_weight_pg").text(data.pet_weight);
+        $("#pet_birthday_pg").text(data.pet_birthday);
+        $("#pet_gender_pg").text(data.pet_gender);
+        $("#pet_personality_pg").text(data.pet_personality);
+
+    });
 
     function getPosts(PetId) {
         var PetId = localStorage.getItem('pet_id');
@@ -19,7 +31,6 @@ $(document).ready(function () {
         $.get("/api/pet/vaccs/" + PetId, function (data) {
 
         }).then(res => {
-            console.log("Posts", res);
             posts = res;
             if (!posts || !posts.length) {
                 displayEmpty();
