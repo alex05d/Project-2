@@ -31,7 +31,6 @@ $("#submit").on("click", function (event) {
         phone_number: $("#phone").val().trim(),
     };
 
-    console.log(owner);
     $.post("/api/owner", owner, function () {
 
     }).then(res => {

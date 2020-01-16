@@ -15,7 +15,7 @@ $(document).ready(function () {
     var posts;
 
     $.get("/api/pet/" + currentPet, function (data) {
-        console.log(data);
+
         $("#pet_name_pg").text(data.pets_name);
         $("#pet_type_pg").text(data.pet_type);
         $("#pet_weight_pg").text(data.pet_weight);
@@ -31,7 +31,6 @@ $(document).ready(function () {
         $.get("/api/pet/vaccs/" + PetId, function (data) {
 
         }).then(res => {
-            console.log("Posts", res);
             posts = res;
             if (!posts || !posts.length) {
                 displayEmpty();

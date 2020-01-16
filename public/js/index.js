@@ -6,7 +6,7 @@ $(document).ready(function () {
         localStorage.setItem("email", tokenEmail);
 
         $.get("/api/owner/" + tokenEmail, function (data) {
-            console.log(data);
+
         }).then(res => {
             var OwnerID = res.id;
             var newPhone = res.phone_number;
@@ -15,7 +15,7 @@ $(document).ready(function () {
             localStorage.setItem("owner_Phone", newPhone);
             localStorage.setItem("first_name", newName);
 
-            console.log(res);
+
         }).then(res => {
             window.location.href = "/home"
         })

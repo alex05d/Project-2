@@ -21,7 +21,6 @@ $(document).ready(function () {
         $.get("/api/pet/feedings/" + PetId, function (data) {
 
         }).then(res => {
-            console.log("Posts", res);
             posts = res;
             if (!posts || !posts.length) {
                 displayEmpty();

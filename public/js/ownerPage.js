@@ -12,12 +12,6 @@ $(document).ready(function () {
     $("#owner-name").text(ownerName);
     $("#owner-email").text(ownerEmail);
 
-    console.log("Owner Page loaded");
-    console.log("Owner Email: " + ownerEmail);
-    console.log("Owner Name: " + ownerName);
-    console.log("Owner Phone: " + ownerPhone);
-
-
 
     /// logout button///////////
     $("#logoutButton").on("click", function () {
@@ -44,7 +38,6 @@ $(document).ready(function () {
 
         }).then(res => {
             posts = res;
-            console.log(res);
             initializeRows(posts);
         });
 
