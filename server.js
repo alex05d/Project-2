@@ -1,7 +1,7 @@
 require("dotenv").config();
 var express = require("express");
-// require('dotenv').config();
 var db = require("./models/index");
+var keys = require("./keys");
 
 var app = express();
 var PORT = process.env.PORT || 5000;

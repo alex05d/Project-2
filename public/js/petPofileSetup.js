@@ -30,7 +30,7 @@ $(document).ready(function () {
         $.post("/api/pet", newPet, function (newPet) {
 
             PetID = newPet.id;
-            localStorage.setItem("pets_id", PetID);
+            localStorage.setItem("pet_id", PetID);
         })
             .then(res => {
                 window.location.href = "/pet"

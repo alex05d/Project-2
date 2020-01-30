@@ -29,8 +29,8 @@ $(document).ready(function () {
                 initializeRows();
             }
 
-        })
-    }
+        });
+    };
 
     // This function does an API call to delete posts
     // function deletePost(id) {

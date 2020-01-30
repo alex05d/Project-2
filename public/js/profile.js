@@ -25,13 +25,18 @@ $(document).ready(function () {
 
     });
 
+
+    // console.log("this is a test " + PetId);
     function getPosts(PetId) {
         var PetId = localStorage.getItem('pet_id');
+
+        console.log("this is a test " + PetId)
 
         $.get("/api/pet/vaccs/" + PetId, function (data) {
 
         }).then(res => {
             posts = res;
+            console.log("this it the posts console " + res);
             if (!posts || !posts.length) {
                 displayEmpty();
             }

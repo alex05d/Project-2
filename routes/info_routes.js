@@ -41,6 +41,7 @@ module.exports = function (app) {
             }
         }).then(function (dbPet_vaccination) {
             res.json(dbPet_vaccination);
+            console.log("000000000000000000000" + dbPet_vaccination);
         });
     });
 
