@@ -50,23 +50,23 @@ $(document).ready(function () {
 
         $.post("/api/pet/feeding", feedingInfo, function (data) {
         }).then(res => {
-        })
+        });
 
         $.post("/api/pet/vacc", newVacc, function (data) {
         }).then(res => {
-        })
+        });
 
         $.post("/api/pet/medication", newMeds, function (data) {
         }).then(res => {
-        })
+        });
 
         $.post("/api/pet/appt", newAppt, function (data) {
         }).then(res => {
-        })
+        });
 
         $.post("/api/pet/specInst", specInst, function (data) {
         }).then(res => {
-        })
+        });
 
 
         $.post("/api/pet/specInst", specInst, function (data) {
@@ -76,6 +76,6 @@ $(document).ready(function () {
             .then(res => {
                 // redirects to Owner Profile
                 window.location.href = "/home"
-            })
+            });
     });
 });

@@ -27,7 +27,7 @@ $(document).ready(function () {
             $("#pet-birthday").text(data.Pet.pet_birthday);
             $("#pet-gender").text(data.Pet.pet_gender);
             $("#pet-personality").text(data.Pet.pet_personality);
-        })
+        });
 
         /// FEEDING
 
@@ -45,7 +45,7 @@ $(document).ready(function () {
             $("#morning-feeding").text(data.Pet_feeding.morning_feeding);
             $("#afternoon-feeding").text(data.Pet_feeding.afternoon_feeding);
             $("#night-feeding").text(data.Pet_feeding.night_feeding);
-        })
+        });
 
         // VACCINATIONS
         var petVaccination = {
@@ -59,7 +59,7 @@ $(document).ready(function () {
             $("#vac-name").text(data.Pet_vaccination.vac_name);
             $("vac-status").text(data.Pet_vaccination.vac_status);
             $("#vac-due-date").text(data.Pet_vaccination.vac_due_date);
-        })
+        });
 
 
         // MEDICATION
@@ -89,7 +89,7 @@ $(document).ready(function () {
             $("#vet_name").text(data.Appt.vet_name);
             $("vet_address").text(data.Appt.vet_address);
             $("#appt").text(data.Appt.appt);
-        })
+        });
 
         // SPECIAL INSTRUCTIONS
         var petInstructions = {
@@ -101,7 +101,7 @@ $(document).ready(function () {
             $("#instructions").text(data.Special_instruction.instructions);
             $("info").text(data.Special_instruction.info);
 
-        })
+        });
 
 
 

@@ -36,7 +36,7 @@ $("#submit").on("click", function (event) {
     }).then(res => {
         window.location.href = "/about_pet_setup_form";
 
-    })
+    });
 
 });
 
